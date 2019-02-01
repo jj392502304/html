@@ -108,21 +108,11 @@
         <div class="container">
             <div class="logo"><a href="index.html"><img src="images/logo.png" alt=""></a></div>
             <div class="search-cate">
-                <select class="selectpicker">
-                    <option> All Categories</option>
-                    <option> Home Audio & Theater</option>
-                    <option> TV & Video</option>
-                    <option> Camera, Photo & Video</option>
-                    <option> Cell Phones & Accessories</option>
-                    <option> Headphones</option>
-                    <option> Video Games</option>
-                    <option> Bluetooth & Wireless</option>
-                    <option> Gaming Console</option>
-                    <option> Computers & Tablets</option>
-                    <option> Monitors</option>
+                <select id="select1" class="selectpicker">
+                    <option>全部</option>
                 </select>
-                <input type="search" placeholder="Search entire store here...">
-                <button class="submit" type="submit"><i class="icon-magnifier"></i></button>
+                <input id="name" type="search" placeholder="Search entire store here...">
+                <button onclick="findByName()" class="submit" type="submit"><i class="icon-magnifier"></i></button>
             </div>
 
             <!-- Cart Part -->
@@ -434,33 +424,33 @@
 
                         <!-- Short List -->
                         <div class="short-lst">
-                            <h2>Cell Phones & Accessories</h2>
-                            <ul>
-                                <!-- Short List -->
-                                <li>
-                                    <p>Showing 1–12 of 756 results</p>
-                                </li>
-                                <!-- Short  -->
-                                <li>
-                                    <select class="selectpicker">
-                                        <option>Show 12</option>
-                                        <option>Show 24</option>
-                                        <option>Show 32</option>
-                                    </select>
-                                </li>
-                                <!-- by Default -->
-                                <li>
-                                    <select class="selectpicker">
-                                        <option>Sort by Default</option>
-                                        <option>Sort by Default</option>
-                                        <option>Sort by Default</option>
-                                    </select>
-                                </li>
+                            <h2>商品列表</h2>
+                            <!--<ul>-->
+                                <!--&lt;!&ndash; Short List &ndash;&gt;-->
+                                <!--<li>-->
+                                    <!--<p>Showing 1–12 of 756 results</p>-->
+                                <!--</li>-->
+                                <!--&lt;!&ndash; Short  &ndash;&gt;-->
+                                <!--<li>-->
+                                    <!--<select class="selectpicker">-->
+                                        <!--<option>Show 12</option>-->
+                                        <!--<option>Show 24</option>-->
+                                        <!--<option>Show 32</option>-->
+                                    <!--</select>-->
+                                <!--</li>-->
+                                <!--&lt;!&ndash; by Default &ndash;&gt;-->
+                                <!--<li>-->
+                                    <!--<select class="selectpicker">-->
+                                        <!--<option>Sort by Default</option>-->
+                                        <!--<option>Sort by Default</option>-->
+                                        <!--<option>Sort by Default</option>-->
+                                    <!--</select>-->
+                                <!--</li>-->
 
-                                <!-- Grid Layer -->
-                                <li class="grid-layer"><a href="#."><i class="fa fa-list margin-right-10"></i></a> <a
-                                        href="#."><i class="fa fa-th"></i></a></li>
-                            </ul>
+                                <!--&lt;!&ndash; Grid Layer &ndash;&gt;-->
+                                <!--<li class="grid-layer"><a href="#."><i class="fa fa-list margin-right-10"></i></a> <a-->
+                                        <!--href="#."><i class="fa fa-th"></i></a></li>-->
+                            <!--</ul>-->
                         </div>
 
                         <!-- Items -->

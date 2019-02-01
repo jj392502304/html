@@ -2,7 +2,11 @@ var max=0;
 var kid="";
 var p=1;
 var name="";
+var id="";
+var max1="";
+var min="";
 var total=0;
+var tt=0;
 window.onload=function () {
     type();
     shop(p);
@@ -23,7 +27,10 @@ function shop(page) {
         async: false,
         data: {
             "page":p,
-            "name":name
+            "name":name,
+            "id":id,
+            "min":min,
+            "max":max1
         },
 //            contentType: "application/json",
         dataType: "json",
@@ -33,13 +40,19 @@ function shop(page) {
                 total=data.data.total;
                 // console.log(total)
                 var list = data.data.list;
+                if(list.length==0){
+                    alert("数据不存在");
+                    return;
+                }
                 var str="";
                 $.each(list,function(n,value){
                     str+=list_shop(value.cpicurl,value.cname,value.ckeyword,value.cprice,value.ccount,value.cid);
                 });
-
                 $("#list_s").html(str);
-
+                id="";
+                if(tt!=0){
+                    pagination();
+                }
 
 
             } else {
@@ -49,6 +62,7 @@ function shop(page) {
     });
 }
 function pagination() {
+    tt=0;
    var str="";
    // console.log(total);
    var str='<li><a onclick="shop(p--)" href="#" aria-label="Previous"> <i class="fa fa-angle-left"></i> </a></li>'
@@ -78,7 +92,6 @@ function checkbox_single(n) {
 
 function type() {
 
-    var str = '<li><a href="#."> TV & Video</a></li>';
     $.ajax({
         type: "POST",
         url: http + "/kind/list",
@@ -146,5 +159,25 @@ function list_shop(image,name,keyword,price,count,total,id) {
     return str;
 }
 function jiansuo() {
-
+    min=$("#price-min").html().replace("$","");
+    max1=$("#price-max").html().replace("$","");
+    var checks=$(":checkbox");
+    $.each(checks,function (n,value) {
+        if(value.checked==true){
+            id=value.value;
+        }
+    });
+    p=1;
+    tt=1;
+    shop(p);
+}
+function findByName() {
+    name=$("#name").val().trim();
+    if(name.length==0){
+        alert("搜索框不能为空");
+        return;
+    }
+    p=1;
+    tt=1;
+    shop(p);
 }

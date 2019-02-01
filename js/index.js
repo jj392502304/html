@@ -11,6 +11,7 @@ window.onload = function () {
         url: http + "/round/list",
         data: null,
 //            contentType: "application/json",
+        async:false,
         dataType: "json",
         success: function (data) {
             if (data.code == 200) {
@@ -43,6 +44,7 @@ window.onload = function () {
     $.ajax({
         type: "POST",
         url: http + "/cleaner/featured",
+        async:false,
         data: null,
 //            contentType: "application/json",
         dataType: "json",
@@ -67,6 +69,7 @@ window.onload = function () {
     $.ajax({
         type: "POST",
         url: http + "/cleaner/special",
+        async:false,
         data: null,
 //            contentType: "application/json",
         dataType: "json",
@@ -80,7 +83,6 @@ window.onload = function () {
                     str += jingxuan(value.cpicurl, value.ckeyword, value.cname, value.cprice, value.cid);
                 });
                 $("#specials").html(str);
-
                 // $("#special").hide();
                 // $("#on-sal").hide();
             } else {
@@ -93,6 +95,7 @@ window.onload = function () {
     $.ajax({
         type: "POST",
         url: http + "/bargin/list",
+        async:false,
         data: null,
 //            contentType: "application/json",
         dataType: "json",
@@ -120,6 +123,7 @@ window.onload = function () {
         type: "POST",
         url: http + "/weekly/weekly",
         data: null,
+        async:false,
 //            contentType: "application/json",
         dataType: "json",
         success: function (data) {
@@ -149,6 +153,7 @@ window.onload = function () {
         type: "POST",
         url: http + "/notice/list",
         data: null,
+        async:false,
 //            contentType: "application/json",
         dataType: "json",
         success: function (data) {
@@ -160,6 +165,7 @@ window.onload = function () {
                     str += notice(value.image, value.ntime,value.ntitle,value.ncontent,value.nid);
                 });
                 $("#blog-slide").html(str);
+
             } else {
                 console.log("公告数据加载异常：" + data.message);
             }
@@ -178,13 +184,14 @@ function sw() {
     $(".owl-stage").css("width", s + "px");
     console.log(s)
     $(".owl-item").css("width", "204px");
-    $("article").css("width", "204px");
-    $("article").css("height", "284.19px");
-    $(".owl-stage-outer").css("height","284.19px");
+    // $("article").css("width", "204px");
+    // $("article").css("height", "284.19px");
+    $(".owl-stage-outer").css("height","290px");
 }
 
 function sw2() {
     $(".owl-stage").css("width", f + "px");
+    $(".owl-item").css("width", "204px");
     console.log(f)
     $("#featur").show();
     $("#special").hide();
@@ -198,9 +205,10 @@ function sw3() {
     $("#on-sal").show();
     $(".owl-stage").css("width", o + "px");
     $(".owl-item").css("width", "204px");
-    $(".product").css("width", "204px");
-    $("article").css("width", "204px");
-    $("article").css("height", "284.19px");
+    // $(".owl-item").css("width", "204px");
+    // $(".product").css("width", "204px");
+    // $("article").css("width", "204px");
+    // $("article").css("height", "284.19px");
 }
 
 
@@ -372,6 +380,7 @@ function type() {
         url: http + "/kind/list",
         data: null,
 //            contentType: "application/json",
+        async:false,
         dataType: "json",
         success: function (data) {
             if (data.code == 200) {
