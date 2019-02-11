@@ -948,7 +948,8 @@ header .ownmenu .nav ul.dropdown-menu .indicator {
 }
 .flex-control-thumbs img {
 	width: 100%;
-	height: auto;
+	height: 122.72px;
+	/*height: auto;*/
 	display: block;
 	opacity: .7;
 	cursor: pointer;
