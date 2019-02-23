@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <title>个人信息</title>
+    <link type="text/css" rel="stylesheet" href="css/mall.css"/>
+</head>
+<body class="body_color">
+<div id="child_header">
+    <div class="goback"><a href="javascript:history.back(-1)"><i></i></a></div>
+    <div class="current_location"><span>个人信息</span></div>
+    <div class="next_operate"><a href="#" id="save"><span>保存</span></a></div>
+</div>
+<div class="user_info">
+    <ul>
+        <li><span>头像</span><input id="file" name="file" onchange="yulan(this)" hidden type="file"/><a href="#"><img
+                onclick="dianji()" id="touxiang" class="info_img1" src="images/user_photo.jpg"></a></li>
+        <li><span>昵称</span><input id="name" class="info_input" type="text" value=""></li>
+        <li><span>性别</span><select id="sex" style="float: right;width: 80px;text-align-last: right;text-align: right;border: 0;-webkit-appearance: none;-moz-appearance: none;appearance: none;">
+            <option>男</option>
+            <option>女</option>
+        </select></li>
+        <li><span>年龄</span><input id="age" class="info_input" type="number" value=""></li>
+        <li><span>邮箱</span><input id="email" class="info_input" type="email" value=""></li>
+        <li><span>手机号码</span><input id="phone" class="info_input" type="text"  style="" value=""  maxlength="11"></li>
+        <li><span>住址</span><input id="address" class="info_input" type="text"  style="" value=""  maxlength="11"></li>
+    </ul>
+</div>
+<script src="../js/vendors/jquery/jquery.min.js"></script>
+<script src="../js/public.js"></script>
+<script src="./js/user_info.js"></script>
+</body>
+</html>

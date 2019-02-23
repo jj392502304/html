@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <title>全部订单</title>
+    <script src="js/jquery-1.7.2.min.js"></script>
+    <link rel="stylesheet" href="css/mall.css" type="text/css"/>
+</head>
+<body class="body_color">
+<div class="mall_main">
+    <div id="child_header">
+        <div class="goback"><a href="javascript:history.back(-1)"><i></i></a></div>
+        <div class="current_location"><span>全部订单</span></div>
+    </div>
+
+    <div class="all_orders">
+        <ul class="order_nav">
+            <li class="current"><a>待付款</a></li>
+            <li><a>待发货</a></li>
+            <li><a>已发货</a></li>
+            <li><a>已完成</a></li>
+        </ul>
+        <!--待付款订单-->
+        <div class="wait_pay" id="daifukuan">
+                    <!--<div class="order_list" >-->
+                    <!--<p>订单号： P000000028000053</p>-->
+                    <!--<div class="goods_info">-->
+                    <!--<div class="left_goods">-->
+                    <!--<a href="goods.html" class="goods_img"><img src="images/user_photo.jpg"></a>-->
+                    <!--<a href="goods.html" class="goods_img"><img src="images/user_photo.jpg"></a>-->
+                    <!--<a href="goods.html" class="goods_img"><img src="images/user_photo.jpg"></a>-->
+                    <!--<a href="goods.html" class="goods_img"><img src="images/user_photo.jpg"></a>-->
+                    <!--</div>-->
+                    <!--<div class="right_operate"><a href="flow_1.html">支付</a></div>-->
+                    <!--</div>-->
+                    <!--<div class="price_count">-->
+                    <!--<time>2015-10-10 09:00:25</time>-->
+                    <!--<span>合计：24.10</span><span>共2件商品</span></div>-->
+                    <!--</div>-->
+
+                    <!--<div class="order_list">-->
+                    <!--<p>订单号： P000000028000053</p>-->
+                    <!--<div class="goods_info">-->
+                    <!--<div class="left_goods">-->
+                    <!--<a href="" class="goods_img"><img src="images/user_photo.jpg"></a>-->
+                    <!--</div>-->
+                    <!--<div class="right_operate"><a href="">退单</a></div>-->
+                    <!--</div>-->
+                    <!--<div class="price_count">-->
+                    <!--<time>2015-10-10 09:00:25</time>-->
+                    <!--<span>合计：24.10</span><span>共2件商品</span></div>-->
+                    <!--</div>-->
+                </div>
+                <!--待发货订单-->
+                <div class="wait_pay" style="display: none">
+                    <div class="order_list">
+                        <p>订单号： P000000028000053</p>
+                        <div class="goods_info">
+                            <div class="left_goods">
+                                <a href="" class="goods_img"><img src="images/user_photo.jpg"></a>
+                            </div>
+                            <div class="right_operate"><a href="">退单</a></div>
+                        </div>
+                        <div class="price_count">
+                            <time>2015-10-10 09:00:25</time>
+                            <span>合计：24.10</span><span>共2件商品</span></div>
+                    </div>
+
+                    <div class="order_list">
+                        <p>订单号： P000000028000053</p>
+                        <div class="goods_info">
+                            <div class="left_goods">
+                                <a href="" class="goods_img"><img src="images/user_photo.jpg"></a>
+                            </div>
+                            <div class="right_operate"><a href="">确认收货</a></div>
+                        </div>
+                        <div class="price_count">
+                            <time>2015-10-10 09:00:25</time>
+                            <span>合计：24.10</span><span>共2件商品</span></div>
+                    </div>
+                </div>
+                <!--已发货订单-->
+                <div class="wait_pay" style="display: none">
+                    <div class="order_list">
+                        <p>订单号： P000000028000053</p>
+                        <div class="goods_info">
+                            <div class="left_goods">
+                                <a href="" class="goods_img"><img src="images/user_photo.jpg"></a>
+                            </div>
+                            <div class="right_operate"><a href="">确认收货</a></div>
+                        </div>
+                        <div class="price_count">
+                            <time>2015-10-10 09:00:25</time>
+                            <span>合计：24.10</span><span>共2件商品</span></div>
+                    </div>
+
+                    <div class="order_list">
+                        <p>订单号： P000000028000053</p>
+                        <div class="goods_info">
+                            <div class="left_goods">
+                                <a href="" class="goods_img"><img src="images/user_photo.jpg"></a>
+                            </div>
+                            <div class="right_operate"><a href="">确认收货</a></div>
+                        </div>
+                        <div class="price_count">
+                            <time>2015-10-10 09:00:25</time>
+                            <span>合计：24.10</span><span>共2件商品</span></div>
+                    </div>
+                </div>
+                <!--已完成订单-->
+                <div class="wait_pay" style="display: none">
+                    <div class="order_list">
+                        <p>订单号： P000000028000053</p>
+                        <div class="goods_info">
+                            <div class="left_goods">
+                                <a href="" class="goods_img"><img src="images/user_photo.jpg"></a>
+                            </div>
+                            <div class="right_operate">
+                                <a href="">评价</a>
+                                <a href="operat_list3.html">投诉</a>
+                                <a href="operat_list3.html">举报</a>
+                            </div>
+                        </div>
+                        <div class="price_count">
+                            <time>2015-10-10 09:00:25</time>
+                            <span>合计：24.10</span><span>共2件商品</span></div>
+                    </div>
+
+                    <div class="order_list">
+                        <p>订单号： P000000028000053</p>
+                        <div class="goods_info">
+                            <div class="left_goods">
+                                <a href="" class="goods_img"><img src="images/user_photo.jpg"></a>
+                            </div>
+                            <div class="right_operate">
+                                <a href="">评价</a>
+                                <a href="">投诉</a>
+                                <a href="">举报</a>
+                            </div>
+                        </div>
+                        <div class="price_count">
+                            <time>2015-10-10 09:00:25</time>
+                            <span>合计：24.10</span><span>共2件商品</span></div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+        <script type="text/javascript">
+            jQuery(function ($) {
+                $('.all_orders ul li').click(function () {
+                    var index = $('.all_orders ul li').index(this);
+                    $(this).addClass('current').siblings('li').removeClass('current');
+                    $('.all_orders .wait_pay:eq(' + index + ')').show().siblings('.wait_pay').hide();
+                })
+            })
+        </script>
+        <script src="../js/vendors/jquery/jquery.min.js"></script>
+        <script src="js/order_list.js"></script>
+        <script src="../js/public.js"></script>
+</body>
+</html>

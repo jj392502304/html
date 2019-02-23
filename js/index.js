@@ -1,7 +1,19 @@
 var f = "";
 var s = "";
 var o = "";
+var login=JSON.parse(sessionStorage.getItem("login"));
+var adminid=login.id;
+
 window.onload = function () {
+    console.log(login)
+    if(typeof(login)!=undefined&&login!=null){
+        if(login.userinfo!=null){
+            $("#welcome").html(login.userinfo.name+",欢迎来到净水器在线销售商店！");
+        }else {
+            $("#welcome").html("欢迎来到净水器在线销售商店！");
+        }
+        $("#login_text").html("退出登录");
+    }
     $("#special").hide();
     $("#on-sal").hide();
 
@@ -26,7 +38,7 @@ window.onload = function () {
                 $("#round").html(s)
                 $(".slid-sec .like-bnr").css("background", "#f5f5f5 url(" + image + ") right top no-repeat");
                 $(".like-bnr").css("background-size", "342px 250px");
-                $("#like-href").attr("href", "http://www.baidu.com");
+                $("#like-href").attr("href", "./Product-Details.html?did="+list[3].rid);
                 $("#like-name").html(list[3].rname);
                 $("#like-brief").html(list[3].rbrief);
                 $("#like-price").html(list[3].rprice);
@@ -132,7 +144,7 @@ window.onload = function () {
                 var list = data.data.list;
 
                 $(".like-bnr").eq(1).css("background", "#f5f5f5 url(" + list[0].cpicurl + ") right top no-repeat");
-                $("#h_link").attr("href", "http://www.baidu.com");
+                $("#h_link").attr("href", "./Product-Details.html?did="+list[0].cid);
                 $("#w_name").html(list[0].cname);
                 $("#k_name").html(list[0].ckeyword);
                 var str="";
@@ -147,7 +159,7 @@ window.onload = function () {
             }
         }
     });
-    
+
     //公告加载
     $.ajax({
         type: "POST",
@@ -171,18 +183,61 @@ window.onload = function () {
             }
         }
     });
+    cartonload();
     sw3();
     sw();
     sw2();
     type();
 }
 
+function cartonload() {
+    $.ajax({
+        type: "POST",
+        url: http + "/cart/cartonload",
+        data: {"cid":adminid},
+        async:false,
+//            contentType: "application/json",
+        dataType: "json",
+        success: function (data) {
+            if (data.code == 200) {
+                // console.log(data)
+                var list=data.data.list;
+
+                var str='<li class="dropdown" ondblclick="db()"><a title="双击可以跳转购物车页面" class="dropdown-toggle" data-toggle="dropdown" role="button"'+
+                    '                                        aria-haspopup="true" aria-expanded="false"><span class="itm-cont">'+list.length+'</span> <i'+
+                    '                        class="flaticon-shopping-bag"></i> <strong>My Cart</strong> <br>'+
+                    '                    <span>￥'+data.data.totalPrice+'</span></a>'+
+                    '                    <ul class="dropdown-menu">';
+
+
+
+                for(var i=0;i<list.length;i++){
+                    str+='                        <li>'+
+                        '                            <div class="media-left"><a href="#." class="thumb"> <img src="'+list[i].picurl+'"'+
+                        '                                                                                     class="img-responsive" alt=""> </a>'+
+                        '                            </div>'+
+                        '                            <div class="media-body"><a href="#." class="tittle">'+list[i].shopname+'</a>'+
+                        '                                <span>'+list[i].price+' x '+list[i].count+'</span></div>'+
+                        '                        </li>'
+                }
+                str+='                        <li class="btn-cart"><a href="cart.html?id='+adminid+'" class="btn-round">查看购物车</a></li>';
+                '                    </ul>'+
+                '                </li>';
+                $("#cart_nav").html(str);
+            } else {
+            }
+        }
+    });
+}
+function db() {
+    window.location.href="cart.html?id="+adminid;
+}
 function sw() {
     $("#featur").hide();
     $("#on-sal").hide();
     $("#special").show();
     $(".owl-stage").css("width", s + "px");
-    console.log(s)
+    // console.log(s)
     $(".owl-item").css("width", "204px");
     // $("article").css("width", "204px");
     // $("article").css("height", "284.19px");
@@ -192,14 +247,14 @@ function sw() {
 function sw2() {
     $(".owl-stage").css("width", f + "px");
     $(".owl-item").css("width", "204px");
-    console.log(f)
+    // console.log(f)
     $("#featur").show();
     $("#special").hide();
     $("#on-sal").hide();
 }
 
 function sw3() {
-    console.log(o)
+    // console.log(o)
     $("#special").hide();
     $("#featur").hide();
     $("#on-sal").show();
@@ -241,14 +296,14 @@ function notice(image,time,title,content,id) {
     '                            <p>'+content+' [...] </p>'+
     '                            <a href="#.">详情</a></article>'+
     '                    </div>';
-    
+
 }
 //特殊字符串拼接
 function special(image, brief, name, price, id) {
     var sb = '<div class="product">' +
         '                                <article><img class="img-responsive" src="' + image + '" alt="">' +
         '                                    <!-- Content -->' +
-        '                                    <span class="tag">' + name + '</span> <a href="#." class="tittle">' + brief + '</a>' +
+        '                                    <span class="tag">' + name + '</span> <a href="./Product-Details.html?did='+id+'" class="tittle">' + brief + '</a>' +
         '                                    <!-- Reviews -->' +
         '                                    <p class="rev"><i class="fa fa-star"></i><i class="fa fa-star"></i><i' +
         '                                            class="fa fa-star"></i><i class="fa fa-star"></i> <i' +
@@ -265,7 +320,7 @@ function jingxuan(image, brief, name, price, id) {
     var sb = '<div class="product">' +
         '                                    <article><img class="img-responsive" src="' + image + '" alt="">' +
         '                                        <!-- Content -->' +
-        '                                        <span class="tag">' + name + '</span> <a href="#." class="tittle">' + brief + '</a>' +
+        '                                        <span class="tag">' + name + '</span> <a href="./Product-Details.html?did='+id+'" class="tittle">' + brief + '</a>' +
         '                                        <!-- Reviews -->' +
         '                                        <p class="rev"><i class="fa fa-star"></i><i class="fa fa-star"></i><i' +
         '                                                class="fa fa-star"></i><i class="fa fa-star"></i> <i' +
@@ -273,11 +328,33 @@ function jingxuan(image, brief, name, price, id) {
         '                                                class="margin-left-10">5 Review(s)</span>' +
         '                                        </p>' +
         '                                        <div class="price">' + price + '</div>' +
-        '                                        <a href="#." class="cart-btn"><i class="icon-basket-loaded"></i></a></article>' +
+        '                                        <a onclick="addCart(\''+String(id)+'\',1)" class="cart-btn"><i class="icon-basket-loaded"></i></a></article>' +
         '                                </div>';
     return sb;
 }
+function addCart(id,count) {
+    var data={
+        "cid":login.id,
+        "cleanerid":id,
+        "count":count
+    };
+    $.ajax({
+        type: "POST",
+        url: http + "/cart/add",
+        data: data,
+        async:false,
+//            contentType: "application/json",
+        dataType: "json",
+        success: function (data) {
+            if (data.code == 200) {
+                alert("购物车添加成功！")
+                cartonload();
+            } else {
+            }
+        }
+    });
 
+}
 //轮播图字符串拼接
 function round(image, brief, name, price, id) {
     var sb = '<li data-transition="random" data-slotamount="7" data-masterspeed="300"  data-saveperformance="off" > ';
@@ -351,7 +428,7 @@ function round(image, brief, name, price, id) {
     sb += '                                     data-endelementdelay="0.1" ';
     sb += '                                     data-endspeed="300" ';
     sb += '                                     data-scrolloffset="0"';
-    sb += '                                     style="z-index: 8;"><a href="#." class="btn-round big">马上抢购</a> </div>';
+    sb += '                                     style="z-index: 8;"><a href="./Product-Details.html?did='+id+'" class="btn-round big">马上抢购</a> </div>';
     sb += '                  </li>';
     return sb;
 };
@@ -374,7 +451,6 @@ function week(image,name,keyword,price,id) {
 }
 //净水器类型加载
 function type() {
-    var str='<li><a href="#."> TV & Video</a></li>';
     $.ajax({
         type: "POST",
         url: http + "/kind/list",
@@ -389,9 +465,9 @@ function type() {
                 var str="";
                 $.each(list,function(n,value){
                     if(value.kpid=="1"){
-                        $("#jiayong").append('<li><a href="#.">'+value.ktype+'</a></li>')
+                        $("#jiayong").append('<li><a href="ListProducts.html?id='+value.kid+'">'+value.ktype+'</a></li>')
                     }else if(value.kpid=="2"){
-                        $("#shangyong").append('<li><a href="#.">'+value.ktype+'</a></li>')
+                        $("#shangyong").append('<li><a href="ListProducts.html?id='+value.kid+'">'+value.ktype+'</a></li>')
                     }
                 });
             } else {
@@ -400,4 +476,8 @@ function type() {
         }
     });
 
+}
+function findByName() {
+        var name=$("#name").val().replace(" ","");
+        window.location.href="ListProducts.html?name="+name;
 }

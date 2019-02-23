@@ -38,66 +38,37 @@
     <!-- Top bar -->
     <div class="top-bar">
         <div class="container">
-            <p>Welcome to SmartTech center!</p>
+            <p id="welcome">欢迎来到净水器在线销售商店</p>
             <div class="right-sec">
                 <ul>
-                    <li><a href="login/index.html">登录</a></li>
-                    <li><a href="#.">注册</a></li>
-                    <li><a href="#.">FAQ </a></li>
-                    <li><a href="#.">Newsletter </a></li>
+
                     <li>
-                        <select class="selectpicker">
-                            <option>French</option>
-                            <option>German</option>
-                            <option>Italian</option>
-                            <option>Japanese</option>
-                        </select>
+                        <a href="person/index.html">个人中心</a>
                     </li>
-                    <li>
-                        <select class="selectpicker">
-                            <option>(USD)Dollar</option>
-                            <option>GBP</option>
-                            <option>Euro</option>
-                            <option>JPY</option>
-                        </select>
-                    </li>
+                    <li><a id="login_text" href="login/index.html">登录</a></li>
                 </ul>
-                <div class="social-top"><a href="#."><i class="fa fa-facebook"></i></a> <a href="#."><i
-                        class="fa fa-twitter"></i></a> <a href="#."><i class="fa fa-linkedin"></i></a> <a href="#."><i
-                        class="fa fa-dribbble"></i></a> <a href="#."><i class="fa fa-pinterest"></i></a></div>
             </div>
         </div>
     </div>
-
     <!-- Header -->
     <header>
         <div class="container">
             <div class="logo"><a href="index.html"><img src="images/logo.png" alt=""></a></div>
             <div class="search-cate">
                 <select class="selectpicker">
-                    <option> All Categories</option>
-                    <option> Home Audio & Theater</option>
-                    <option> TV & Video</option>
-                    <option> Camera, Photo & Video</option>
-                    <option> Cell Phones & Accessories</option>
-                    <option> Headphones</option>
-                    <option> Video Games</option>
-                    <option> Bluetooth & Wireless</option>
-                    <option> Gaming Console</option>
-                    <option> Computers & Tablets</option>
-                    <option> Monitors</option>
+                    <option> 所有</option>
                 </select>
-                <input type="search" placeholder="Search entire store here...">
-                <button class="submit" type="submit"><i class="icon-magnifier"></i></button>
+                <input id="name" type="search" placeholder="输入商品名称...">
+                <button class="submit" onclick="findByName()" type="submit"><i class="icon-magnifier"></i></button>
             </div>
 
             <!-- Cart Part -->
-            <ul class="nav navbar-right cart-pop">
+            <ul id="cart_nav" class="nav navbar-right cart-pop">
                 <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
                                         aria-haspopup="true" aria-expanded="false"><span class="itm-cont">3</span> <i
                         class="flaticon-shopping-bag"></i> <strong>My Cart</strong> <br>
                     <span>3 item(s) - $500.00</span></a>
-                    <ul class="dropdown-menu">
+                    <ul class="dropdown-menu" style="height: 400px;overflow:auto;">
                         <li>
                             <div class="media-left"><a href="#." class="thumb"> <img src="images/item-img-1-1.jpg"
                                                                                      class="img-responsive" alt=""> </a>
@@ -123,7 +94,8 @@
             <div class="container">
 
                 <!-- Categories -->
-                <div class="cate-lst"><a data-toggle="collapse" class="cate-style" href="#cater" style="min-width: 120px;"><i
+                <div class="cate-lst"><a data-toggle="collapse" class="cate-style" href="#cater"
+                                         style="min-width: 120px;"><i
                         class="fa fa-list-ul"></i>分　类</a>
                     <div class="cate-bar-in">
                         <div id="cater" class="collapse">
@@ -142,27 +114,27 @@
                                 <!--<li><a href="#."> TV & Video</a></li>-->
                                 <!--<li><a href="#."> Camera, Photo & Video</a></li>-->
                                 <!--<li class="sub-menu"><a href="#."> Cell Phones & Accessories</a>-->
-                                    <!--<ul>-->
-                                        <!--<li><a href="#."> TV & Video</a></li>-->
-                                        <!--<li><a href="#."> Camera, Photo & Video</a></li>-->
-                                        <!--<li><a href="#."> Cell Phones & Accessories</a>-->
-                                    <!--</ul>-->
+                                <!--<ul>-->
+                                <!--<li><a href="#."> TV & Video</a></li>-->
+                                <!--<li><a href="#."> Camera, Photo & Video</a></li>-->
+                                <!--<li><a href="#."> Cell Phones & Accessories</a>-->
+                                <!--</ul>-->
                                 <!--</li>-->
                                 <!--<li><a href="#."> Headphones</a></li>-->
                                 <!--<li><a href="#."> Video Games</a></li>-->
                                 <!--<li class="sub-menu"><a href="#."> Bluetooth & Wireless Speakers</a>-->
-                                    <!--<ul>-->
-                                        <!--<li><a href="#."> TV & Video</a></li>-->
-                                        <!--<li><a href="#."> Camera, Photo & Video</a></li>-->
-                                        <!--<li><a href="#."> Cell Phones & Accessories</a>-->
-                                    <!--</ul>-->
+                                <!--<ul>-->
+                                <!--<li><a href="#."> TV & Video</a></li>-->
+                                <!--<li><a href="#."> Camera, Photo & Video</a></li>-->
+                                <!--<li><a href="#."> Cell Phones & Accessories</a>-->
+                                <!--</ul>-->
                                 <!--</li>-->
                                 <!--<li class="sub-menu"><a href="#."> Gaming Console</a>-->
-                                    <!--<ul>-->
-                                        <!--<li><a href="#."> TV & Video</a></li>-->
-                                        <!--<li><a href="#."> Camera, Photo & Video</a></li>-->
-                                        <!--<li><a href="#."> Cell Phones & Accessories</a>-->
-                                    <!--</ul>-->
+                                <!--<ul>-->
+                                <!--<li><a href="#."> TV & Video</a></li>-->
+                                <!--<li><a href="#."> Camera, Photo & Video</a></li>-->
+                                <!--<li><a href="#."> Cell Phones & Accessories</a>-->
+                                <!--</ul>-->
                                 <!--</li>-->
                                 <!--<li><a href="#."> Computers & Tablets</a></li>-->
                                 <!--<li><a href="#."> Monitors</a></li>-->
@@ -230,7 +202,7 @@
                                              data-elementdelay="0.03"
                                              data-endelementdelay="0.4"
                                              data-endspeed="300"
-                                             style="z-index: 5; font-size:30px; font-weight:500; color:#888888;  max-width: auto; max-height: auto; white-space: nowrap;">
+                                             style="z-index: 5; font-size:30px; font-weight:500; color:#888888;  max-width: 100%; max-height: 100%; white-space: nowrap;">
                                             High Quality VR Glasses
                                         </div>
 
@@ -262,7 +234,7 @@
                                              data-elementdelay="0.1"
                                              data-endelementdelay="0.1"
                                              data-endspeed="300"
-                                             style="z-index: 7;  font-size:24px; color:#888888; font-weight:500; max-width: auto; max-height: auto; white-space: nowrap;">
+                                             style="z-index: 7;  font-size:24px; color:#888888; font-weight:500; max-width: 100%; max-height: 100%; white-space: nowrap;">
                                             Starting at
                                         </div>
 
@@ -278,7 +250,7 @@
                                              data-elementdelay="0.03"
                                              data-endelementdelay="0.4"
                                              data-endspeed="300"
-                                             style="z-index: 5; font-size:36px; font-weight:800; color:#000;  max-width: auto; max-height: auto; white-space: nowrap;">
+                                             style="z-index: 5; font-size:36px; font-weight:800; color:#000;  max-width: 100%; max-height: 100%; white-space: nowrap;">
                                             $49.99
                                         </div>
 
@@ -315,7 +287,7 @@
                                              data-elementdelay="0.03"
                                              data-endelementdelay="0.4"
                                              data-endspeed="300"
-                                             style="z-index: 5; font-size:30px; font-weight:500; color:#888888;  max-width: auto; max-height: auto; white-space: nowrap;">
+                                             style="z-index: 5; font-size:30px; font-weight:500; color:#888888;  max-width: 100%; max-height: 100%; white-space: nowrap;">
                                             No restocking fee ($35 savings)
                                         </div>
 
@@ -347,7 +319,7 @@
                                              data-elementdelay="0.1"
                                              data-endelementdelay="0.1"
                                              data-endspeed="300"
-                                             style="z-index: 7;  font-size:24px; color:#888888; font-weight:500; max-width: auto; max-height: auto; white-space: nowrap;">
+                                             style="z-index: 7;  font-size:24px; color:#888888; font-weight:500; max-width: 100%; max-height: 100%; white-space: nowrap;">
                                             Now Only
                                         </div>
 
@@ -363,7 +335,7 @@
                                              data-elementdelay="0.03"
                                              data-endelementdelay="0.4"
                                              data-endspeed="300"
-                                             style="z-index: 5; font-size:36px; font-weight:800; color:#000;  max-width: auto; max-height: auto; white-space: nowrap;">
+                                             style="z-index: 5; font-size:36px; font-weight:800; color:#000;  max-width: 100%; max-height: 100%; white-space: nowrap;">
                                             $320.99
                                         </div>
 
@@ -400,7 +372,7 @@
                                              data-elementdelay="0.03"
                                              data-endelementdelay="0.4"
                                              data-endspeed="300"
-                                             style="z-index: 5; font-size:30px; font-weight:500; color:#888888;  max-width: auto; max-height: auto; white-space: nowrap;">
+                                             style="z-index: 5; font-size:30px; font-weight:500; color:#888888;  max-width: 100%; max-height: 100%; white-space: nowrap;">
                                             Get Free Bluetooth when buy
                                         </div>
 
@@ -432,7 +404,7 @@
                                              data-elementdelay="0.1"
                                              data-endelementdelay="0.1"
                                              data-endspeed="300"
-                                             style="z-index: 7;  font-size:24px; color:#888888; font-weight:500; max-width: auto; max-height: auto; white-space: nowrap;">
+                                             style="z-index: 7;  font-size:24px; color:#888888; font-weight:500; max-width: 100%; max-height: 100%; white-space: nowrap;">
                                             Combo Only:
                                         </div>
 
@@ -448,7 +420,7 @@
                                              data-elementdelay="0.03"
                                              data-endelementdelay="0.4"
                                              data-endspeed="300"
-                                             style="z-index: 5; font-size:36px; font-weight:800; color:#000;  max-width: auto; max-height: auto; white-space: nowrap;">
+                                             style="z-index: 5; font-size:36px; font-weight:800; color:#000;  max-width: 100%; max-height: 100%; white-space: nowrap;">
                                             $590.00
                                         </div>
 
@@ -485,7 +457,7 @@
                                              data-elementdelay="0.03"
                                              data-endelementdelay="0.4"
                                              data-endspeed="300"
-                                             style="z-index: 5; font-size:30px; font-weight:500; color:#888888;  max-width: auto; max-height: auto; white-space: nowrap;">
+                                             style="z-index: 5; font-size:30px; font-weight:500; color:#888888;  max-width: 100%; max-height: 100%; white-space: nowrap;">
                                             Get Free Bluetooth when buy
                                         </div>
 
@@ -517,7 +489,7 @@
                                              data-elementdelay="0.1"
                                              data-endelementdelay="0.1"
                                              data-endspeed="300"
-                                             style="z-index: 7;  font-size:24px; color:#888888; font-weight:500; max-width: auto; max-height: auto; white-space: nowrap;">
+                                             style="z-index: 7;  font-size:24px; color:#888888; font-weight:500; max-width: 100%; max-height: 100%; white-space: nowrap;">
                                             Combo Only:
                                         </div>
 
@@ -533,7 +505,7 @@
                                              data-elementdelay="0.03"
                                              data-endelementdelay="0.4"
                                              data-endspeed="300"
-                                             style="z-index: 5; font-size:36px; font-weight:800; color:#000;  max-width: auto; max-height: auto; white-space: nowrap;">
+                                             style="z-index: 5; font-size:36px; font-weight:800; color:#000;  max-width: 100%; max-height: 100%; white-space: nowrap;">
                                             $590.00
                                         </div>
 
@@ -628,11 +600,13 @@
 
                 <!-- Nav tabs -->
                 <ul class="nav nav-tabs nav-pills margin-bottom-40" role="tablist">
-                    <li role="presentation" class="active"><a onclick="sw2()" href="#featur" aria-controls="featur" role="tab"
+                    <li role="presentation" class="active"><a onclick="sw2()" href="#featur" aria-controls="featur"
+                                                              role="tab"
                                                               data-toggle="tab">精选</a></li>
                     <li role="presentation"><a href="#special" onclick="sw()" aria-controls="special" role="tab"
                                                data-toggle="tab">特殊</a></li>
-                    <li role="presentation"><a onclick="sw3()" href="#on-sal" aria-controls="on-sal" role="tab" data-toggle="tab">打折</a>
+                    <li role="presentation"><a onclick="sw3()" href="#on-sal" aria-controls="on-sal" role="tab"
+                                               data-toggle="tab">打折</a>
                     </li>
                 </ul>
 
@@ -1043,170 +1017,170 @@
                     </div>
                     <!-- Special -->
                     <!--<div  role="tabpanel" class="tab-pane fade" id="special">-->
-                        <!--&lt;!&ndash; Items Slider &ndash;&gt;-->
-                        <!--<div id="specials" class="item-col-5">-->
+                    <!--&lt;!&ndash; Items Slider &ndash;&gt;-->
+                    <!--<div id="specials" class="item-col-5">-->
 
-                            <!--&lt;!&ndash; Product &ndash;&gt;-->
-                            <!--<div class="product">-->
-                                <!--<article><img class="img-responsive" src="images/item-img-1-11.jpg" alt="">-->
-                                    <!--&lt;!&ndash; Content &ndash;&gt;-->
-                                    <!--<span class="tag">Latop</span> <a href="#." class="tittle">Laptop Alienware 15 i7-->
-                                        <!--Perfect For Playing Game</a>-->
-                                    <!--&lt;!&ndash; Reviews &ndash;&gt;-->
-                                    <!--<p class="rev"><i class="fa fa-star"></i><i class="fa fa-star"></i><i-->
-                                            <!--class="fa fa-star"></i><i class="fa fa-star"></i> <i-->
-                                            <!--class="fa fa-star-o"></i> <span class="margin-left-10">5 Review(s)</span>-->
-                                    <!--</p>-->
-                                    <!--<div class="price">$350.00</div>-->
-                                    <!--<a href="#." class="cart-btn"><i class="icon-basket-loaded"></i></a></article>-->
-                            <!--</div>-->
+                    <!--&lt;!&ndash; Product &ndash;&gt;-->
+                    <!--<div class="product">-->
+                    <!--<article><img class="img-responsive" src="images/item-img-1-11.jpg" alt="">-->
+                    <!--&lt;!&ndash; Content &ndash;&gt;-->
+                    <!--<span class="tag">Latop</span> <a href="#." class="tittle">Laptop Alienware 15 i7-->
+                    <!--Perfect For Playing Game</a>-->
+                    <!--&lt;!&ndash; Reviews &ndash;&gt;-->
+                    <!--<p class="rev"><i class="fa fa-star"></i><i class="fa fa-star"></i><i-->
+                    <!--class="fa fa-star"></i><i class="fa fa-star"></i> <i-->
+                    <!--class="fa fa-star-o"></i> <span class="margin-left-10">5 Review(s)</span>-->
+                    <!--</p>-->
+                    <!--<div class="price">$350.00</div>-->
+                    <!--<a href="#." class="cart-btn"><i class="icon-basket-loaded"></i></a></article>-->
+                    <!--</div>-->
 
-                            <!--&lt;!&ndash; Product &ndash;&gt;-->
-                            <!--<div class="product">-->
-                                <!--<article><img class="img-responsive" src="images/item-img-1-9.jpg" alt=""> <span-->
-                                        <!--class="sale-tag">-25%</span>-->
+                    <!--&lt;!&ndash; Product &ndash;&gt;-->
+                    <!--<div class="product">-->
+                    <!--<article><img class="img-responsive" src="images/item-img-1-9.jpg" alt=""> <span-->
+                    <!--class="sale-tag">-25%</span>-->
 
-                                    <!--&lt;!&ndash; Content &ndash;&gt;-->
-                                    <!--<span class="tag">Tablets</span> <a href="#." class="tittle">Mp3 Sumergible-->
-                                        <!--Deportivo Slim Con 8GB</a>-->
-                                    <!--&lt;!&ndash; Reviews &ndash;&gt;-->
-                                    <!--<p class="rev"><i class="fa fa-star"></i><i class="fa fa-star"></i><i-->
-                                            <!--class="fa fa-star"></i><i class="fa fa-star"></i> <i-->
-                                            <!--class="fa fa-star-o"></i> <span class="margin-left-10">5 Review(s)</span>-->
-                                    <!--</p>-->
-                                    <!--<div class="price">$350.00 <span>$200.00</span></div>-->
-                                    <!--<a href="#." class="cart-btn"><i class="icon-basket-loaded"></i></a></article>-->
-                            <!--</div>-->
+                    <!--&lt;!&ndash; Content &ndash;&gt;-->
+                    <!--<span class="tag">Tablets</span> <a href="#." class="tittle">Mp3 Sumergible-->
+                    <!--Deportivo Slim Con 8GB</a>-->
+                    <!--&lt;!&ndash; Reviews &ndash;&gt;-->
+                    <!--<p class="rev"><i class="fa fa-star"></i><i class="fa fa-star"></i><i-->
+                    <!--class="fa fa-star"></i><i class="fa fa-star"></i> <i-->
+                    <!--class="fa fa-star-o"></i> <span class="margin-left-10">5 Review(s)</span>-->
+                    <!--</p>-->
+                    <!--<div class="price">$350.00 <span>$200.00</span></div>-->
+                    <!--<a href="#." class="cart-btn"><i class="icon-basket-loaded"></i></a></article>-->
+                    <!--</div>-->
 
-                            <!--&lt;!&ndash; Product &ndash;&gt;-->
-                            <!--<div class="product">-->
-                                <!--<article><img class="img-responsive" src="images/item-img-1-8.jpg" alt="">-->
-                                    <!--&lt;!&ndash; Content &ndash;&gt;-->
-                                    <!--<span class="tag">Appliances</span> <a href="#." class="tittle">Reloj Inteligente-->
-                                        <!--Smart Watch M26 Touch Bluetooh </a>-->
-                                    <!--&lt;!&ndash; Reviews &ndash;&gt;-->
-                                    <!--<p class="rev"><i class="fa fa-star"></i><i class="fa fa-star"></i><i-->
-                                            <!--class="fa fa-star"></i><i class="fa fa-star"></i> <i-->
-                                            <!--class="fa fa-star-o"></i> <span class="margin-left-10">5 Review(s)</span>-->
-                                    <!--</p>-->
-                                    <!--<div class="price">$350.00</div>-->
-                                    <!--<a href="#." class="cart-btn"><i class="icon-basket-loaded"></i></a></article>-->
-                            <!--</div>-->
+                    <!--&lt;!&ndash; Product &ndash;&gt;-->
+                    <!--<div class="product">-->
+                    <!--<article><img class="img-responsive" src="images/item-img-1-8.jpg" alt="">-->
+                    <!--&lt;!&ndash; Content &ndash;&gt;-->
+                    <!--<span class="tag">Appliances</span> <a href="#." class="tittle">Reloj Inteligente-->
+                    <!--Smart Watch M26 Touch Bluetooh </a>-->
+                    <!--&lt;!&ndash; Reviews &ndash;&gt;-->
+                    <!--<p class="rev"><i class="fa fa-star"></i><i class="fa fa-star"></i><i-->
+                    <!--class="fa fa-star"></i><i class="fa fa-star"></i> <i-->
+                    <!--class="fa fa-star-o"></i> <span class="margin-left-10">5 Review(s)</span>-->
+                    <!--</p>-->
+                    <!--<div class="price">$350.00</div>-->
+                    <!--<a href="#." class="cart-btn"><i class="icon-basket-loaded"></i></a></article>-->
+                    <!--</div>-->
 
-                            <!--&lt;!&ndash; Product &ndash;&gt;-->
-                            <!--<div class="product">-->
-                                <!--<article><img class="img-responsive" src="images/item-img-1-7.jpg" alt=""> <span-->
-                                        <!--class="new-tag">New</span>-->
+                    <!--&lt;!&ndash; Product &ndash;&gt;-->
+                    <!--<div class="product">-->
+                    <!--<article><img class="img-responsive" src="images/item-img-1-7.jpg" alt=""> <span-->
+                    <!--class="new-tag">New</span>-->
 
-                                    <!--&lt;!&ndash; Content &ndash;&gt;-->
-                                    <!--<span class="tag">Accessories</span> <a href="#." class="tittle">Teclado Inalambrico-->
-                                        <!--Bluetooth Con Air Mouse</a>-->
-                                    <!--&lt;!&ndash; Reviews &ndash;&gt;-->
-                                    <!--<p class="rev"><i class="fa fa-star"></i><i class="fa fa-star"></i><i-->
-                                            <!--class="fa fa-star"></i><i class="fa fa-star"></i> <i-->
-                                            <!--class="fa fa-star-o"></i> <span class="margin-left-10">5 Review(s)</span>-->
-                                    <!--</p>-->
-                                    <!--<div class="price">$350.00</div>-->
-                                    <!--<a href="#." class="cart-btn"><i class="icon-basket-loaded"></i></a></article>-->
-                            <!--</div>-->
+                    <!--&lt;!&ndash; Content &ndash;&gt;-->
+                    <!--<span class="tag">Accessories</span> <a href="#." class="tittle">Teclado Inalambrico-->
+                    <!--Bluetooth Con Air Mouse</a>-->
+                    <!--&lt;!&ndash; Reviews &ndash;&gt;-->
+                    <!--<p class="rev"><i class="fa fa-star"></i><i class="fa fa-star"></i><i-->
+                    <!--class="fa fa-star"></i><i class="fa fa-star"></i> <i-->
+                    <!--class="fa fa-star-o"></i> <span class="margin-left-10">5 Review(s)</span>-->
+                    <!--</p>-->
+                    <!--<div class="price">$350.00</div>-->
+                    <!--<a href="#." class="cart-btn"><i class="icon-basket-loaded"></i></a></article>-->
+                    <!--</div>-->
 
-                            <!--&lt;!&ndash; Product &ndash;&gt;-->
-                            <!--<div class="product">-->
-                                <!--<article><img class="img-responsive" src="images/item-img-1-6.jpg" alt="">-->
-                                    <!--&lt;!&ndash; Content &ndash;&gt;-->
-                                    <!--<span class="tag">Appliances</span> <a href="#." class="tittle">Funda Para Ebook 7"-->
-                                        <!--128GB full HD</a>-->
-                                    <!--&lt;!&ndash; Reviews &ndash;&gt;-->
-                                    <!--<p class="rev"><i class="fa fa-star"></i><i class="fa fa-star"></i><i-->
-                                            <!--class="fa fa-star"></i><i class="fa fa-star"></i> <i-->
-                                            <!--class="fa fa-star-o"></i> <span class="margin-left-10">5 Review(s)</span>-->
-                                    <!--</p>-->
-                                    <!--<div class="price">$350.00</div>-->
-                                    <!--<a href="#." class="cart-btn"><i class="icon-basket-loaded"></i></a></article>-->
-                            <!--</div>-->
-                        <!--</div>-->
+                    <!--&lt;!&ndash; Product &ndash;&gt;-->
+                    <!--<div class="product">-->
+                    <!--<article><img class="img-responsive" src="images/item-img-1-6.jpg" alt="">-->
+                    <!--&lt;!&ndash; Content &ndash;&gt;-->
+                    <!--<span class="tag">Appliances</span> <a href="#." class="tittle">Funda Para Ebook 7"-->
+                    <!--128GB full HD</a>-->
+                    <!--&lt;!&ndash; Reviews &ndash;&gt;-->
+                    <!--<p class="rev"><i class="fa fa-star"></i><i class="fa fa-star"></i><i-->
+                    <!--class="fa fa-star"></i><i class="fa fa-star"></i> <i-->
+                    <!--class="fa fa-star-o"></i> <span class="margin-left-10">5 Review(s)</span>-->
+                    <!--</p>-->
+                    <!--<div class="price">$350.00</div>-->
+                    <!--<a href="#." class="cart-btn"><i class="icon-basket-loaded"></i></a></article>-->
+                    <!--</div>-->
+                    <!--</div>-->
                     <!--</div>-->
 
                     <!-- on sale -->
                     <!--<div role="tabpanel" class="tab-pane fade" id="on-sal">-->
-                        <!--&lt;!&ndash; Items Slider &ndash;&gt;-->
-                        <!--<div class="item-col-5">-->
+                    <!--&lt;!&ndash; Items Slider &ndash;&gt;-->
+                    <!--<div class="item-col-5">-->
 
-                            <!--&lt;!&ndash; Product &ndash;&gt;-->
-                            <!--<div class="product">-->
-                                <!--<article><img class="img-responsive" src="images/item-img-1-3.jpg" alt="">-->
-                                    <!--&lt;!&ndash; Content &ndash;&gt;-->
-                                    <!--<span class="tag">Latop</span> <a href="#." class="tittle">Laptop Alienware 15 i7-->
-                                        <!--Perfect For Playing Game</a>-->
-                                    <!--&lt;!&ndash; Reviews &ndash;&gt;-->
-                                    <!--<p class="rev"><i class="fa fa-star"></i><i class="fa fa-star"></i><i-->
-                                            <!--class="fa fa-star"></i><i class="fa fa-star"></i> <i-->
-                                            <!--class="fa fa-star-o"></i> <span class="margin-left-10">5 Review(s)</span>-->
-                                    <!--</p>-->
-                                    <!--<div class="price">$350.00</div>-->
-                                    <!--<a href="#." class="cart-btn"><i class="icon-basket-loaded"></i></a></article>-->
-                            <!--</div>-->
+                    <!--&lt;!&ndash; Product &ndash;&gt;-->
+                    <!--<div class="product">-->
+                    <!--<article><img class="img-responsive" src="images/item-img-1-3.jpg" alt="">-->
+                    <!--&lt;!&ndash; Content &ndash;&gt;-->
+                    <!--<span class="tag">Latop</span> <a href="#." class="tittle">Laptop Alienware 15 i7-->
+                    <!--Perfect For Playing Game</a>-->
+                    <!--&lt;!&ndash; Reviews &ndash;&gt;-->
+                    <!--<p class="rev"><i class="fa fa-star"></i><i class="fa fa-star"></i><i-->
+                    <!--class="fa fa-star"></i><i class="fa fa-star"></i> <i-->
+                    <!--class="fa fa-star-o"></i> <span class="margin-left-10">5 Review(s)</span>-->
+                    <!--</p>-->
+                    <!--<div class="price">$350.00</div>-->
+                    <!--<a href="#." class="cart-btn"><i class="icon-basket-loaded"></i></a></article>-->
+                    <!--</div>-->
 
-                            <!--&lt;!&ndash; Product &ndash;&gt;-->
-                            <!--<div class="product">-->
-                                <!--<article><img class="img-responsive" src="images/item-img-1-1.jpg" alt=""> <span-->
-                                        <!--class="sale-tag">-25%</span>-->
+                    <!--&lt;!&ndash; Product &ndash;&gt;-->
+                    <!--<div class="product">-->
+                    <!--<article><img class="img-responsive" src="images/item-img-1-1.jpg" alt=""> <span-->
+                    <!--class="sale-tag">-25%</span>-->
 
-                                    <!--&lt;!&ndash; Content &ndash;&gt;-->
-                                    <!--<span class="tag">Tablets</span> <a href="#." class="tittle">Mp3 Sumergible-->
-                                        <!--Deportivo Slim Con 8GB</a>-->
-                                    <!--&lt;!&ndash; Reviews &ndash;&gt;-->
-                                    <!--<p class="rev"><i class="fa fa-star"></i><i class="fa fa-star"></i><i-->
-                                            <!--class="fa fa-star"></i><i class="fa fa-star"></i> <i class="fa fa-star"></i>-->
-                                        <!--<span class="margin-left-10">5 Review(s)</span></p>-->
-                                    <!--<div class="price">$350.00 <span>$200.00</span></div>-->
-                                    <!--<a href="#." class="cart-btn"><i class="icon-basket-loaded"></i></a></article>-->
-                            <!--</div>-->
+                    <!--&lt;!&ndash; Content &ndash;&gt;-->
+                    <!--<span class="tag">Tablets</span> <a href="#." class="tittle">Mp3 Sumergible-->
+                    <!--Deportivo Slim Con 8GB</a>-->
+                    <!--&lt;!&ndash; Reviews &ndash;&gt;-->
+                    <!--<p class="rev"><i class="fa fa-star"></i><i class="fa fa-star"></i><i-->
+                    <!--class="fa fa-star"></i><i class="fa fa-star"></i> <i class="fa fa-star"></i>-->
+                    <!--<span class="margin-left-10">5 Review(s)</span></p>-->
+                    <!--<div class="price">$350.00 <span>$200.00</span></div>-->
+                    <!--<a href="#." class="cart-btn"><i class="icon-basket-loaded"></i></a></article>-->
+                    <!--</div>-->
 
-                            <!--&lt;!&ndash; Product &ndash;&gt;-->
-                            <!--<div class="product">-->
-                                <!--<article><img class="img-responsive" src="images/item-img-1-2.jpg" alt="">-->
-                                    <!--&lt;!&ndash; Content &ndash;&gt;-->
-                                    <!--<span class="tag">Appliances</span> <a href="#." class="tittle">Reloj Inteligente-->
-                                        <!--Smart Watch M26 Touch Bluetooh </a>-->
-                                    <!--&lt;!&ndash; Reviews &ndash;&gt;-->
-                                    <!--<p class="rev"><i class="fa fa-star"></i><i class="fa fa-star"></i><i-->
-                                            <!--class="fa fa-star"></i><i class="fa fa-star"></i> <i class="fa fa-star"></i>-->
-                                        <!--<span class="margin-left-10">5 Review(s)</span></p>-->
-                                    <!--<div class="price">$350.00</div>-->
-                                    <!--<a href="#." class="cart-btn"><i class="icon-basket-loaded"></i></a></article>-->
-                            <!--</div>-->
+                    <!--&lt;!&ndash; Product &ndash;&gt;-->
+                    <!--<div class="product">-->
+                    <!--<article><img class="img-responsive" src="images/item-img-1-2.jpg" alt="">-->
+                    <!--&lt;!&ndash; Content &ndash;&gt;-->
+                    <!--<span class="tag">Appliances</span> <a href="#." class="tittle">Reloj Inteligente-->
+                    <!--Smart Watch M26 Touch Bluetooh </a>-->
+                    <!--&lt;!&ndash; Reviews &ndash;&gt;-->
+                    <!--<p class="rev"><i class="fa fa-star"></i><i class="fa fa-star"></i><i-->
+                    <!--class="fa fa-star"></i><i class="fa fa-star"></i> <i class="fa fa-star"></i>-->
+                    <!--<span class="margin-left-10">5 Review(s)</span></p>-->
+                    <!--<div class="price">$350.00</div>-->
+                    <!--<a href="#." class="cart-btn"><i class="icon-basket-loaded"></i></a></article>-->
+                    <!--</div>-->
 
-                            <!--&lt;!&ndash; Product &ndash;&gt;-->
-                            <!--<div class="product">-->
-                                <!--<article><img class="img-responsive" src="images/item-img-1-5.jpg" alt=""> <span-->
-                                        <!--class="new-tag">New</span>-->
+                    <!--&lt;!&ndash; Product &ndash;&gt;-->
+                    <!--<div class="product">-->
+                    <!--<article><img class="img-responsive" src="images/item-img-1-5.jpg" alt=""> <span-->
+                    <!--class="new-tag">New</span>-->
 
-                                    <!--&lt;!&ndash; Content &ndash;&gt;-->
-                                    <!--<span class="tag">Accessories</span> <a href="#." class="tittle">Teclado Inalambrico-->
-                                        <!--Bluetooth Con Air Mouse</a>-->
-                                    <!--&lt;!&ndash; Reviews &ndash;&gt;-->
-                                    <!--<p class="rev"><i class="fa fa-star"></i><i class="fa fa-star"></i><i-->
-                                            <!--class="fa fa-star"></i><i class="fa fa-star"></i> <i class="fa fa-star"></i>-->
-                                        <!--<span class="margin-left-10">5 Review(s)</span></p>-->
-                                    <!--<div class="price">$350.00</div>-->
-                                    <!--<a href="#." class="cart-btn"><i class="icon-basket-loaded"></i></a></article>-->
-                            <!--</div>-->
+                    <!--&lt;!&ndash; Content &ndash;&gt;-->
+                    <!--<span class="tag">Accessories</span> <a href="#." class="tittle">Teclado Inalambrico-->
+                    <!--Bluetooth Con Air Mouse</a>-->
+                    <!--&lt;!&ndash; Reviews &ndash;&gt;-->
+                    <!--<p class="rev"><i class="fa fa-star"></i><i class="fa fa-star"></i><i-->
+                    <!--class="fa fa-star"></i><i class="fa fa-star"></i> <i class="fa fa-star"></i>-->
+                    <!--<span class="margin-left-10">5 Review(s)</span></p>-->
+                    <!--<div class="price">$350.00</div>-->
+                    <!--<a href="#." class="cart-btn"><i class="icon-basket-loaded"></i></a></article>-->
+                    <!--</div>-->
 
-                            <!--&lt;!&ndash; Product &ndash;&gt;-->
-                            <!--<div class="product">-->
-                                <!--<article><img class="img-responsive" src="images/item-img-1-4.jpg" alt="">-->
-                                    <!--&lt;!&ndash; Content &ndash;&gt;-->
-                                    <!--<span class="tag">Appliances</span> <a href="#." class="tittle">Funda Para Ebook 7"-->
-                                        <!--128GB full HD</a>-->
-                                    <!--&lt;!&ndash; Reviews &ndash;&gt;-->
-                                    <!--<p class="rev"><i class="fa fa-star"></i><i class="fa fa-star"></i><i-->
-                                            <!--class="fa fa-star"></i><i class="fa fa-star"></i> <i class="fa fa-star"></i>-->
-                                        <!--<span class="margin-left-10">5 Review(s)</span></p>-->
-                                    <!--<div class="price">$350.00</div>-->
-                                    <!--<a href="#." class="cart-btn"><i class="icon-basket-loaded"></i></a></article>-->
-                            <!--</div>-->
-                        <!--</div>-->
+                    <!--&lt;!&ndash; Product &ndash;&gt;-->
+                    <!--<div class="product">-->
+                    <!--<article><img class="img-responsive" src="images/item-img-1-4.jpg" alt="">-->
+                    <!--&lt;!&ndash; Content &ndash;&gt;-->
+                    <!--<span class="tag">Appliances</span> <a href="#." class="tittle">Funda Para Ebook 7"-->
+                    <!--128GB full HD</a>-->
+                    <!--&lt;!&ndash; Reviews &ndash;&gt;-->
+                    <!--<p class="rev"><i class="fa fa-star"></i><i class="fa fa-star"></i><i-->
+                    <!--class="fa fa-star"></i><i class="fa fa-star"></i> <i class="fa fa-star"></i>-->
+                    <!--<span class="margin-left-10">5 Review(s)</span></p>-->
+                    <!--<div class="price">$350.00</div>-->
+                    <!--<a href="#." class="cart-btn"><i class="icon-basket-loaded"></i></a></article>-->
+                    <!--</div>-->
+                    <!--</div>-->
                     <!--</div>-->
                 </div>
             </div>
@@ -1223,7 +1197,7 @@
                 </div>
 
                 <!-- Items -->
-                <div  id="weekly_shop" class="item-col-5">
+                <div id="weekly_shop" class="item-col-5">
 
                     <!-- Product -->
                     <div class="product col-2x">
@@ -1238,120 +1212,120 @@
 
                     <!--&lt;!&ndash; Product &ndash;&gt;-->
                     <!--<div class="product">-->
-                        <!--<article><img class="img-responsive" src="images/item-img-1-6.jpg" alt=""> <span-->
-                                <!--class="sale-tag">-25%</span>-->
+                    <!--<article><img class="img-responsive" src="images/item-img-1-6.jpg" alt=""> <span-->
+                    <!--class="sale-tag">-25%</span>-->
 
-                            <!--&lt;!&ndash; Content &ndash;&gt;-->
-                            <!--<span class="tag">Tablets</span> <a href="#." class="tittle">Mp3 Sumergible Deportivo Slim-->
-                                <!--Con 8GB</a>-->
-                            <!--&lt;!&ndash; Reviews &ndash;&gt;-->
-                            <!--<p class="rev"><i class="fa fa-star"></i><i class="fa fa-star"></i><i-->
-                                    <!--class="fa fa-star"></i><i class="fa fa-star"></i> <i class="fa fa-star"></i> <span-->
-                                    <!--class="margin-left-10">5 Review(s)</span></p>-->
-                            <!--<div class="price">$350.00 <span>$200.00</span></div>-->
-                            <!--<a href="#." class="cart-btn"><i class="icon-basket-loaded"></i></a></article>-->
+                    <!--&lt;!&ndash; Content &ndash;&gt;-->
+                    <!--<span class="tag">Tablets</span> <a href="#." class="tittle">Mp3 Sumergible Deportivo Slim-->
+                    <!--Con 8GB</a>-->
+                    <!--&lt;!&ndash; Reviews &ndash;&gt;-->
+                    <!--<p class="rev"><i class="fa fa-star"></i><i class="fa fa-star"></i><i-->
+                    <!--class="fa fa-star"></i><i class="fa fa-star"></i> <i class="fa fa-star"></i> <span-->
+                    <!--class="margin-left-10">5 Review(s)</span></p>-->
+                    <!--<div class="price">$350.00 <span>$200.00</span></div>-->
+                    <!--<a href="#." class="cart-btn"><i class="icon-basket-loaded"></i></a></article>-->
                     <!--</div>-->
 
                     <!--&lt;!&ndash; Product &ndash;&gt;-->
                     <!--<div class="product">-->
-                        <!--<article><img class="img-responsive" src="images/item-img-1-7.jpg" alt="">-->
-                            <!--&lt;!&ndash; Content &ndash;&gt;-->
-                            <!--<span class="tag">Appliances</span> <a href="#." class="tittle">Reloj Inteligente Smart-->
-                                <!--Watch M26 Touch Bluetooh </a>-->
-                            <!--&lt;!&ndash; Reviews &ndash;&gt;-->
-                            <!--<p class="rev"><i class="fa fa-star"></i><i class="fa fa-star"></i><i-->
-                                    <!--class="fa fa-star"></i><i class="fa fa-star"></i> <i class="fa fa-star-o"></i> <span-->
-                                    <!--class="margin-left-10">5 Review(s)</span></p>-->
-                            <!--<div class="price">$350.00</div>-->
-                            <!--<a href="#." class="cart-btn"><i class="icon-basket-loaded"></i></a></article>-->
+                    <!--<article><img class="img-responsive" src="images/item-img-1-7.jpg" alt="">-->
+                    <!--&lt;!&ndash; Content &ndash;&gt;-->
+                    <!--<span class="tag">Appliances</span> <a href="#." class="tittle">Reloj Inteligente Smart-->
+                    <!--Watch M26 Touch Bluetooh </a>-->
+                    <!--&lt;!&ndash; Reviews &ndash;&gt;-->
+                    <!--<p class="rev"><i class="fa fa-star"></i><i class="fa fa-star"></i><i-->
+                    <!--class="fa fa-star"></i><i class="fa fa-star"></i> <i class="fa fa-star-o"></i> <span-->
+                    <!--class="margin-left-10">5 Review(s)</span></p>-->
+                    <!--<div class="price">$350.00</div>-->
+                    <!--<a href="#." class="cart-btn"><i class="icon-basket-loaded"></i></a></article>-->
                     <!--</div>-->
 
                     <!--&lt;!&ndash; Product &ndash;&gt;-->
                     <!--<div class="product">-->
-                        <!--<article><img class="img-responsive" src="images/item-img-1-8.jpg" alt=""> <span-->
-                                <!--class="new-tag">New</span>-->
+                    <!--<article><img class="img-responsive" src="images/item-img-1-8.jpg" alt=""> <span-->
+                    <!--class="new-tag">New</span>-->
 
-                            <!--&lt;!&ndash; Content &ndash;&gt;-->
-                            <!--<span class="tag">Accessories</span> <a href="#." class="tittle">Teclado Inalambrico-->
-                                <!--Bluetooth Con Air Mouse</a>-->
-                            <!--&lt;!&ndash; Reviews &ndash;&gt;-->
-                            <!--<p class="rev"><i class="fa fa-star"></i><i class="fa fa-star"></i><i-->
-                                    <!--class="fa fa-star"></i><i class="fa fa-star"></i> <i class="fa fa-star-o"></i> <span-->
-                                    <!--class="margin-left-10">5 Review(s)</span></p>-->
-                            <!--<div class="price">$350.00</div>-->
-                            <!--<a href="#." class="cart-btn"><i class="icon-basket-loaded"></i></a></article>-->
+                    <!--&lt;!&ndash; Content &ndash;&gt;-->
+                    <!--<span class="tag">Accessories</span> <a href="#." class="tittle">Teclado Inalambrico-->
+                    <!--Bluetooth Con Air Mouse</a>-->
+                    <!--&lt;!&ndash; Reviews &ndash;&gt;-->
+                    <!--<p class="rev"><i class="fa fa-star"></i><i class="fa fa-star"></i><i-->
+                    <!--class="fa fa-star"></i><i class="fa fa-star"></i> <i class="fa fa-star-o"></i> <span-->
+                    <!--class="margin-left-10">5 Review(s)</span></p>-->
+                    <!--<div class="price">$350.00</div>-->
+                    <!--<a href="#." class="cart-btn"><i class="icon-basket-loaded"></i></a></article>-->
                     <!--</div>-->
 
                     <!--&lt;!&ndash; Product &ndash;&gt;-->
                     <!--<div class="product">-->
-                        <!--<article><img class="img-responsive" src="images/item-img-1-9.jpg" alt="">-->
-                            <!--&lt;!&ndash; Content &ndash;&gt;-->
-                            <!--<span class="tag">Appliances</span> <a href="#." class="tittle">Funda Para Ebook 7" 128GB-->
-                                <!--full HD</a>-->
-                            <!--&lt;!&ndash; Reviews &ndash;&gt;-->
-                            <!--<p class="rev"><i class="fa fa-star"></i><i class="fa fa-star"></i><i-->
-                                    <!--class="fa fa-star"></i><i class="fa fa-star"></i> <i class="fa fa-star-o"></i> <span-->
-                                    <!--class="margin-left-10">5 Review(s)</span></p>-->
-                            <!--<div class="price">$350.00</div>-->
-                            <!--<a href="#." class="cart-btn"><i class="icon-basket-loaded"></i></a></article>-->
+                    <!--<article><img class="img-responsive" src="images/item-img-1-9.jpg" alt="">-->
+                    <!--&lt;!&ndash; Content &ndash;&gt;-->
+                    <!--<span class="tag">Appliances</span> <a href="#." class="tittle">Funda Para Ebook 7" 128GB-->
+                    <!--full HD</a>-->
+                    <!--&lt;!&ndash; Reviews &ndash;&gt;-->
+                    <!--<p class="rev"><i class="fa fa-star"></i><i class="fa fa-star"></i><i-->
+                    <!--class="fa fa-star"></i><i class="fa fa-star"></i> <i class="fa fa-star-o"></i> <span-->
+                    <!--class="margin-left-10">5 Review(s)</span></p>-->
+                    <!--<div class="price">$350.00</div>-->
+                    <!--<a href="#." class="cart-btn"><i class="icon-basket-loaded"></i></a></article>-->
                     <!--</div>-->
 
                     <!--&lt;!&ndash; Product &ndash;&gt;-->
                     <!--<div class="product">-->
-                        <!--<article><img class="img-responsive" src="images/item-img-1-10.jpg" alt="">-->
-                            <!--&lt;!&ndash; Content &ndash;&gt;-->
-                            <!--<span class="tag">Appliances</span> <a href="#." class="tittle">Reloj Inteligente Smart-->
-                                <!--Watch M26 Touch Bluetooh </a>-->
-                            <!--&lt;!&ndash; Reviews &ndash;&gt;-->
-                            <!--<p class="rev"><i class="fa fa-star"></i><i class="fa fa-star"></i><i-->
-                                    <!--class="fa fa-star"></i><i class="fa fa-star"></i> <i class="fa fa-star-o"></i> <span-->
-                                    <!--class="margin-left-10">5 Review(s)</span></p>-->
-                            <!--<div class="price">$350.00</div>-->
-                            <!--<a href="#." class="cart-btn"><i class="icon-basket-loaded"></i></a></article>-->
+                    <!--<article><img class="img-responsive" src="images/item-img-1-10.jpg" alt="">-->
+                    <!--&lt;!&ndash; Content &ndash;&gt;-->
+                    <!--<span class="tag">Appliances</span> <a href="#." class="tittle">Reloj Inteligente Smart-->
+                    <!--Watch M26 Touch Bluetooh </a>-->
+                    <!--&lt;!&ndash; Reviews &ndash;&gt;-->
+                    <!--<p class="rev"><i class="fa fa-star"></i><i class="fa fa-star"></i><i-->
+                    <!--class="fa fa-star"></i><i class="fa fa-star"></i> <i class="fa fa-star-o"></i> <span-->
+                    <!--class="margin-left-10">5 Review(s)</span></p>-->
+                    <!--<div class="price">$350.00</div>-->
+                    <!--<a href="#." class="cart-btn"><i class="icon-basket-loaded"></i></a></article>-->
                     <!--</div>-->
 
                     <!--&lt;!&ndash; Product &ndash;&gt;-->
                     <!--<div class="product">-->
-                        <!--<article><img class="img-responsive" src="images/item-img-1-11.jpg" alt=""> <span-->
-                                <!--class="new-tag">New</span>-->
+                    <!--<article><img class="img-responsive" src="images/item-img-1-11.jpg" alt=""> <span-->
+                    <!--class="new-tag">New</span>-->
 
-                            <!--&lt;!&ndash; Content &ndash;&gt;-->
-                            <!--<span class="tag">Accessories</span> <a href="#." class="tittle">Teclado Inalambrico-->
-                                <!--Bluetooth Con Air Mouse</a>-->
-                            <!--&lt;!&ndash; Reviews &ndash;&gt;-->
-                            <!--<p class="rev"><i class="fa fa-star"></i><i class="fa fa-star"></i><i-->
-                                    <!--class="fa fa-star"></i><i class="fa fa-star"></i> <i class="fa fa-star"></i> <span-->
-                                    <!--class="margin-left-10">5 Review(s)</span></p>-->
-                            <!--<div class="price">$350.00</div>-->
-                            <!--<a href="#." class="cart-btn"><i class="icon-basket-loaded"></i></a></article>-->
+                    <!--&lt;!&ndash; Content &ndash;&gt;-->
+                    <!--<span class="tag">Accessories</span> <a href="#." class="tittle">Teclado Inalambrico-->
+                    <!--Bluetooth Con Air Mouse</a>-->
+                    <!--&lt;!&ndash; Reviews &ndash;&gt;-->
+                    <!--<p class="rev"><i class="fa fa-star"></i><i class="fa fa-star"></i><i-->
+                    <!--class="fa fa-star"></i><i class="fa fa-star"></i> <i class="fa fa-star"></i> <span-->
+                    <!--class="margin-left-10">5 Review(s)</span></p>-->
+                    <!--<div class="price">$350.00</div>-->
+                    <!--<a href="#." class="cart-btn"><i class="icon-basket-loaded"></i></a></article>-->
                     <!--</div>-->
 
                     <!--&lt;!&ndash; Product &ndash;&gt;-->
                     <!--<div class="product">-->
-                        <!--<article><img class="img-responsive" src="images/item-img-1-12.jpg" alt="">-->
-                            <!--&lt;!&ndash; Content &ndash;&gt;-->
-                            <!--<span class="tag">Appliances</span> <a href="#." class="tittle">Funda Para Ebook 7" 128GB-->
-                                <!--full HD</a>-->
-                            <!--&lt;!&ndash; Reviews &ndash;&gt;-->
-                            <!--<p class="rev"><i class="fa fa-star"></i><i class="fa fa-star"></i><i-->
-                                    <!--class="fa fa-star"></i><i class="fa fa-star"></i> <i class="fa fa-star"></i> <span-->
-                                    <!--class="margin-left-10">5 Review(s)</span></p>-->
-                            <!--<div class="price">$350.00</div>-->
-                            <!--<a href="#." class="cart-btn"><i class="icon-basket-loaded"></i></a></article>-->
+                    <!--<article><img class="img-responsive" src="images/item-img-1-12.jpg" alt="">-->
+                    <!--&lt;!&ndash; Content &ndash;&gt;-->
+                    <!--<span class="tag">Appliances</span> <a href="#." class="tittle">Funda Para Ebook 7" 128GB-->
+                    <!--full HD</a>-->
+                    <!--&lt;!&ndash; Reviews &ndash;&gt;-->
+                    <!--<p class="rev"><i class="fa fa-star"></i><i class="fa fa-star"></i><i-->
+                    <!--class="fa fa-star"></i><i class="fa fa-star"></i> <i class="fa fa-star"></i> <span-->
+                    <!--class="margin-left-10">5 Review(s)</span></p>-->
+                    <!--<div class="price">$350.00</div>-->
+                    <!--<a href="#." class="cart-btn"><i class="icon-basket-loaded"></i></a></article>-->
                     <!--</div>-->
 
                     <!--&lt;!&ndash; Product &ndash;&gt;-->
                     <!--<div class="product">-->
-                        <!--<article><img class="img-responsive" src="images/item-img-1-13.jpg" alt="">-->
-                            <!--&lt;!&ndash; Content &ndash;&gt;-->
-                            <!--<span class="tag">Appliances</span> <a href="#." class="tittle">Reloj Inteligente Smart-->
-                                <!--Watch M26 Touch Bluetooh </a>-->
-                            <!--&lt;!&ndash; Reviews &ndash;&gt;-->
-                            <!--<p class="rev"><i class="fa fa-star"></i><i class="fa fa-star"></i><i-->
-                                    <!--class="fa fa-star"></i><i class="fa fa-star"></i> <i class="fa fa-star"></i> <span-->
-                                    <!--class="margin-left-10">5 Review(s)</span></p>-->
-                            <!--<div class="price">$350.00</div>-->
-                            <!--<a href="#." class="cart-btn"><i class="icon-basket-loaded"></i></a></article>-->
+                    <!--<article><img class="img-responsive" src="images/item-img-1-13.jpg" alt="">-->
+                    <!--&lt;!&ndash; Content &ndash;&gt;-->
+                    <!--<span class="tag">Appliances</span> <a href="#." class="tittle">Reloj Inteligente Smart-->
+                    <!--Watch M26 Touch Bluetooh </a>-->
+                    <!--&lt;!&ndash; Reviews &ndash;&gt;-->
+                    <!--<p class="rev"><i class="fa fa-star"></i><i class="fa fa-star"></i><i-->
+                    <!--class="fa fa-star"></i><i class="fa fa-star"></i> <i class="fa fa-star"></i> <span-->
+                    <!--class="margin-left-10">5 Review(s)</span></p>-->
+                    <!--<div class="price">$350.00</div>-->
+                    <!--<a href="#." class="cart-btn"><i class="icon-basket-loaded"></i></a></article>-->
                     <!--</div>-->
                 </div>
             </div>
@@ -1360,627 +1334,627 @@
         <!-- Main Tabs Sec -->
         <section class="main-tabs-sec padding-top-60 padding-bottom-0">
             <!--<div class="container">-->
-                <!--<ul class="nav margin-bottom-40" role="tablist">-->
-                    <!--<li role="presentation" class="active"><a href="#tv-au" aria-controls="featur" role="tab"-->
-                                                              <!--data-toggle="tab"> <i class="flaticon-computer"></i> TV &-->
-                        <!--Audios <span>236 item(s)</span></a></li>-->
-                    <!--<li role="presentation"><a href="#smart" aria-controls="special" role="tab" data-toggle="tab"><i-->
-                            <!--class="flaticon-smartphone"></i>Smartphones <span>150 item(s)</span></a></li>-->
-                    <!--<li role="presentation"><a href="#deks-lap" aria-controls="on-sal" role="tab" data-toggle="tab"><i-->
-                            <!--class="flaticon-laptop"></i>Desk & Laptop <span>268 item(s)</span></a></li>-->
-                    <!--<li role="presentation"><a href="#game-com" aria-controls="special" role="tab" data-toggle="tab"><i-->
-                            <!--class="flaticon-gamepad-1"></i>Game Console <span>79 item(s)</span></a></li>-->
-                    <!--<li role="presentation"><a href="#watches" aria-controls="on-sal" role="tab" data-toggle="tab"><i-->
-                            <!--class="flaticon-computer-1"></i>Watches <span>105 item(s)</span></a></li>-->
-                    <!--<li role="presentation"><a href="#access" aria-controls="on-sal" role="tab" data-toggle="tab"><i-->
-                            <!--class="flaticon-keyboard"></i>Accessories <span>816 item(s)</span></a></li>-->
-                <!--</ul>-->
+            <!--<ul class="nav margin-bottom-40" role="tablist">-->
+            <!--<li role="presentation" class="active"><a href="#tv-au" aria-controls="featur" role="tab"-->
+            <!--data-toggle="tab"> <i class="flaticon-computer"></i> TV &-->
+            <!--Audios <span>236 item(s)</span></a></li>-->
+            <!--<li role="presentation"><a href="#smart" aria-controls="special" role="tab" data-toggle="tab"><i-->
+            <!--class="flaticon-smartphone"></i>Smartphones <span>150 item(s)</span></a></li>-->
+            <!--<li role="presentation"><a href="#deks-lap" aria-controls="on-sal" role="tab" data-toggle="tab"><i-->
+            <!--class="flaticon-laptop"></i>Desk & Laptop <span>268 item(s)</span></a></li>-->
+            <!--<li role="presentation"><a href="#game-com" aria-controls="special" role="tab" data-toggle="tab"><i-->
+            <!--class="flaticon-gamepad-1"></i>Game Console <span>79 item(s)</span></a></li>-->
+            <!--<li role="presentation"><a href="#watches" aria-controls="on-sal" role="tab" data-toggle="tab"><i-->
+            <!--class="flaticon-computer-1"></i>Watches <span>105 item(s)</span></a></li>-->
+            <!--<li role="presentation"><a href="#access" aria-controls="on-sal" role="tab" data-toggle="tab"><i-->
+            <!--class="flaticon-keyboard"></i>Accessories <span>816 item(s)</span></a></li>-->
+            <!--</ul>-->
 
-                <!--&lt;!&ndash; Tab panes &ndash;&gt;-->
-                <!--<div class="tab-content">-->
-                    <!--&lt;!&ndash; TV & Audios &ndash;&gt;-->
-                    <!--<div role="tabpanel" class="tab-pane active fade in" id="tv-au">-->
+            <!--&lt;!&ndash; Tab panes &ndash;&gt;-->
+            <!--<div class="tab-content">-->
+            <!--&lt;!&ndash; TV & Audios &ndash;&gt;-->
+            <!--<div role="tabpanel" class="tab-pane active fade in" id="tv-au">-->
 
-                        <!--&lt;!&ndash; Items &ndash;&gt;-->
-                        <!--<div class="item-slide-5 with-bullet no-nav">-->
-                            <!--&lt;!&ndash; Product &ndash;&gt;-->
-                            <!--<div class="product">-->
-                                <!--<article><img class="img-responsive" src="images/item-img-1-1.jpg" alt="">-->
-                                    <!--&lt;!&ndash; Content &ndash;&gt;-->
-                                    <!--<span class="tag">Latop</span> <a href="#." class="tittle">Laptop Alienware 15 i7-->
-                                        <!--Perfect For Playing Game</a>-->
-                                    <!--&lt;!&ndash; Reviews &ndash;&gt;-->
-                                    <!--<p class="rev"><i class="fa fa-star"></i><i class="fa fa-star"></i><i-->
-                                            <!--class="fa fa-star"></i><i class="fa fa-star"></i> <i-->
-                                            <!--class="fa fa-star-o"></i> <span class="margin-left-10">5 Review(s)</span>-->
-                                    <!--</p>-->
-                                    <!--<div class="price">$350.00</div>-->
-                                    <!--<a href="#." class="cart-btn"><i class="icon-basket-loaded"></i></a></article>-->
-                            <!--</div>-->
-                            <!--&lt;!&ndash; Product &ndash;&gt;-->
-                            <!--<div class="product">-->
-                                <!--<article><img class="img-responsive" src="images/item-img-1-2.jpg" alt=""> <span-->
-                                        <!--class="sale-tag">-25%</span>-->
+            <!--&lt;!&ndash; Items &ndash;&gt;-->
+            <!--<div class="item-slide-5 with-bullet no-nav">-->
+            <!--&lt;!&ndash; Product &ndash;&gt;-->
+            <!--<div class="product">-->
+            <!--<article><img class="img-responsive" src="images/item-img-1-1.jpg" alt="">-->
+            <!--&lt;!&ndash; Content &ndash;&gt;-->
+            <!--<span class="tag">Latop</span> <a href="#." class="tittle">Laptop Alienware 15 i7-->
+            <!--Perfect For Playing Game</a>-->
+            <!--&lt;!&ndash; Reviews &ndash;&gt;-->
+            <!--<p class="rev"><i class="fa fa-star"></i><i class="fa fa-star"></i><i-->
+            <!--class="fa fa-star"></i><i class="fa fa-star"></i> <i-->
+            <!--class="fa fa-star-o"></i> <span class="margin-left-10">5 Review(s)</span>-->
+            <!--</p>-->
+            <!--<div class="price">$350.00</div>-->
+            <!--<a href="#." class="cart-btn"><i class="icon-basket-loaded"></i></a></article>-->
+            <!--</div>-->
+            <!--&lt;!&ndash; Product &ndash;&gt;-->
+            <!--<div class="product">-->
+            <!--<article><img class="img-responsive" src="images/item-img-1-2.jpg" alt=""> <span-->
+            <!--class="sale-tag">-25%</span>-->
 
-                                    <!--&lt;!&ndash; Content &ndash;&gt;-->
-                                    <!--<span class="tag">Tablets</span> <a href="#." class="tittle">Mp3 Sumergible-->
-                                        <!--Deportivo Slim Con 8GB</a>-->
-                                    <!--&lt;!&ndash; Reviews &ndash;&gt;-->
-                                    <!--<p class="rev"><i class="fa fa-star"></i><i class="fa fa-star"></i><i-->
-                                            <!--class="fa fa-star"></i><i class="fa fa-star"></i> <i-->
-                                            <!--class="fa fa-star-o"></i> <span class="margin-left-10">5 Review(s)</span>-->
-                                    <!--</p>-->
-                                    <!--<div class="price">$350.00 <span>$200.00</span></div>-->
-                                    <!--<a href="#." class="cart-btn"><i class="icon-basket-loaded"></i></a></article>-->
-                            <!--</div>-->
+            <!--&lt;!&ndash; Content &ndash;&gt;-->
+            <!--<span class="tag">Tablets</span> <a href="#." class="tittle">Mp3 Sumergible-->
+            <!--Deportivo Slim Con 8GB</a>-->
+            <!--&lt;!&ndash; Reviews &ndash;&gt;-->
+            <!--<p class="rev"><i class="fa fa-star"></i><i class="fa fa-star"></i><i-->
+            <!--class="fa fa-star"></i><i class="fa fa-star"></i> <i-->
+            <!--class="fa fa-star-o"></i> <span class="margin-left-10">5 Review(s)</span>-->
+            <!--</p>-->
+            <!--<div class="price">$350.00 <span>$200.00</span></div>-->
+            <!--<a href="#." class="cart-btn"><i class="icon-basket-loaded"></i></a></article>-->
+            <!--</div>-->
 
-                            <!--&lt;!&ndash; Product &ndash;&gt;-->
-                            <!--<div class="product">-->
-                                <!--<article><img class="img-responsive" src="images/item-img-1-3.jpg" alt="">-->
-                                    <!--&lt;!&ndash; Content &ndash;&gt;-->
-                                    <!--<span class="tag">Appliances</span> <a href="#." class="tittle">Reloj Inteligente-->
-                                        <!--Smart Watch M26 Touch Bluetooh </a>-->
-                                    <!--&lt;!&ndash; Reviews &ndash;&gt;-->
-                                    <!--<p class="rev"><i class="fa fa-star"></i><i class="fa fa-star"></i><i-->
-                                            <!--class="fa fa-star"></i><i class="fa fa-star"></i> <i-->
-                                            <!--class="fa fa-star-o"></i> <span class="margin-left-10">5 Review(s)</span>-->
-                                    <!--</p>-->
-                                    <!--<div class="price">$350.00</div>-->
-                                    <!--<a href="#." class="cart-btn"><i class="icon-basket-loaded"></i></a></article>-->
-                            <!--</div>-->
+            <!--&lt;!&ndash; Product &ndash;&gt;-->
+            <!--<div class="product">-->
+            <!--<article><img class="img-responsive" src="images/item-img-1-3.jpg" alt="">-->
+            <!--&lt;!&ndash; Content &ndash;&gt;-->
+            <!--<span class="tag">Appliances</span> <a href="#." class="tittle">Reloj Inteligente-->
+            <!--Smart Watch M26 Touch Bluetooh </a>-->
+            <!--&lt;!&ndash; Reviews &ndash;&gt;-->
+            <!--<p class="rev"><i class="fa fa-star"></i><i class="fa fa-star"></i><i-->
+            <!--class="fa fa-star"></i><i class="fa fa-star"></i> <i-->
+            <!--class="fa fa-star-o"></i> <span class="margin-left-10">5 Review(s)</span>-->
+            <!--</p>-->
+            <!--<div class="price">$350.00</div>-->
+            <!--<a href="#." class="cart-btn"><i class="icon-basket-loaded"></i></a></article>-->
+            <!--</div>-->
 
-                            <!--&lt;!&ndash; Product &ndash;&gt;-->
-                            <!--<div class="product">-->
-                                <!--<article><img class="img-responsive" src="images/item-img-1-4.jpg" alt=""> <span-->
-                                        <!--class="new-tag">New</span>-->
+            <!--&lt;!&ndash; Product &ndash;&gt;-->
+            <!--<div class="product">-->
+            <!--<article><img class="img-responsive" src="images/item-img-1-4.jpg" alt=""> <span-->
+            <!--class="new-tag">New</span>-->
 
-                                    <!--&lt;!&ndash; Content &ndash;&gt;-->
-                                    <!--<span class="tag">Accessories</span> <a href="#." class="tittle">Teclado Inalambrico-->
-                                        <!--Bluetooth Con Air Mouse</a>-->
-                                    <!--&lt;!&ndash; Reviews &ndash;&gt;-->
-                                    <!--<p class="rev"><i class="fa fa-star"></i><i class="fa fa-star"></i><i-->
-                                            <!--class="fa fa-star"></i><i class="fa fa-star"></i> <i-->
-                                            <!--class="fa fa-star-o"></i> <span class="margin-left-10">5 Review(s)</span>-->
-                                    <!--</p>-->
-                                    <!--<div class="price">$350.00</div>-->
-                                    <!--<a href="#." class="cart-btn"><i class="icon-basket-loaded"></i></a></article>-->
-                            <!--</div>-->
+            <!--&lt;!&ndash; Content &ndash;&gt;-->
+            <!--<span class="tag">Accessories</span> <a href="#." class="tittle">Teclado Inalambrico-->
+            <!--Bluetooth Con Air Mouse</a>-->
+            <!--&lt;!&ndash; Reviews &ndash;&gt;-->
+            <!--<p class="rev"><i class="fa fa-star"></i><i class="fa fa-star"></i><i-->
+            <!--class="fa fa-star"></i><i class="fa fa-star"></i> <i-->
+            <!--class="fa fa-star-o"></i> <span class="margin-left-10">5 Review(s)</span>-->
+            <!--</p>-->
+            <!--<div class="price">$350.00</div>-->
+            <!--<a href="#." class="cart-btn"><i class="icon-basket-loaded"></i></a></article>-->
+            <!--</div>-->
 
-                            <!--&lt;!&ndash; Product &ndash;&gt;-->
-                            <!--<div class="product">-->
-                                <!--<article><img class="img-responsive" src="images/item-img-1-5.jpg" alt="">-->
-                                    <!--&lt;!&ndash; Content &ndash;&gt;-->
-                                    <!--<span class="tag">Appliances</span> <a href="#." class="tittle">Funda Para Ebook 7"-->
-                                        <!--128GB full HD</a>-->
-                                    <!--&lt;!&ndash; Reviews &ndash;&gt;-->
-                                    <!--<p class="rev"><i class="fa fa-star"></i><i class="fa fa-star"></i><i-->
-                                            <!--class="fa fa-star"></i><i class="fa fa-star"></i> <i-->
-                                            <!--class="fa fa-star-o"></i> <span class="margin-left-10">5 Review(s)</span>-->
-                                    <!--</p>-->
-                                    <!--<div class="price">$350.00</div>-->
-                                    <!--<a href="#." class="cart-btn"><i class="icon-basket-loaded"></i></a></article>-->
-                            <!--</div>-->
+            <!--&lt;!&ndash; Product &ndash;&gt;-->
+            <!--<div class="product">-->
+            <!--<article><img class="img-responsive" src="images/item-img-1-5.jpg" alt="">-->
+            <!--&lt;!&ndash; Content &ndash;&gt;-->
+            <!--<span class="tag">Appliances</span> <a href="#." class="tittle">Funda Para Ebook 7"-->
+            <!--128GB full HD</a>-->
+            <!--&lt;!&ndash; Reviews &ndash;&gt;-->
+            <!--<p class="rev"><i class="fa fa-star"></i><i class="fa fa-star"></i><i-->
+            <!--class="fa fa-star"></i><i class="fa fa-star"></i> <i-->
+            <!--class="fa fa-star-o"></i> <span class="margin-left-10">5 Review(s)</span>-->
+            <!--</p>-->
+            <!--<div class="price">$350.00</div>-->
+            <!--<a href="#." class="cart-btn"><i class="icon-basket-loaded"></i></a></article>-->
+            <!--</div>-->
 
-                            <!--&lt;!&ndash; Product &ndash;&gt;-->
-                            <!--<div class="product">-->
-                                <!--<article><img class="img-responsive" src="images/item-img-1-6.jpg" alt=""> <span-->
-                                        <!--class="sale-tag">-25%</span>-->
+            <!--&lt;!&ndash; Product &ndash;&gt;-->
+            <!--<div class="product">-->
+            <!--<article><img class="img-responsive" src="images/item-img-1-6.jpg" alt=""> <span-->
+            <!--class="sale-tag">-25%</span>-->
 
-                                    <!--&lt;!&ndash; Content &ndash;&gt;-->
-                                    <!--<span class="tag">Tablets</span> <a href="#." class="tittle">Mp3 Sumergible-->
-                                        <!--Deportivo Slim Con 8GB</a>-->
-                                    <!--&lt;!&ndash; Reviews &ndash;&gt;-->
-                                    <!--<p class="rev"><i class="fa fa-star"></i><i class="fa fa-star"></i><i-->
-                                            <!--class="fa fa-star"></i><i class="fa fa-star"></i> <i-->
-                                            <!--class="fa fa-star-o"></i> <span class="margin-left-10">5 Review(s)</span>-->
-                                    <!--</p>-->
-                                    <!--<div class="price">$350.00 <span>$200.00</span></div>-->
-                                    <!--<a href="#." class="cart-btn"><i class="icon-basket-loaded"></i></a></article>-->
-                            <!--</div>-->
+            <!--&lt;!&ndash; Content &ndash;&gt;-->
+            <!--<span class="tag">Tablets</span> <a href="#." class="tittle">Mp3 Sumergible-->
+            <!--Deportivo Slim Con 8GB</a>-->
+            <!--&lt;!&ndash; Reviews &ndash;&gt;-->
+            <!--<p class="rev"><i class="fa fa-star"></i><i class="fa fa-star"></i><i-->
+            <!--class="fa fa-star"></i><i class="fa fa-star"></i> <i-->
+            <!--class="fa fa-star-o"></i> <span class="margin-left-10">5 Review(s)</span>-->
+            <!--</p>-->
+            <!--<div class="price">$350.00 <span>$200.00</span></div>-->
+            <!--<a href="#." class="cart-btn"><i class="icon-basket-loaded"></i></a></article>-->
+            <!--</div>-->
 
-                            <!--&lt;!&ndash; Product &ndash;&gt;-->
-                            <!--<div class="product">-->
-                                <!--<article><img class="img-responsive" src="images/item-img-1-7.jpg" alt="">-->
-                                    <!--&lt;!&ndash; Content &ndash;&gt;-->
-                                    <!--<span class="tag">Appliances</span> <a href="#." class="tittle">Reloj Inteligente-->
-                                        <!--Smart Watch M26 Touch Bluetooh </a>-->
-                                    <!--&lt;!&ndash; Reviews &ndash;&gt;-->
-                                    <!--<p class="rev"><i class="fa fa-star"></i><i class="fa fa-star"></i><i-->
-                                            <!--class="fa fa-star"></i><i class="fa fa-star"></i> <i-->
-                                            <!--class="fa fa-star-o"></i> <span class="margin-left-10">5 Review(s)</span>-->
-                                    <!--</p>-->
-                                    <!--<div class="price">$350.00</div>-->
-                                    <!--<a href="#." class="cart-btn"><i class="icon-basket-loaded"></i></a></article>-->
-                            <!--</div>-->
+            <!--&lt;!&ndash; Product &ndash;&gt;-->
+            <!--<div class="product">-->
+            <!--<article><img class="img-responsive" src="images/item-img-1-7.jpg" alt="">-->
+            <!--&lt;!&ndash; Content &ndash;&gt;-->
+            <!--<span class="tag">Appliances</span> <a href="#." class="tittle">Reloj Inteligente-->
+            <!--Smart Watch M26 Touch Bluetooh </a>-->
+            <!--&lt;!&ndash; Reviews &ndash;&gt;-->
+            <!--<p class="rev"><i class="fa fa-star"></i><i class="fa fa-star"></i><i-->
+            <!--class="fa fa-star"></i><i class="fa fa-star"></i> <i-->
+            <!--class="fa fa-star-o"></i> <span class="margin-left-10">5 Review(s)</span>-->
+            <!--</p>-->
+            <!--<div class="price">$350.00</div>-->
+            <!--<a href="#." class="cart-btn"><i class="icon-basket-loaded"></i></a></article>-->
+            <!--</div>-->
 
-                            <!--&lt;!&ndash; Product &ndash;&gt;-->
-                            <!--<div class="product">-->
-                                <!--<article><img class="img-responsive" src="images/item-img-1-8.jpg" alt=""> <span-->
-                                        <!--class="new-tag">New</span>-->
+            <!--&lt;!&ndash; Product &ndash;&gt;-->
+            <!--<div class="product">-->
+            <!--<article><img class="img-responsive" src="images/item-img-1-8.jpg" alt=""> <span-->
+            <!--class="new-tag">New</span>-->
 
-                                    <!--&lt;!&ndash; Content &ndash;&gt;-->
-                                    <!--<span class="tag">Accessories</span> <a href="#." class="tittle">Teclado Inalambrico-->
-                                        <!--Bluetooth Con Air Mouse</a>-->
-                                    <!--&lt;!&ndash; Reviews &ndash;&gt;-->
-                                    <!--<p class="rev"><i class="fa fa-star"></i><i class="fa fa-star"></i><i-->
-                                            <!--class="fa fa-star"></i><i class="fa fa-star"></i> <i-->
-                                            <!--class="fa fa-star-o"></i> <span class="margin-left-10">5 Review(s)</span>-->
-                                    <!--</p>-->
-                                    <!--<div class="price">$350.00</div>-->
-                                    <!--<a href="#." class="cart-btn"><i class="icon-basket-loaded"></i></a></article>-->
-                            <!--</div>-->
+            <!--&lt;!&ndash; Content &ndash;&gt;-->
+            <!--<span class="tag">Accessories</span> <a href="#." class="tittle">Teclado Inalambrico-->
+            <!--Bluetooth Con Air Mouse</a>-->
+            <!--&lt;!&ndash; Reviews &ndash;&gt;-->
+            <!--<p class="rev"><i class="fa fa-star"></i><i class="fa fa-star"></i><i-->
+            <!--class="fa fa-star"></i><i class="fa fa-star"></i> <i-->
+            <!--class="fa fa-star-o"></i> <span class="margin-left-10">5 Review(s)</span>-->
+            <!--</p>-->
+            <!--<div class="price">$350.00</div>-->
+            <!--<a href="#." class="cart-btn"><i class="icon-basket-loaded"></i></a></article>-->
+            <!--</div>-->
 
-                            <!--&lt;!&ndash; Product &ndash;&gt;-->
-                            <!--<div class="product">-->
-                                <!--<article><img class="img-responsive" src="images/item-img-1-9.jpg" alt=""> <span-->
-                                        <!--class="sale-tag">-25%</span>-->
+            <!--&lt;!&ndash; Product &ndash;&gt;-->
+            <!--<div class="product">-->
+            <!--<article><img class="img-responsive" src="images/item-img-1-9.jpg" alt=""> <span-->
+            <!--class="sale-tag">-25%</span>-->
 
-                                    <!--&lt;!&ndash; Content &ndash;&gt;-->
-                                    <!--<span class="tag">Tablets</span> <a href="#." class="tittle">Mp3 Sumergible-->
-                                        <!--Deportivo Slim Con 8GB</a>-->
-                                    <!--&lt;!&ndash; Reviews &ndash;&gt;-->
-                                    <!--<p class="rev"><i class="fa fa-star"></i><i class="fa fa-star"></i><i-->
-                                            <!--class="fa fa-star"></i><i class="fa fa-star"></i> <i-->
-                                            <!--class="fa fa-star-o"></i> <span class="margin-left-10">5 Review(s)</span>-->
-                                    <!--</p>-->
-                                    <!--<div class="price">$350.00 <span>$200.00</span></div>-->
-                                    <!--<a href="#." class="cart-btn"><i class="icon-basket-loaded"></i></a></article>-->
-                            <!--</div>-->
+            <!--&lt;!&ndash; Content &ndash;&gt;-->
+            <!--<span class="tag">Tablets</span> <a href="#." class="tittle">Mp3 Sumergible-->
+            <!--Deportivo Slim Con 8GB</a>-->
+            <!--&lt;!&ndash; Reviews &ndash;&gt;-->
+            <!--<p class="rev"><i class="fa fa-star"></i><i class="fa fa-star"></i><i-->
+            <!--class="fa fa-star"></i><i class="fa fa-star"></i> <i-->
+            <!--class="fa fa-star-o"></i> <span class="margin-left-10">5 Review(s)</span>-->
+            <!--</p>-->
+            <!--<div class="price">$350.00 <span>$200.00</span></div>-->
+            <!--<a href="#." class="cart-btn"><i class="icon-basket-loaded"></i></a></article>-->
+            <!--</div>-->
 
-                            <!--&lt;!&ndash; Product &ndash;&gt;-->
-                            <!--<div class="product">-->
-                                <!--<article><img class="img-responsive" src="images/item-img-1-10.jpg" alt="">-->
-                                    <!--&lt;!&ndash; Content &ndash;&gt;-->
-                                    <!--<span class="tag">Appliances</span> <a href="#." class="tittle">Reloj Inteligente-->
-                                        <!--Smart Watch M26 Touch Bluetooh </a>-->
-                                    <!--&lt;!&ndash; Reviews &ndash;&gt;-->
-                                    <!--<p class="rev"><i class="fa fa-star"></i><i class="fa fa-star"></i><i-->
-                                            <!--class="fa fa-star"></i><i class="fa fa-star"></i> <i-->
-                                            <!--class="fa fa-star-o"></i> <span class="margin-left-10">5 Review(s)</span>-->
-                                    <!--</p>-->
-                                    <!--<div class="price">$350.00</div>-->
-                                    <!--<a href="#." class="cart-btn"><i class="icon-basket-loaded"></i></a></article>-->
-                            <!--</div>-->
+            <!--&lt;!&ndash; Product &ndash;&gt;-->
+            <!--<div class="product">-->
+            <!--<article><img class="img-responsive" src="images/item-img-1-10.jpg" alt="">-->
+            <!--&lt;!&ndash; Content &ndash;&gt;-->
+            <!--<span class="tag">Appliances</span> <a href="#." class="tittle">Reloj Inteligente-->
+            <!--Smart Watch M26 Touch Bluetooh </a>-->
+            <!--&lt;!&ndash; Reviews &ndash;&gt;-->
+            <!--<p class="rev"><i class="fa fa-star"></i><i class="fa fa-star"></i><i-->
+            <!--class="fa fa-star"></i><i class="fa fa-star"></i> <i-->
+            <!--class="fa fa-star-o"></i> <span class="margin-left-10">5 Review(s)</span>-->
+            <!--</p>-->
+            <!--<div class="price">$350.00</div>-->
+            <!--<a href="#." class="cart-btn"><i class="icon-basket-loaded"></i></a></article>-->
+            <!--</div>-->
 
-                            <!--&lt;!&ndash; Product &ndash;&gt;-->
-                            <!--<div class="product">-->
-                                <!--<article><img class="img-responsive" src="images/item-img-1-11.jpg" alt=""> <span-->
-                                        <!--class="new-tag">New</span>-->
+            <!--&lt;!&ndash; Product &ndash;&gt;-->
+            <!--<div class="product">-->
+            <!--<article><img class="img-responsive" src="images/item-img-1-11.jpg" alt=""> <span-->
+            <!--class="new-tag">New</span>-->
 
-                                    <!--&lt;!&ndash; Content &ndash;&gt;-->
-                                    <!--<span class="tag">Accessories</span> <a href="#." class="tittle">Teclado Inalambrico-->
-                                        <!--Bluetooth Con Air Mouse</a>-->
-                                    <!--&lt;!&ndash; Reviews &ndash;&gt;-->
-                                    <!--<p class="rev"><i class="fa fa-star"></i><i class="fa fa-star"></i><i-->
-                                            <!--class="fa fa-star"></i><i class="fa fa-star"></i> <i-->
-                                            <!--class="fa fa-star-o"></i> <span class="margin-left-10">5 Review(s)</span>-->
-                                    <!--</p>-->
-                                    <!--<div class="price">$350.00</div>-->
-                                    <!--<a href="#." class="cart-btn"><i class="icon-basket-loaded"></i></a></article>-->
-                            <!--</div>-->
-                        <!--</div>-->
-                    <!--</div>-->
+            <!--&lt;!&ndash; Content &ndash;&gt;-->
+            <!--<span class="tag">Accessories</span> <a href="#." class="tittle">Teclado Inalambrico-->
+            <!--Bluetooth Con Air Mouse</a>-->
+            <!--&lt;!&ndash; Reviews &ndash;&gt;-->
+            <!--<p class="rev"><i class="fa fa-star"></i><i class="fa fa-star"></i><i-->
+            <!--class="fa fa-star"></i><i class="fa fa-star"></i> <i-->
+            <!--class="fa fa-star-o"></i> <span class="margin-left-10">5 Review(s)</span>-->
+            <!--</p>-->
+            <!--<div class="price">$350.00</div>-->
+            <!--<a href="#." class="cart-btn"><i class="icon-basket-loaded"></i></a></article>-->
+            <!--</div>-->
+            <!--</div>-->
+            <!--</div>-->
 
-                    <!--&lt;!&ndash; Smartphones &ndash;&gt;-->
-                    <!--<div role="tabpanel" class="tab-pane fade" id="smart">-->
-                        <!--&lt;!&ndash; Items &ndash;&gt;-->
-                        <!--<div class="item-col-5">-->
+            <!--&lt;!&ndash; Smartphones &ndash;&gt;-->
+            <!--<div role="tabpanel" class="tab-pane fade" id="smart">-->
+            <!--&lt;!&ndash; Items &ndash;&gt;-->
+            <!--<div class="item-col-5">-->
 
-                            <!--&lt;!&ndash; Product &ndash;&gt;-->
-                            <!--<div class="product">-->
-                                <!--<article><img class="img-responsive" src="images/item-img-1-11.jpg" alt=""> <span-->
-                                        <!--class="sale-tag">-25%</span>-->
+            <!--&lt;!&ndash; Product &ndash;&gt;-->
+            <!--<div class="product">-->
+            <!--<article><img class="img-responsive" src="images/item-img-1-11.jpg" alt=""> <span-->
+            <!--class="sale-tag">-25%</span>-->
 
-                                    <!--&lt;!&ndash; Content &ndash;&gt;-->
-                                    <!--<span class="tag">Accessories</span> <a href="#." class="tittle">Teclado Inalambrico-->
-                                        <!--Bluetooth Con Air Mouse</a>-->
-                                    <!--&lt;!&ndash; Reviews &ndash;&gt;-->
-                                    <!--<p class="rev"><i class="fa fa-star"></i><i class="fa fa-star"></i><i-->
-                                            <!--class="fa fa-star"></i><i class="fa fa-star"></i> <i-->
-                                            <!--class="fa fa-star-o"></i> <span class="margin-left-10">5 Review(s)</span>-->
-                                    <!--</p>-->
-                                    <!--<div class="price">$350.00</div>-->
-                                    <!--<a href="#." class="cart-btn"><i class="icon-basket-loaded"></i></a></article>-->
-                            <!--</div>-->
+            <!--&lt;!&ndash; Content &ndash;&gt;-->
+            <!--<span class="tag">Accessories</span> <a href="#." class="tittle">Teclado Inalambrico-->
+            <!--Bluetooth Con Air Mouse</a>-->
+            <!--&lt;!&ndash; Reviews &ndash;&gt;-->
+            <!--<p class="rev"><i class="fa fa-star"></i><i class="fa fa-star"></i><i-->
+            <!--class="fa fa-star"></i><i class="fa fa-star"></i> <i-->
+            <!--class="fa fa-star-o"></i> <span class="margin-left-10">5 Review(s)</span>-->
+            <!--</p>-->
+            <!--<div class="price">$350.00</div>-->
+            <!--<a href="#." class="cart-btn"><i class="icon-basket-loaded"></i></a></article>-->
+            <!--</div>-->
 
-                            <!--&lt;!&ndash; Product &ndash;&gt;-->
-                            <!--<div class="product">-->
-                                <!--<article><img class="img-responsive" src="images/item-img-1-8.jpg" alt="">-->
-                                    <!--&lt;!&ndash; Content &ndash;&gt;-->
-                                    <!--<span class="tag">Appliances</span> <a href="#." class="tittle">Funda Para Ebook 7"-->
-                                        <!--128GB full HD</a>-->
-                                    <!--&lt;!&ndash; Reviews &ndash;&gt;-->
-                                    <!--<p class="rev"><i class="fa fa-star"></i><i class="fa fa-star"></i><i-->
-                                            <!--class="fa fa-star"></i><i class="fa fa-star"></i> <i-->
-                                            <!--class="fa fa-star-o"></i> <span class="margin-left-10">5 Review(s)</span>-->
-                                    <!--</p>-->
-                                    <!--<div class="price">$350.00</div>-->
-                                    <!--<a href="#." class="cart-btn"><i class="icon-basket-loaded"></i></a></article>-->
-                            <!--</div>-->
+            <!--&lt;!&ndash; Product &ndash;&gt;-->
+            <!--<div class="product">-->
+            <!--<article><img class="img-responsive" src="images/item-img-1-8.jpg" alt="">-->
+            <!--&lt;!&ndash; Content &ndash;&gt;-->
+            <!--<span class="tag">Appliances</span> <a href="#." class="tittle">Funda Para Ebook 7"-->
+            <!--128GB full HD</a>-->
+            <!--&lt;!&ndash; Reviews &ndash;&gt;-->
+            <!--<p class="rev"><i class="fa fa-star"></i><i class="fa fa-star"></i><i-->
+            <!--class="fa fa-star"></i><i class="fa fa-star"></i> <i-->
+            <!--class="fa fa-star-o"></i> <span class="margin-left-10">5 Review(s)</span>-->
+            <!--</p>-->
+            <!--<div class="price">$350.00</div>-->
+            <!--<a href="#." class="cart-btn"><i class="icon-basket-loaded"></i></a></article>-->
+            <!--</div>-->
 
-                            <!--&lt;!&ndash; Product &ndash;&gt;-->
-                            <!--<div class="product">-->
-                                <!--<article><img class="img-responsive" src="images/item-img-1-5.jpg" alt="">-->
-                                    <!--&lt;!&ndash; Content &ndash;&gt;-->
-                                    <!--<span class="tag">Appliances</span> <a href="#." class="tittle">Reloj Inteligente-->
-                                        <!--Smart Watch M26 Touch Bluetooh </a>-->
-                                    <!--&lt;!&ndash; Reviews &ndash;&gt;-->
-                                    <!--<p class="rev"><i class="fa fa-star"></i><i class="fa fa-star"></i><i-->
-                                            <!--class="fa fa-star"></i><i class="fa fa-star"></i> <i-->
-                                            <!--class="fa fa-star-o"></i> <span class="margin-left-10">5 Review(s)</span>-->
-                                    <!--</p>-->
-                                    <!--<div class="price">$350.00</div>-->
-                                    <!--<a href="#." class="cart-btn"><i class="icon-basket-loaded"></i></a></article>-->
-                            <!--</div>-->
+            <!--&lt;!&ndash; Product &ndash;&gt;-->
+            <!--<div class="product">-->
+            <!--<article><img class="img-responsive" src="images/item-img-1-5.jpg" alt="">-->
+            <!--&lt;!&ndash; Content &ndash;&gt;-->
+            <!--<span class="tag">Appliances</span> <a href="#." class="tittle">Reloj Inteligente-->
+            <!--Smart Watch M26 Touch Bluetooh </a>-->
+            <!--&lt;!&ndash; Reviews &ndash;&gt;-->
+            <!--<p class="rev"><i class="fa fa-star"></i><i class="fa fa-star"></i><i-->
+            <!--class="fa fa-star"></i><i class="fa fa-star"></i> <i-->
+            <!--class="fa fa-star-o"></i> <span class="margin-left-10">5 Review(s)</span>-->
+            <!--</p>-->
+            <!--<div class="price">$350.00</div>-->
+            <!--<a href="#." class="cart-btn"><i class="icon-basket-loaded"></i></a></article>-->
+            <!--</div>-->
 
-                            <!--&lt;!&ndash; Product &ndash;&gt;-->
-                            <!--<div class="product">-->
-                                <!--<article><img class="img-responsive" src="images/item-img-1-17.jpg" alt=""> <span-->
-                                        <!--class="new-tag">New</span>-->
+            <!--&lt;!&ndash; Product &ndash;&gt;-->
+            <!--<div class="product">-->
+            <!--<article><img class="img-responsive" src="images/item-img-1-17.jpg" alt=""> <span-->
+            <!--class="new-tag">New</span>-->
 
-                                    <!--&lt;!&ndash; Content &ndash;&gt;-->
-                                    <!--<span class="tag">Accessories</span> <a href="#." class="tittle">Teclado Inalambrico-->
-                                        <!--Bluetooth Con Air Mouse</a>-->
-                                    <!--&lt;!&ndash; Reviews &ndash;&gt;-->
-                                    <!--<p class="rev"><i class="fa fa-star"></i><i class="fa fa-star"></i><i-->
-                                            <!--class="fa fa-star"></i><i class="fa fa-star"></i> <i class="fa fa-star"></i>-->
-                                        <!--<span class="margin-left-10">5 Review(s)</span></p>-->
-                                    <!--<div class="price">$350.00</div>-->
-                                    <!--<a href="#." class="cart-btn"><i class="icon-basket-loaded"></i></a></article>-->
-                            <!--</div>-->
+            <!--&lt;!&ndash; Content &ndash;&gt;-->
+            <!--<span class="tag">Accessories</span> <a href="#." class="tittle">Teclado Inalambrico-->
+            <!--Bluetooth Con Air Mouse</a>-->
+            <!--&lt;!&ndash; Reviews &ndash;&gt;-->
+            <!--<p class="rev"><i class="fa fa-star"></i><i class="fa fa-star"></i><i-->
+            <!--class="fa fa-star"></i><i class="fa fa-star"></i> <i class="fa fa-star"></i>-->
+            <!--<span class="margin-left-10">5 Review(s)</span></p>-->
+            <!--<div class="price">$350.00</div>-->
+            <!--<a href="#." class="cart-btn"><i class="icon-basket-loaded"></i></a></article>-->
+            <!--</div>-->
 
-                            <!--&lt;!&ndash; Product &ndash;&gt;-->
-                            <!--<div class="product">-->
-                                <!--<article><img class="img-responsive" src="images/item-img-1-15.jpg" alt="">-->
-                                    <!--&lt;!&ndash; Content &ndash;&gt;-->
-                                    <!--<span class="tag">Appliances</span> <a href="#." class="tittle">Funda Para Ebook 7"-->
-                                        <!--128GB full HD</a>-->
-                                    <!--&lt;!&ndash; Reviews &ndash;&gt;-->
-                                    <!--<p class="rev"><i class="fa fa-star"></i><i class="fa fa-star"></i><i-->
-                                            <!--class="fa fa-star"></i><i class="fa fa-star"></i> <i class="fa fa-star"></i>-->
-                                        <!--<span class="margin-left-10">5 Review(s)</span></p>-->
-                                    <!--<div class="price">$350.00</div>-->
-                                    <!--<a href="#." class="cart-btn"><i class="icon-basket-loaded"></i></a></article>-->
-                            <!--</div>-->
-                        <!--</div>-->
-                    <!--</div>-->
-                    <!--&lt;!&ndash; Desk & Laptop &ndash;&gt;-->
-                    <!--<div role="tabpanel" class="tab-pane fade" id="deks-lap">-->
+            <!--&lt;!&ndash; Product &ndash;&gt;-->
+            <!--<div class="product">-->
+            <!--<article><img class="img-responsive" src="images/item-img-1-15.jpg" alt="">-->
+            <!--&lt;!&ndash; Content &ndash;&gt;-->
+            <!--<span class="tag">Appliances</span> <a href="#." class="tittle">Funda Para Ebook 7"-->
+            <!--128GB full HD</a>-->
+            <!--&lt;!&ndash; Reviews &ndash;&gt;-->
+            <!--<p class="rev"><i class="fa fa-star"></i><i class="fa fa-star"></i><i-->
+            <!--class="fa fa-star"></i><i class="fa fa-star"></i> <i class="fa fa-star"></i>-->
+            <!--<span class="margin-left-10">5 Review(s)</span></p>-->
+            <!--<div class="price">$350.00</div>-->
+            <!--<a href="#." class="cart-btn"><i class="icon-basket-loaded"></i></a></article>-->
+            <!--</div>-->
+            <!--</div>-->
+            <!--</div>-->
+            <!--&lt;!&ndash; Desk & Laptop &ndash;&gt;-->
+            <!--<div role="tabpanel" class="tab-pane fade" id="deks-lap">-->
 
-                        <!--&lt;!&ndash; Items &ndash;&gt;-->
-                        <!--<div class="item-col-5">-->
+            <!--&lt;!&ndash; Items &ndash;&gt;-->
+            <!--<div class="item-col-5">-->
 
-                            <!--&lt;!&ndash; Product &ndash;&gt;-->
-                            <!--<div class="product">-->
-                                <!--<article><img class="img-responsive" src="images/item-img-1-2.jpg" alt=""> <span-->
-                                        <!--class="sale-tag">-25%</span>-->
+            <!--&lt;!&ndash; Product &ndash;&gt;-->
+            <!--<div class="product">-->
+            <!--<article><img class="img-responsive" src="images/item-img-1-2.jpg" alt=""> <span-->
+            <!--class="sale-tag">-25%</span>-->
 
-                                    <!--&lt;!&ndash; Content &ndash;&gt;-->
-                                    <!--<span class="tag">Accessories</span> <a href="#." class="tittle">Teclado Inalambrico-->
-                                        <!--Bluetooth Con Air Mouse</a>-->
-                                    <!--&lt;!&ndash; Reviews &ndash;&gt;-->
-                                    <!--<p class="rev"><i class="fa fa-star"></i><i class="fa fa-star"></i><i-->
-                                            <!--class="fa fa-star"></i><i class="fa fa-star"></i> <i-->
-                                            <!--class="fa fa-star-o"></i> <span class="margin-left-10">5 Review(s)</span>-->
-                                    <!--</p>-->
-                                    <!--<div class="price">$350.00</div>-->
-                                    <!--<a href="#." class="cart-btn"><i class="icon-basket-loaded"></i></a></article>-->
-                            <!--</div>-->
+            <!--&lt;!&ndash; Content &ndash;&gt;-->
+            <!--<span class="tag">Accessories</span> <a href="#." class="tittle">Teclado Inalambrico-->
+            <!--Bluetooth Con Air Mouse</a>-->
+            <!--&lt;!&ndash; Reviews &ndash;&gt;-->
+            <!--<p class="rev"><i class="fa fa-star"></i><i class="fa fa-star"></i><i-->
+            <!--class="fa fa-star"></i><i class="fa fa-star"></i> <i-->
+            <!--class="fa fa-star-o"></i> <span class="margin-left-10">5 Review(s)</span>-->
+            <!--</p>-->
+            <!--<div class="price">$350.00</div>-->
+            <!--<a href="#." class="cart-btn"><i class="icon-basket-loaded"></i></a></article>-->
+            <!--</div>-->
 
-                            <!--&lt;!&ndash; Product &ndash;&gt;-->
-                            <!--<div class="product">-->
-                                <!--<article><img class="img-responsive" src="images/item-img-1-3.jpg" alt="">-->
-                                    <!--&lt;!&ndash; Content &ndash;&gt;-->
-                                    <!--<span class="tag">Appliances</span> <a href="#." class="tittle">Funda Para Ebook 7"-->
-                                        <!--128GB full HD</a>-->
-                                    <!--&lt;!&ndash; Reviews &ndash;&gt;-->
-                                    <!--<p class="rev"><i class="fa fa-star"></i><i class="fa fa-star"></i><i-->
-                                            <!--class="fa fa-star"></i><i class="fa fa-star"></i> <i-->
-                                            <!--class="fa fa-star-o"></i> <span class="margin-left-10">5 Review(s)</span>-->
-                                    <!--</p>-->
-                                    <!--<div class="price">$350.00</div>-->
-                                    <!--<a href="#." class="cart-btn"><i class="icon-basket-loaded"></i></a></article>-->
-                            <!--</div>-->
+            <!--&lt;!&ndash; Product &ndash;&gt;-->
+            <!--<div class="product">-->
+            <!--<article><img class="img-responsive" src="images/item-img-1-3.jpg" alt="">-->
+            <!--&lt;!&ndash; Content &ndash;&gt;-->
+            <!--<span class="tag">Appliances</span> <a href="#." class="tittle">Funda Para Ebook 7"-->
+            <!--128GB full HD</a>-->
+            <!--&lt;!&ndash; Reviews &ndash;&gt;-->
+            <!--<p class="rev"><i class="fa fa-star"></i><i class="fa fa-star"></i><i-->
+            <!--class="fa fa-star"></i><i class="fa fa-star"></i> <i-->
+            <!--class="fa fa-star-o"></i> <span class="margin-left-10">5 Review(s)</span>-->
+            <!--</p>-->
+            <!--<div class="price">$350.00</div>-->
+            <!--<a href="#." class="cart-btn"><i class="icon-basket-loaded"></i></a></article>-->
+            <!--</div>-->
 
-                            <!--&lt;!&ndash; Product &ndash;&gt;-->
-                            <!--<div class="product">-->
-                                <!--<article><img class="img-responsive" src="images/item-img-1-4.jpg" alt="">-->
-                                    <!--&lt;!&ndash; Content &ndash;&gt;-->
-                                    <!--<span class="tag">Appliances</span> <a href="#." class="tittle">Reloj Inteligente-->
-                                        <!--Smart Watch M26 Touch Bluetooh </a>-->
-                                    <!--&lt;!&ndash; Reviews &ndash;&gt;-->
-                                    <!--<p class="rev"><i class="fa fa-star"></i><i class="fa fa-star"></i><i-->
-                                            <!--class="fa fa-star"></i><i class="fa fa-star"></i> <i-->
-                                            <!--class="fa fa-star-o"></i> <span class="margin-left-10">5 Review(s)</span>-->
-                                    <!--</p>-->
-                                    <!--<div class="price">$350.00</div>-->
-                                    <!--<a href="#." class="cart-btn"><i class="icon-basket-loaded"></i></a></article>-->
-                            <!--</div>-->
+            <!--&lt;!&ndash; Product &ndash;&gt;-->
+            <!--<div class="product">-->
+            <!--<article><img class="img-responsive" src="images/item-img-1-4.jpg" alt="">-->
+            <!--&lt;!&ndash; Content &ndash;&gt;-->
+            <!--<span class="tag">Appliances</span> <a href="#." class="tittle">Reloj Inteligente-->
+            <!--Smart Watch M26 Touch Bluetooh </a>-->
+            <!--&lt;!&ndash; Reviews &ndash;&gt;-->
+            <!--<p class="rev"><i class="fa fa-star"></i><i class="fa fa-star"></i><i-->
+            <!--class="fa fa-star"></i><i class="fa fa-star"></i> <i-->
+            <!--class="fa fa-star-o"></i> <span class="margin-left-10">5 Review(s)</span>-->
+            <!--</p>-->
+            <!--<div class="price">$350.00</div>-->
+            <!--<a href="#." class="cart-btn"><i class="icon-basket-loaded"></i></a></article>-->
+            <!--</div>-->
 
-                            <!--&lt;!&ndash; Product &ndash;&gt;-->
-                            <!--<div class="product">-->
-                                <!--<article><img class="img-responsive" src="images/item-img-1-13.jpg" alt=""> <span-->
-                                        <!--class="new-tag">New</span>-->
+            <!--&lt;!&ndash; Product &ndash;&gt;-->
+            <!--<div class="product">-->
+            <!--<article><img class="img-responsive" src="images/item-img-1-13.jpg" alt=""> <span-->
+            <!--class="new-tag">New</span>-->
 
-                                    <!--&lt;!&ndash; Content &ndash;&gt;-->
-                                    <!--<span class="tag">Accessories</span> <a href="#." class="tittle">Teclado Inalambrico-->
-                                        <!--Bluetooth Con Air Mouse</a>-->
-                                    <!--&lt;!&ndash; Reviews &ndash;&gt;-->
-                                    <!--<p class="rev"><i class="fa fa-star"></i><i class="fa fa-star"></i><i-->
-                                            <!--class="fa fa-star"></i><i class="fa fa-star"></i> <i class="fa fa-star"></i>-->
-                                        <!--<span class="margin-left-10">5 Review(s)</span></p>-->
-                                    <!--<div class="price">$350.00</div>-->
-                                    <!--<a href="#." class="cart-btn"><i class="icon-basket-loaded"></i></a></article>-->
-                            <!--</div>-->
+            <!--&lt;!&ndash; Content &ndash;&gt;-->
+            <!--<span class="tag">Accessories</span> <a href="#." class="tittle">Teclado Inalambrico-->
+            <!--Bluetooth Con Air Mouse</a>-->
+            <!--&lt;!&ndash; Reviews &ndash;&gt;-->
+            <!--<p class="rev"><i class="fa fa-star"></i><i class="fa fa-star"></i><i-->
+            <!--class="fa fa-star"></i><i class="fa fa-star"></i> <i class="fa fa-star"></i>-->
+            <!--<span class="margin-left-10">5 Review(s)</span></p>-->
+            <!--<div class="price">$350.00</div>-->
+            <!--<a href="#." class="cart-btn"><i class="icon-basket-loaded"></i></a></article>-->
+            <!--</div>-->
 
-                            <!--&lt;!&ndash; Product &ndash;&gt;-->
-                            <!--<div class="product">-->
-                                <!--<article><img class="img-responsive" src="images/item-img-1-15.jpg" alt="">-->
-                                    <!--&lt;!&ndash; Content &ndash;&gt;-->
-                                    <!--<span class="tag">Appliances</span> <a href="#." class="tittle">Funda Para Ebook 7"-->
-                                        <!--128GB full HD</a>-->
-                                    <!--&lt;!&ndash; Reviews &ndash;&gt;-->
-                                    <!--<p class="rev"><i class="fa fa-star"></i><i class="fa fa-star"></i><i-->
-                                            <!--class="fa fa-star"></i><i class="fa fa-star"></i> <i class="fa fa-star"></i>-->
-                                        <!--<span class="margin-left-10">5 Review(s)</span></p>-->
-                                    <!--<div class="price">$350.00</div>-->
-                                    <!--<a href="#." class="cart-btn"><i class="icon-basket-loaded"></i></a></article>-->
-                            <!--</div>-->
-                        <!--</div>-->
-                    <!--</div>-->
-                    <!--&lt;!&ndash; Game Console &ndash;&gt;-->
-                    <!--<div role="tabpanel" class="tab-pane fade" id="game-com">-->
+            <!--&lt;!&ndash; Product &ndash;&gt;-->
+            <!--<div class="product">-->
+            <!--<article><img class="img-responsive" src="images/item-img-1-15.jpg" alt="">-->
+            <!--&lt;!&ndash; Content &ndash;&gt;-->
+            <!--<span class="tag">Appliances</span> <a href="#." class="tittle">Funda Para Ebook 7"-->
+            <!--128GB full HD</a>-->
+            <!--&lt;!&ndash; Reviews &ndash;&gt;-->
+            <!--<p class="rev"><i class="fa fa-star"></i><i class="fa fa-star"></i><i-->
+            <!--class="fa fa-star"></i><i class="fa fa-star"></i> <i class="fa fa-star"></i>-->
+            <!--<span class="margin-left-10">5 Review(s)</span></p>-->
+            <!--<div class="price">$350.00</div>-->
+            <!--<a href="#." class="cart-btn"><i class="icon-basket-loaded"></i></a></article>-->
+            <!--</div>-->
+            <!--</div>-->
+            <!--</div>-->
+            <!--&lt;!&ndash; Game Console &ndash;&gt;-->
+            <!--<div role="tabpanel" class="tab-pane fade" id="game-com">-->
 
-                        <!--&lt;!&ndash; Items &ndash;&gt;-->
-                        <!--<div class="item-col-5">-->
+            <!--&lt;!&ndash; Items &ndash;&gt;-->
+            <!--<div class="item-col-5">-->
 
-                            <!--&lt;!&ndash; Product &ndash;&gt;-->
-                            <!--<div class="product">-->
-                                <!--<article><img class="img-responsive" src="images/item-img-1-9.jpg" alt=""> <span-->
-                                        <!--class="sale-tag">-25%</span>-->
+            <!--&lt;!&ndash; Product &ndash;&gt;-->
+            <!--<div class="product">-->
+            <!--<article><img class="img-responsive" src="images/item-img-1-9.jpg" alt=""> <span-->
+            <!--class="sale-tag">-25%</span>-->
 
-                                    <!--&lt;!&ndash; Content &ndash;&gt;-->
-                                    <!--<span class="tag">Accessories</span> <a href="#." class="tittle">Teclado Inalambrico-->
-                                        <!--Bluetooth Con Air Mouse</a>-->
-                                    <!--&lt;!&ndash; Reviews &ndash;&gt;-->
-                                    <!--<p class="rev"><i class="fa fa-star"></i><i class="fa fa-star"></i><i-->
-                                            <!--class="fa fa-star"></i><i class="fa fa-star"></i> <i-->
-                                            <!--class="fa fa-star-o"></i> <span class="margin-left-10">5 Review(s)</span>-->
-                                    <!--</p>-->
-                                    <!--<div class="price">$350.00</div>-->
-                                    <!--<a href="#." class="cart-btn"><i class="icon-basket-loaded"></i></a></article>-->
-                            <!--</div>-->
+            <!--&lt;!&ndash; Content &ndash;&gt;-->
+            <!--<span class="tag">Accessories</span> <a href="#." class="tittle">Teclado Inalambrico-->
+            <!--Bluetooth Con Air Mouse</a>-->
+            <!--&lt;!&ndash; Reviews &ndash;&gt;-->
+            <!--<p class="rev"><i class="fa fa-star"></i><i class="fa fa-star"></i><i-->
+            <!--class="fa fa-star"></i><i class="fa fa-star"></i> <i-->
+            <!--class="fa fa-star-o"></i> <span class="margin-left-10">5 Review(s)</span>-->
+            <!--</p>-->
+            <!--<div class="price">$350.00</div>-->
+            <!--<a href="#." class="cart-btn"><i class="icon-basket-loaded"></i></a></article>-->
+            <!--</div>-->
 
-                            <!--&lt;!&ndash; Product &ndash;&gt;-->
-                            <!--<div class="product">-->
-                                <!--<article><img class="img-responsive" src="images/item-img-1-1.jpg" alt="">-->
-                                    <!--&lt;!&ndash; Content &ndash;&gt;-->
-                                    <!--<span class="tag">Appliances</span> <a href="#." class="tittle">Funda Para Ebook 7"-->
-                                        <!--128GB full HD</a>-->
-                                    <!--&lt;!&ndash; Reviews &ndash;&gt;-->
-                                    <!--<p class="rev"><i class="fa fa-star"></i><i class="fa fa-star"></i><i-->
-                                            <!--class="fa fa-star"></i><i class="fa fa-star"></i> <i-->
-                                            <!--class="fa fa-star-o"></i> <span class="margin-left-10">5 Review(s)</span>-->
-                                    <!--</p>-->
-                                    <!--<div class="price">$350.00</div>-->
-                                    <!--<a href="#." class="cart-btn"><i class="icon-basket-loaded"></i></a></article>-->
-                            <!--</div>-->
+            <!--&lt;!&ndash; Product &ndash;&gt;-->
+            <!--<div class="product">-->
+            <!--<article><img class="img-responsive" src="images/item-img-1-1.jpg" alt="">-->
+            <!--&lt;!&ndash; Content &ndash;&gt;-->
+            <!--<span class="tag">Appliances</span> <a href="#." class="tittle">Funda Para Ebook 7"-->
+            <!--128GB full HD</a>-->
+            <!--&lt;!&ndash; Reviews &ndash;&gt;-->
+            <!--<p class="rev"><i class="fa fa-star"></i><i class="fa fa-star"></i><i-->
+            <!--class="fa fa-star"></i><i class="fa fa-star"></i> <i-->
+            <!--class="fa fa-star-o"></i> <span class="margin-left-10">5 Review(s)</span>-->
+            <!--</p>-->
+            <!--<div class="price">$350.00</div>-->
+            <!--<a href="#." class="cart-btn"><i class="icon-basket-loaded"></i></a></article>-->
+            <!--</div>-->
 
-                            <!--&lt;!&ndash; Product &ndash;&gt;-->
-                            <!--<div class="product">-->
-                                <!--<article><img class="img-responsive" src="images/item-img-1-5.jpg" alt="">-->
-                                    <!--&lt;!&ndash; Content &ndash;&gt;-->
-                                    <!--<span class="tag">Appliances</span> <a href="#." class="tittle">Reloj Inteligente-->
-                                        <!--Smart Watch M26 Touch Bluetooh </a>-->
-                                    <!--&lt;!&ndash; Reviews &ndash;&gt;-->
-                                    <!--<p class="rev"><i class="fa fa-star"></i><i class="fa fa-star"></i><i-->
-                                            <!--class="fa fa-star"></i><i class="fa fa-star"></i> <i-->
-                                            <!--class="fa fa-star-o"></i> <span class="margin-left-10">5 Review(s)</span>-->
-                                    <!--</p>-->
-                                    <!--<div class="price">$350.00</div>-->
-                                    <!--<a href="#." class="cart-btn"><i class="icon-basket-loaded"></i></a></article>-->
-                            <!--</div>-->
+            <!--&lt;!&ndash; Product &ndash;&gt;-->
+            <!--<div class="product">-->
+            <!--<article><img class="img-responsive" src="images/item-img-1-5.jpg" alt="">-->
+            <!--&lt;!&ndash; Content &ndash;&gt;-->
+            <!--<span class="tag">Appliances</span> <a href="#." class="tittle">Reloj Inteligente-->
+            <!--Smart Watch M26 Touch Bluetooh </a>-->
+            <!--&lt;!&ndash; Reviews &ndash;&gt;-->
+            <!--<p class="rev"><i class="fa fa-star"></i><i class="fa fa-star"></i><i-->
+            <!--class="fa fa-star"></i><i class="fa fa-star"></i> <i-->
+            <!--class="fa fa-star-o"></i> <span class="margin-left-10">5 Review(s)</span>-->
+            <!--</p>-->
+            <!--<div class="price">$350.00</div>-->
+            <!--<a href="#." class="cart-btn"><i class="icon-basket-loaded"></i></a></article>-->
+            <!--</div>-->
 
-                            <!--&lt;!&ndash; Product &ndash;&gt;-->
-                            <!--<div class="product">-->
-                                <!--<article><img class="img-responsive" src="images/item-img-1-3.jpg" alt=""> <span-->
-                                        <!--class="new-tag">New</span>-->
+            <!--&lt;!&ndash; Product &ndash;&gt;-->
+            <!--<div class="product">-->
+            <!--<article><img class="img-responsive" src="images/item-img-1-3.jpg" alt=""> <span-->
+            <!--class="new-tag">New</span>-->
 
-                                    <!--&lt;!&ndash; Content &ndash;&gt;-->
-                                    <!--<span class="tag">Accessories</span> <a href="#." class="tittle">Teclado Inalambrico-->
-                                        <!--Bluetooth Con Air Mouse</a>-->
-                                    <!--&lt;!&ndash; Reviews &ndash;&gt;-->
-                                    <!--<p class="rev"><i class="fa fa-star"></i><i class="fa fa-star"></i><i-->
-                                            <!--class="fa fa-star"></i><i class="fa fa-star"></i> <i class="fa fa-star"></i>-->
-                                        <!--<span class="margin-left-10">5 Review(s)</span></p>-->
-                                    <!--<div class="price">$350.00</div>-->
-                                    <!--<a href="#." class="cart-btn"><i class="icon-basket-loaded"></i></a></article>-->
-                            <!--</div>-->
+            <!--&lt;!&ndash; Content &ndash;&gt;-->
+            <!--<span class="tag">Accessories</span> <a href="#." class="tittle">Teclado Inalambrico-->
+            <!--Bluetooth Con Air Mouse</a>-->
+            <!--&lt;!&ndash; Reviews &ndash;&gt;-->
+            <!--<p class="rev"><i class="fa fa-star"></i><i class="fa fa-star"></i><i-->
+            <!--class="fa fa-star"></i><i class="fa fa-star"></i> <i class="fa fa-star"></i>-->
+            <!--<span class="margin-left-10">5 Review(s)</span></p>-->
+            <!--<div class="price">$350.00</div>-->
+            <!--<a href="#." class="cart-btn"><i class="icon-basket-loaded"></i></a></article>-->
+            <!--</div>-->
 
-                            <!--&lt;!&ndash; Product &ndash;&gt;-->
-                            <!--<div class="product">-->
-                                <!--<article><img class="img-responsive" src="images/item-img-1-2.jpg" alt="">-->
-                                    <!--&lt;!&ndash; Content &ndash;&gt;-->
-                                    <!--<span class="tag">Appliances</span> <a href="#." class="tittle">Funda Para Ebook 7"-->
-                                        <!--128GB full HD</a>-->
-                                    <!--&lt;!&ndash; Reviews &ndash;&gt;-->
-                                    <!--<p class="rev"><i class="fa fa-star"></i><i class="fa fa-star"></i><i-->
-                                            <!--class="fa fa-star"></i><i class="fa fa-star"></i> <i class="fa fa-star"></i>-->
-                                        <!--<span class="margin-left-10">5 Review(s)</span></p>-->
-                                    <!--<div class="price">$350.00</div>-->
-                                    <!--<a href="#." class="cart-btn"><i class="icon-basket-loaded"></i></a></article>-->
-                            <!--</div>-->
-                        <!--</div>-->
-                    <!--</div>-->
-                    <!--&lt;!&ndash; Watches &ndash;&gt;-->
-                    <!--<div role="tabpanel" class="tab-pane fade" id="watches">-->
+            <!--&lt;!&ndash; Product &ndash;&gt;-->
+            <!--<div class="product">-->
+            <!--<article><img class="img-responsive" src="images/item-img-1-2.jpg" alt="">-->
+            <!--&lt;!&ndash; Content &ndash;&gt;-->
+            <!--<span class="tag">Appliances</span> <a href="#." class="tittle">Funda Para Ebook 7"-->
+            <!--128GB full HD</a>-->
+            <!--&lt;!&ndash; Reviews &ndash;&gt;-->
+            <!--<p class="rev"><i class="fa fa-star"></i><i class="fa fa-star"></i><i-->
+            <!--class="fa fa-star"></i><i class="fa fa-star"></i> <i class="fa fa-star"></i>-->
+            <!--<span class="margin-left-10">5 Review(s)</span></p>-->
+            <!--<div class="price">$350.00</div>-->
+            <!--<a href="#." class="cart-btn"><i class="icon-basket-loaded"></i></a></article>-->
+            <!--</div>-->
+            <!--</div>-->
+            <!--</div>-->
+            <!--&lt;!&ndash; Watches &ndash;&gt;-->
+            <!--<div role="tabpanel" class="tab-pane fade" id="watches">-->
 
-                        <!--&lt;!&ndash; Items &ndash;&gt;-->
-                        <!--<div class="item-col-5">-->
+            <!--&lt;!&ndash; Items &ndash;&gt;-->
+            <!--<div class="item-col-5">-->
 
-                            <!--&lt;!&ndash; Product &ndash;&gt;-->
-                            <!--<div class="product">-->
-                                <!--<article><img class="img-responsive" src="images/item-img-1-8.jpg" alt=""> <span-->
-                                        <!--class="sale-tag">-25%</span>-->
+            <!--&lt;!&ndash; Product &ndash;&gt;-->
+            <!--<div class="product">-->
+            <!--<article><img class="img-responsive" src="images/item-img-1-8.jpg" alt=""> <span-->
+            <!--class="sale-tag">-25%</span>-->
 
-                                    <!--&lt;!&ndash; Content &ndash;&gt;-->
-                                    <!--<span class="tag">Accessories</span> <a href="#." class="tittle">Teclado Inalambrico-->
-                                        <!--Bluetooth Con Air Mouse</a>-->
-                                    <!--&lt;!&ndash; Reviews &ndash;&gt;-->
-                                    <!--<p class="rev"><i class="fa fa-star"></i><i class="fa fa-star"></i><i-->
-                                            <!--class="fa fa-star"></i><i class="fa fa-star"></i> <i-->
-                                            <!--class="fa fa-star-o"></i> <span class="margin-left-10">5 Review(s)</span>-->
-                                    <!--</p>-->
-                                    <!--<div class="price">$350.00</div>-->
-                                    <!--<a href="#." class="cart-btn"><i class="icon-basket-loaded"></i></a></article>-->
-                            <!--</div>-->
+            <!--&lt;!&ndash; Content &ndash;&gt;-->
+            <!--<span class="tag">Accessories</span> <a href="#." class="tittle">Teclado Inalambrico-->
+            <!--Bluetooth Con Air Mouse</a>-->
+            <!--&lt;!&ndash; Reviews &ndash;&gt;-->
+            <!--<p class="rev"><i class="fa fa-star"></i><i class="fa fa-star"></i><i-->
+            <!--class="fa fa-star"></i><i class="fa fa-star"></i> <i-->
+            <!--class="fa fa-star-o"></i> <span class="margin-left-10">5 Review(s)</span>-->
+            <!--</p>-->
+            <!--<div class="price">$350.00</div>-->
+            <!--<a href="#." class="cart-btn"><i class="icon-basket-loaded"></i></a></article>-->
+            <!--</div>-->
 
-                            <!--&lt;!&ndash; Product &ndash;&gt;-->
-                            <!--<div class="product">-->
-                                <!--<article><img class="img-responsive" src="images/item-img-1-9.jpg" alt="">-->
-                                    <!--&lt;!&ndash; Content &ndash;&gt;-->
-                                    <!--<span class="tag">Appliances</span> <a href="#." class="tittle">Funda Para Ebook 7"-->
-                                        <!--128GB full HD</a>-->
-                                    <!--&lt;!&ndash; Reviews &ndash;&gt;-->
-                                    <!--<p class="rev"><i class="fa fa-star"></i><i class="fa fa-star"></i><i-->
-                                            <!--class="fa fa-star"></i><i class="fa fa-star"></i> <i-->
-                                            <!--class="fa fa-star-o"></i> <span class="margin-left-10">5 Review(s)</span>-->
-                                    <!--</p>-->
-                                    <!--<div class="price">$350.00</div>-->
-                                    <!--<a href="#." class="cart-btn"><i class="icon-basket-loaded"></i></a></article>-->
-                            <!--</div>-->
+            <!--&lt;!&ndash; Product &ndash;&gt;-->
+            <!--<div class="product">-->
+            <!--<article><img class="img-responsive" src="images/item-img-1-9.jpg" alt="">-->
+            <!--&lt;!&ndash; Content &ndash;&gt;-->
+            <!--<span class="tag">Appliances</span> <a href="#." class="tittle">Funda Para Ebook 7"-->
+            <!--128GB full HD</a>-->
+            <!--&lt;!&ndash; Reviews &ndash;&gt;-->
+            <!--<p class="rev"><i class="fa fa-star"></i><i class="fa fa-star"></i><i-->
+            <!--class="fa fa-star"></i><i class="fa fa-star"></i> <i-->
+            <!--class="fa fa-star-o"></i> <span class="margin-left-10">5 Review(s)</span>-->
+            <!--</p>-->
+            <!--<div class="price">$350.00</div>-->
+            <!--<a href="#." class="cart-btn"><i class="icon-basket-loaded"></i></a></article>-->
+            <!--</div>-->
 
-                            <!--&lt;!&ndash; Product &ndash;&gt;-->
-                            <!--<div class="product">-->
-                                <!--<article><img class="img-responsive" src="images/item-img-1-17.jpg" alt="">-->
-                                    <!--&lt;!&ndash; Content &ndash;&gt;-->
-                                    <!--<span class="tag">Appliances</span> <a href="#." class="tittle">Reloj Inteligente-->
-                                        <!--Smart Watch M26 Touch Bluetooh </a>-->
-                                    <!--&lt;!&ndash; Reviews &ndash;&gt;-->
-                                    <!--<p class="rev"><i class="fa fa-star"></i><i class="fa fa-star"></i><i-->
-                                            <!--class="fa fa-star"></i><i class="fa fa-star"></i> <i-->
-                                            <!--class="fa fa-star-o"></i> <span class="margin-left-10">5 Review(s)</span>-->
-                                    <!--</p>-->
-                                    <!--<div class="price">$350.00</div>-->
-                                    <!--<a href="#." class="cart-btn"><i class="icon-basket-loaded"></i></a></article>-->
-                            <!--</div>-->
+            <!--&lt;!&ndash; Product &ndash;&gt;-->
+            <!--<div class="product">-->
+            <!--<article><img class="img-responsive" src="images/item-img-1-17.jpg" alt="">-->
+            <!--&lt;!&ndash; Content &ndash;&gt;-->
+            <!--<span class="tag">Appliances</span> <a href="#." class="tittle">Reloj Inteligente-->
+            <!--Smart Watch M26 Touch Bluetooh </a>-->
+            <!--&lt;!&ndash; Reviews &ndash;&gt;-->
+            <!--<p class="rev"><i class="fa fa-star"></i><i class="fa fa-star"></i><i-->
+            <!--class="fa fa-star"></i><i class="fa fa-star"></i> <i-->
+            <!--class="fa fa-star-o"></i> <span class="margin-left-10">5 Review(s)</span>-->
+            <!--</p>-->
+            <!--<div class="price">$350.00</div>-->
+            <!--<a href="#." class="cart-btn"><i class="icon-basket-loaded"></i></a></article>-->
+            <!--</div>-->
 
-                            <!--&lt;!&ndash; Product &ndash;&gt;-->
-                            <!--<div class="product">-->
-                                <!--<article><img class="img-responsive" src="images/item-img-1-16.jpg" alt=""> <span-->
-                                        <!--class="new-tag">New</span>-->
+            <!--&lt;!&ndash; Product &ndash;&gt;-->
+            <!--<div class="product">-->
+            <!--<article><img class="img-responsive" src="images/item-img-1-16.jpg" alt=""> <span-->
+            <!--class="new-tag">New</span>-->
 
-                                    <!--&lt;!&ndash; Content &ndash;&gt;-->
-                                    <!--<span class="tag">Accessories</span> <a href="#." class="tittle">Teclado Inalambrico-->
-                                        <!--Bluetooth Con Air Mouse</a>-->
-                                    <!--&lt;!&ndash; Reviews &ndash;&gt;-->
-                                    <!--<p class="rev"><i class="fa fa-star"></i><i class="fa fa-star"></i><i-->
-                                            <!--class="fa fa-star"></i><i class="fa fa-star"></i> <i class="fa fa-star"></i>-->
-                                        <!--<span class="margin-left-10">5 Review(s)</span></p>-->
-                                    <!--<div class="price">$350.00</div>-->
-                                    <!--<a href="#." class="cart-btn"><i class="icon-basket-loaded"></i></a></article>-->
-                            <!--</div>-->
+            <!--&lt;!&ndash; Content &ndash;&gt;-->
+            <!--<span class="tag">Accessories</span> <a href="#." class="tittle">Teclado Inalambrico-->
+            <!--Bluetooth Con Air Mouse</a>-->
+            <!--&lt;!&ndash; Reviews &ndash;&gt;-->
+            <!--<p class="rev"><i class="fa fa-star"></i><i class="fa fa-star"></i><i-->
+            <!--class="fa fa-star"></i><i class="fa fa-star"></i> <i class="fa fa-star"></i>-->
+            <!--<span class="margin-left-10">5 Review(s)</span></p>-->
+            <!--<div class="price">$350.00</div>-->
+            <!--<a href="#." class="cart-btn"><i class="icon-basket-loaded"></i></a></article>-->
+            <!--</div>-->
 
-                            <!--&lt;!&ndash; Product &ndash;&gt;-->
-                            <!--<div class="product">-->
-                                <!--<article><img class="img-responsive" src="images/item-img-1-12.jpg" alt="">-->
-                                    <!--&lt;!&ndash; Content &ndash;&gt;-->
-                                    <!--<span class="tag">Appliances</span> <a href="#." class="tittle">Funda Para Ebook 7"-->
-                                        <!--128GB full HD</a>-->
-                                    <!--&lt;!&ndash; Reviews &ndash;&gt;-->
-                                    <!--<p class="rev"><i class="fa fa-star"></i><i class="fa fa-star"></i><i-->
-                                            <!--class="fa fa-star"></i><i class="fa fa-star"></i> <i class="fa fa-star"></i>-->
-                                        <!--<span class="margin-left-10">5 Review(s)</span></p>-->
-                                    <!--<div class="price">$350.00</div>-->
-                                    <!--<a href="#." class="cart-btn"><i class="icon-basket-loaded"></i></a></article>-->
-                            <!--</div>-->
-                        <!--</div>-->
-                    <!--</div>-->
-                    <!--&lt;!&ndash; Accessories &ndash;&gt;-->
-                    <!--<div role="tabpanel" class="tab-pane fade" id="access">-->
+            <!--&lt;!&ndash; Product &ndash;&gt;-->
+            <!--<div class="product">-->
+            <!--<article><img class="img-responsive" src="images/item-img-1-12.jpg" alt="">-->
+            <!--&lt;!&ndash; Content &ndash;&gt;-->
+            <!--<span class="tag">Appliances</span> <a href="#." class="tittle">Funda Para Ebook 7"-->
+            <!--128GB full HD</a>-->
+            <!--&lt;!&ndash; Reviews &ndash;&gt;-->
+            <!--<p class="rev"><i class="fa fa-star"></i><i class="fa fa-star"></i><i-->
+            <!--class="fa fa-star"></i><i class="fa fa-star"></i> <i class="fa fa-star"></i>-->
+            <!--<span class="margin-left-10">5 Review(s)</span></p>-->
+            <!--<div class="price">$350.00</div>-->
+            <!--<a href="#." class="cart-btn"><i class="icon-basket-loaded"></i></a></article>-->
+            <!--</div>-->
+            <!--</div>-->
+            <!--</div>-->
+            <!--&lt;!&ndash; Accessories &ndash;&gt;-->
+            <!--<div role="tabpanel" class="tab-pane fade" id="access">-->
 
-                        <!--&lt;!&ndash; Items &ndash;&gt;-->
-                        <!--<div class="item-col-5">-->
+            <!--&lt;!&ndash; Items &ndash;&gt;-->
+            <!--<div class="item-col-5">-->
 
-                            <!--&lt;!&ndash; Product &ndash;&gt;-->
-                            <!--<div class="product">-->
-                                <!--<article><img class="img-responsive" src="images/item-img-1-11.jpg" alt=""> <span-->
-                                        <!--class="sale-tag">-25%</span>-->
+            <!--&lt;!&ndash; Product &ndash;&gt;-->
+            <!--<div class="product">-->
+            <!--<article><img class="img-responsive" src="images/item-img-1-11.jpg" alt=""> <span-->
+            <!--class="sale-tag">-25%</span>-->
 
-                                    <!--&lt;!&ndash; Content &ndash;&gt;-->
-                                    <!--<span class="tag">Accessories</span> <a href="#." class="tittle">Teclado Inalambrico-->
-                                        <!--Bluetooth Con Air Mouse</a>-->
-                                    <!--&lt;!&ndash; Reviews &ndash;&gt;-->
-                                    <!--<p class="rev"><i class="fa fa-star"></i><i class="fa fa-star"></i><i-->
-                                            <!--class="fa fa-star"></i><i class="fa fa-star"></i> <i-->
-                                            <!--class="fa fa-star-o"></i> <span class="margin-left-10">5 Review(s)</span>-->
-                                    <!--</p>-->
-                                    <!--<div class="price">$350.00</div>-->
-                                    <!--<a href="#." class="cart-btn"><i class="icon-basket-loaded"></i></a></article>-->
-                            <!--</div>-->
+            <!--&lt;!&ndash; Content &ndash;&gt;-->
+            <!--<span class="tag">Accessories</span> <a href="#." class="tittle">Teclado Inalambrico-->
+            <!--Bluetooth Con Air Mouse</a>-->
+            <!--&lt;!&ndash; Reviews &ndash;&gt;-->
+            <!--<p class="rev"><i class="fa fa-star"></i><i class="fa fa-star"></i><i-->
+            <!--class="fa fa-star"></i><i class="fa fa-star"></i> <i-->
+            <!--class="fa fa-star-o"></i> <span class="margin-left-10">5 Review(s)</span>-->
+            <!--</p>-->
+            <!--<div class="price">$350.00</div>-->
+            <!--<a href="#." class="cart-btn"><i class="icon-basket-loaded"></i></a></article>-->
+            <!--</div>-->
 
-                            <!--&lt;!&ndash; Product &ndash;&gt;-->
-                            <!--<div class="product">-->
-                                <!--<article><img class="img-responsive" src="images/item-img-1-12.jpg" alt="">-->
-                                    <!--&lt;!&ndash; Content &ndash;&gt;-->
-                                    <!--<span class="tag">Appliances</span> <a href="#." class="tittle">Funda Para Ebook 7"-->
-                                        <!--128GB full HD</a>-->
-                                    <!--&lt;!&ndash; Reviews &ndash;&gt;-->
-                                    <!--<p class="rev"><i class="fa fa-star"></i><i class="fa fa-star"></i><i-->
-                                            <!--class="fa fa-star"></i><i class="fa fa-star"></i> <i-->
-                                            <!--class="fa fa-star-o"></i> <span class="margin-left-10">5 Review(s)</span>-->
-                                    <!--</p>-->
-                                    <!--<div class="price">$350.00</div>-->
-                                    <!--<a href="#." class="cart-btn"><i class="icon-basket-loaded"></i></a></article>-->
-                            <!--</div>-->
+            <!--&lt;!&ndash; Product &ndash;&gt;-->
+            <!--<div class="product">-->
+            <!--<article><img class="img-responsive" src="images/item-img-1-12.jpg" alt="">-->
+            <!--&lt;!&ndash; Content &ndash;&gt;-->
+            <!--<span class="tag">Appliances</span> <a href="#." class="tittle">Funda Para Ebook 7"-->
+            <!--128GB full HD</a>-->
+            <!--&lt;!&ndash; Reviews &ndash;&gt;-->
+            <!--<p class="rev"><i class="fa fa-star"></i><i class="fa fa-star"></i><i-->
+            <!--class="fa fa-star"></i><i class="fa fa-star"></i> <i-->
+            <!--class="fa fa-star-o"></i> <span class="margin-left-10">5 Review(s)</span>-->
+            <!--</p>-->
+            <!--<div class="price">$350.00</div>-->
+            <!--<a href="#." class="cart-btn"><i class="icon-basket-loaded"></i></a></article>-->
+            <!--</div>-->
 
-                            <!--&lt;!&ndash; Product &ndash;&gt;-->
-                            <!--<div class="product">-->
-                                <!--<article><img class="img-responsive" src="images/item-img-1-16.jpg" alt="">-->
-                                    <!--&lt;!&ndash; Content &ndash;&gt;-->
-                                    <!--<span class="tag">Appliances</span> <a href="#." class="tittle">Reloj Inteligente-->
-                                        <!--Smart Watch M26 Touch Bluetooh </a>-->
-                                    <!--&lt;!&ndash; Reviews &ndash;&gt;-->
-                                    <!--<p class="rev"><i class="fa fa-star"></i><i class="fa fa-star"></i><i-->
-                                            <!--class="fa fa-star"></i><i class="fa fa-star"></i> <i-->
-                                            <!--class="fa fa-star-o"></i> <span class="margin-left-10">5 Review(s)</span>-->
-                                    <!--</p>-->
-                                    <!--<div class="price">$350.00</div>-->
-                                    <!--<a href="#." class="cart-btn"><i class="icon-basket-loaded"></i></a></article>-->
-                            <!--</div>-->
+            <!--&lt;!&ndash; Product &ndash;&gt;-->
+            <!--<div class="product">-->
+            <!--<article><img class="img-responsive" src="images/item-img-1-16.jpg" alt="">-->
+            <!--&lt;!&ndash; Content &ndash;&gt;-->
+            <!--<span class="tag">Appliances</span> <a href="#." class="tittle">Reloj Inteligente-->
+            <!--Smart Watch M26 Touch Bluetooh </a>-->
+            <!--&lt;!&ndash; Reviews &ndash;&gt;-->
+            <!--<p class="rev"><i class="fa fa-star"></i><i class="fa fa-star"></i><i-->
+            <!--class="fa fa-star"></i><i class="fa fa-star"></i> <i-->
+            <!--class="fa fa-star-o"></i> <span class="margin-left-10">5 Review(s)</span>-->
+            <!--</p>-->
+            <!--<div class="price">$350.00</div>-->
+            <!--<a href="#." class="cart-btn"><i class="icon-basket-loaded"></i></a></article>-->
+            <!--</div>-->
 
-                            <!--&lt;!&ndash; Product &ndash;&gt;-->
-                            <!--<div class="product">-->
-                                <!--<article><img class="img-responsive" src="images/item-img-1-15.jpg" alt=""> <span-->
-                                        <!--class="new-tag">New</span>-->
+            <!--&lt;!&ndash; Product &ndash;&gt;-->
+            <!--<div class="product">-->
+            <!--<article><img class="img-responsive" src="images/item-img-1-15.jpg" alt=""> <span-->
+            <!--class="new-tag">New</span>-->
 
-                                    <!--&lt;!&ndash; Content &ndash;&gt;-->
-                                    <!--<span class="tag">Accessories</span> <a href="#." class="tittle">Teclado Inalambrico-->
-                                        <!--Bluetooth Con Air Mouse</a>-->
-                                    <!--&lt;!&ndash; Reviews &ndash;&gt;-->
-                                    <!--<p class="rev"><i class="fa fa-star"></i><i class="fa fa-star"></i><i-->
-                                            <!--class="fa fa-star"></i><i class="fa fa-star"></i> <i class="fa fa-star"></i>-->
-                                        <!--<span class="margin-left-10">5 Review(s)</span></p>-->
-                                    <!--<div class="price">$350.00</div>-->
-                                    <!--<a href="#." class="cart-btn"><i class="icon-basket-loaded"></i></a></article>-->
-                            <!--</div>-->
+            <!--&lt;!&ndash; Content &ndash;&gt;-->
+            <!--<span class="tag">Accessories</span> <a href="#." class="tittle">Teclado Inalambrico-->
+            <!--Bluetooth Con Air Mouse</a>-->
+            <!--&lt;!&ndash; Reviews &ndash;&gt;-->
+            <!--<p class="rev"><i class="fa fa-star"></i><i class="fa fa-star"></i><i-->
+            <!--class="fa fa-star"></i><i class="fa fa-star"></i> <i class="fa fa-star"></i>-->
+            <!--<span class="margin-left-10">5 Review(s)</span></p>-->
+            <!--<div class="price">$350.00</div>-->
+            <!--<a href="#." class="cart-btn"><i class="icon-basket-loaded"></i></a></article>-->
+            <!--</div>-->
 
-                            <!--&lt;!&ndash; Product &ndash;&gt;-->
-                            <!--<div class="product">-->
-                                <!--<article><img class="img-responsive" src="images/item-img-1-14.jpg" alt="">-->
-                                    <!--&lt;!&ndash; Content &ndash;&gt;-->
-                                    <!--<span class="tag">Appliances</span> <a href="#." class="tittle">Funda Para Ebook 7"-->
-                                        <!--128GB full HD</a>-->
-                                    <!--&lt;!&ndash; Reviews &ndash;&gt;-->
-                                    <!--<p class="rev"><i class="fa fa-star"></i><i class="fa fa-star"></i><i-->
-                                            <!--class="fa fa-star"></i><i class="fa fa-star"></i> <i class="fa fa-star"></i>-->
-                                        <!--<span class="margin-left-10">5 Review(s)</span></p>-->
-                                    <!--<div class="price">$350.00</div>-->
-                                    <!--<a href="#." class="cart-btn"><i class="icon-basket-loaded"></i></a></article>-->
-                            <!--</div>-->
-                        <!--</div>-->
-                    <!--</div>-->
-                <!--</div>-->
+            <!--&lt;!&ndash; Product &ndash;&gt;-->
+            <!--<div class="product">-->
+            <!--<article><img class="img-responsive" src="images/item-img-1-14.jpg" alt="">-->
+            <!--&lt;!&ndash; Content &ndash;&gt;-->
+            <!--<span class="tag">Appliances</span> <a href="#." class="tittle">Funda Para Ebook 7"-->
+            <!--128GB full HD</a>-->
+            <!--&lt;!&ndash; Reviews &ndash;&gt;-->
+            <!--<p class="rev"><i class="fa fa-star"></i><i class="fa fa-star"></i><i-->
+            <!--class="fa fa-star"></i><i class="fa fa-star"></i> <i class="fa fa-star"></i>-->
+            <!--<span class="margin-left-10">5 Review(s)</span></p>-->
+            <!--<div class="price">$350.00</div>-->
+            <!--<a href="#." class="cart-btn"><i class="icon-basket-loaded"></i></a></article>-->
+            <!--</div>-->
+            <!--</div>-->
+            <!--</div>-->
+            <!--</div>-->
             <!--</div>-->
         </section>
 
@@ -2030,34 +2004,34 @@
         </section>
 
         <!-- Clients img -->
-        <section class="light-gry-bg clients-img">
-            <div class="container">
-                <ul>
-                    <li><img src="images/c-img-1.png" alt=""></li>
-                    <li><img src="images/c-img-2.png" alt=""></li>
-                    <li><img src="images/c-img-3.png" alt=""></li>
-                    <li><img src="images/c-img-4.png" alt=""></li>
-                    <li><img src="images/c-img-5.png" alt=""></li>
-                </ul>
-            </div>
-        </section>
+        <!--<section class="light-gry-bg clients-img">-->
+        <!--<div class="container">-->
+        <!--<ul>-->
+        <!--<li><img src="images/c-img-1.png" alt=""></li>-->
+        <!--<li><img src="images/c-img-2.png" alt=""></li>-->
+        <!--<li><img src="images/c-img-3.png" alt=""></li>-->
+        <!--<li><img src="images/c-img-4.png" alt=""></li>-->
+        <!--<li><img src="images/c-img-5.png" alt=""></li>-->
+        <!--</ul>-->
+        <!--</div>-->
+        <!--</section>-->
 
         <!-- Newslatter -->
-        <section class="newslatter">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-6">
-                        <h3>Subscribe our Newsletter <span>Get <strong>25% Off</strong> first purchase!</span></h3>
-                    </div>
-                    <div class="col-md-6">
-                        <form>
-                            <input type="email" placeholder="Your email address here...">
-                            <button type="submit">Subscribe!</button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </section>
+        <!--<section class="newslatter">-->
+        <!--<div class="container">-->
+        <!--<div class="row">-->
+        <!--<div class="col-md-6">-->
+        <!--<h3>Subscribe our Newsletter <span>Get <strong>25% Off</strong> first purchase!</span></h3>-->
+        <!--</div>-->
+        <!--<div class="col-md-6">-->
+        <!--<form>-->
+        <!--<input type="email" placeholder="Your email address here...">-->
+        <!--<button type="submit">Subscribe!</button>-->
+        <!--</form>-->
+        <!--</div>-->
+        <!--</div>-->
+        <!--</div>-->
+        <!--</section>-->
     </div>
     <!-- End Content -->
 
@@ -2066,71 +2040,71 @@
         <div class="container">
 
             <!-- Footer Upside Links -->
-            <div class="foot-link">
-                <ul>
-                    <li><a href="#."> About us </a></li>
-                    <li><a href="#."> Customer Service </a></li>
-                    <li><a href="#."> Privacy Policy </a></li>
-                    <li><a href="#."> Site Map </a></li>
-                    <li><a href="#."> Search Terms </a></li>
-                    <li><a href="#."> Advanced Search </a></li>
-                    <li><a href="#."> Orders and Returns </a></li>
-                    <li><a href="#."> Contact Us</a></li>
-                </ul>
-            </div>
+            <!--<div class="foot-link">-->
+            <!--<ul>-->
+            <!--<li><a href="#."> About us </a></li>-->
+            <!--<li><a href="#."> Customer Service </a></li>-->
+            <!--<li><a href="#."> Privacy Policy </a></li>-->
+            <!--<li><a href="#."> Site Map </a></li>-->
+            <!--<li><a href="#."> Search Terms </a></li>-->
+            <!--<li><a href="#."> Advanced Search </a></li>-->
+            <!--<li><a href="#."> Orders and Returns </a></li>-->
+            <!--<li><a href="#."> Contact Us</a></li>-->
+            <!--</ul>-->
+            <!--</div>-->
             <div class="row">
 
                 <!-- Contact -->
-                <div class="col-md-4">
-                    <h4>Contact SmartTech!</h4>
-                    <p>Address: 45 Grand Central Terminal New York, NY 1017
-                        United State USA</p>
-                    <p>Phone: (+100) 123 456 7890</p>
-                    <p>Email: Support@smarttech.com</p>
-                    <div class="social-links"><a href="#."><i class="fa fa-facebook"></i></a> <a href="#."><i
-                            class="fa fa-twitter"></i></a> <a href="#."><i class="fa fa-linkedin"></i></a> <a href="#."><i
-                            class="fa fa-pinterest"></i></a> <a href="#."><i class="fa fa-instagram"></i></a> <a
-                            href="#."><i class="fa fa-google"></i></a></div>
-                </div>
+                <!--<div class="col-md-4">-->
+                <!--<h4>Contact SmartTech!</h4>-->
+                <!--<p>Address: 45 Grand Central Terminal New York, NY 1017-->
+                <!--United State USA</p>-->
+                <!--<p>Phone: (+100) 123 456 7890</p>-->
+                <!--<p>Email: Support@smarttech.com</p>-->
+                <!--<div class="social-links"><a href="#."><i class="fa fa-facebook"></i></a> <a href="#."><i-->
+                <!--class="fa fa-twitter"></i></a> <a href="#."><i class="fa fa-linkedin"></i></a> <a href="#."><i-->
+                <!--class="fa fa-pinterest"></i></a> <a href="#."><i class="fa fa-instagram"></i></a> <a-->
+                <!--href="#."><i class="fa fa-google"></i></a></div>-->
+                <!--</div>-->
 
                 <!-- Categories -->
-                <div class="col-md-3">
-                    <h4>Categories</h4>
-                    <ul class="links-footer">
-                        <li><a href="#.">Home Audio & Theater</a></li>
-                        <li><a href="#."> TV & Video</a></li>
-                        <li><a href="#."> Camera, Photo & Video</a></li>
-                        <li><a href="#."> Cell Phones & Accessories</a></li>
-                        <li><a href="#."> Headphones</a></li>
-                        <li><a href="#."> Video Games</a></li>
-                        <li><a href="#."> Bluetooth & Wireless</a></li>
-                    </ul>
-                </div>
+                <!--<div class="col-md-3">-->
+                <!--<h4>Categories</h4>-->
+                <!--<ul class="links-footer">-->
+                <!--<li><a href="#.">Home Audio & Theater</a></li>-->
+                <!--<li><a href="#."> TV & Video</a></li>-->
+                <!--<li><a href="#."> Camera, Photo & Video</a></li>-->
+                <!--<li><a href="#."> Cell Phones & Accessories</a></li>-->
+                <!--<li><a href="#."> Headphones</a></li>-->
+                <!--<li><a href="#."> Video Games</a></li>-->
+                <!--<li><a href="#."> Bluetooth & Wireless</a></li>-->
+                <!--</ul>-->
+                <!--</div>-->
 
                 <!-- Categories -->
-                <div class="col-md-3">
-                    <h4>Customer Services</h4>
-                    <ul class="links-footer">
-                        <li><a href="#.">Shipping & Returns</a></li>
-                        <li><a href="#."> Secure Shopping</a></li>
-                        <li><a href="#."> International Shipping</a></li>
-                        <li><a href="#."> Affiliates</a></li>
-                        <li><a href="#."> Contact </a></li>
-                    </ul>
-                </div>
+                <!--<div class="col-md-3">-->
+                <!--<h4>Customer Services</h4>-->
+                <!--<ul class="links-footer">-->
+                <!--<li><a href="#.">Shipping & Returns</a></li>-->
+                <!--<li><a href="#."> Secure Shopping</a></li>-->
+                <!--<li><a href="#."> International Shipping</a></li>-->
+                <!--<li><a href="#."> Affiliates</a></li>-->
+                <!--<li><a href="#."> Contact </a></li>-->
+                <!--</ul>-->
+                <!--</div>-->
 
                 <!-- Categories -->
-                <div class="col-md-2">
-                    <h4>Information</h4>
-                    <ul class="links-footer">
-                        <li><a href="#.">Our Blog</a></li>
-                        <li><a href="#."> About Our Shop</a></li>
-                        <li><a href="#."> Secure Shopping</a></li>
-                        <li><a href="#."> Delivery infomation</a></li>
-                        <li><a href="#."> Store Locations</a></li>
-                        <li><a href="#."> FAQs</a></li>
-                    </ul>
-                </div>
+                <!--<div class="col-md-2">-->
+                <!--<h4>Information</h4>-->
+                <!--<ul class="links-footer">-->
+                <!--<li><a href="#.">Our Blog</a></li>-->
+                <!--<li><a href="#."> About Our Shop</a></li>-->
+                <!--<li><a href="#."> Secure Shopping</a></li>-->
+                <!--<li><a href="#."> Delivery infomation</a></li>-->
+                <!--<li><a href="#."> Store Locations</a></li>-->
+                <!--<li><a href="#."> FAQs</a></li>-->
+                <!--</ul>-->
+                <!--</div>-->
             </div>
         </div>
     </footer>

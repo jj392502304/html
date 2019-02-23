@@ -3388,6 +3388,8 @@ header nav {
 	font-size: 26px;
 }
 .cart-pop .dropdown-menu {
+	height: 460px;
+	overflow: auto;
 	margin-top: 10px;
 	min-width: 246px;
 	padding: 15px;
