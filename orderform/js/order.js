@@ -143,7 +143,8 @@ function xiadan() {
         dataType: "json",
         success: function (data) {
             if (data.code == 200) {
-                window.location.href = "submit.html";
+                console.log(data)
+                window.location.href = "submit.html?no="+data.data.orderid+"&amount="+data.data.payment;
             } else {
                 alert("网页出现问题，请联系管理员！")
             }

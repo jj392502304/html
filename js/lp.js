@@ -136,6 +136,11 @@ function type() {
                     } else if (value.kpid == "2") {
                         $("#shangyong").append('<li><a href="ListProducts.html?id=' + value.kid + '">' + value.ktype + '</a></li>')
                     }
+                    var ss=' <li> '+
+                        '   <input value="'+value.kid +'" class="styled" onclick="checkbox_single('+n+')" type="checkbox" >'+
+                        '   <label for="cate1"> '+value.ktype+'</label>'+
+                        ' </li>';
+                    $("#type").append(ss)
                 });
             } else {
                 console.log("净水器类型数据加载异常：" + data.message);

@@ -5,6 +5,7 @@ function GetRequest() {
         url=document.referrer;
         url=url.substring(url.lastIndexOf("?"),url.length);
     }
+    console.log(url);
     var theRequest = new Object();
     if (url.indexOf("?") != -1) {
         var str = url.substr(1);

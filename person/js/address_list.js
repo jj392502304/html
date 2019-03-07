@@ -1,18 +1,19 @@
 window.onload=function () {
+    var login=JSON.parse(sessionStorage.getItem("login"));
     $.ajax({
-        url: http + "/address/list",
+        url: http + "/address/list2",
         type: "post",
         dataType: "json",
         // contentType: "application/json",
         data: {
-            "size":100
+            "id":login.id
         },
         cache: false,
         async: true,
         success: function (data) {
             var xx={"xx":"xx"}
             var str="";
-            $.each(data.data.list,function (n,value) {
+            $.each(data.data,function (n,value) {
                 var item=JSON.stringify(value).replace("{","").replace("}","");
                 str+='<div class="address_list">'+
                     '        <div class="list_left">'+

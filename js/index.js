@@ -27,21 +27,21 @@ window.onload = function () {
         dataType: "json",
         success: function (data) {
             if (data.code == 200) {
-                // console.log(data);
+                console.log(data);
                 var list = data.data.list;
                 var s;
-                for (var i = 0; i < 3; i++) {
+                for (var i = 0; i < list.length-1; i++) {
                     s += round(list[i].rimage, list[i].rbrief, list[i].rname, list[i].rprice, list[i].rid)
                 }
                 s = s.replace("undefined", "");
-                var image = list[3].rimage;
+                var image = list[list.length-1].rimage;
                 $("#round").html(s)
                 $(".slid-sec .like-bnr").css("background", "#f5f5f5 url(" + image + ") right top no-repeat");
                 $(".like-bnr").css("background-size", "342px 250px");
                 $("#like-href").attr("href", "./Product-Details.html?did="+list[3].rid);
-                $("#like-name").html(list[3].rname);
-                $("#like-brief").html(list[3].rbrief);
-                $("#like-price").html(list[3].rprice);
+                $("#like-name").html(list[list.length-1].rname);
+                $("#like-brief").html(list[list.length-1].rbrief);
+                $("#like-price").html(list[list.length-1].rprice);
                 loadScript('js/main.js', function () {
                     // console.log('onload');
                 });
@@ -131,34 +131,34 @@ window.onload = function () {
     });
 
     //本周最畅销数据加载
-    $.ajax({
-        type: "POST",
-        url: http + "/weekly/weekly",
-        data: null,
-        async:false,
-//            contentType: "application/json",
-        dataType: "json",
-        success: function (data) {
-            if (data.code == 200) {
-                // console.log(data)
-                var list = data.data.list;
-
-                $(".like-bnr").eq(1).css("background", "#f5f5f5 url(" + list[0].cpicurl + ") right top no-repeat");
-                $("#h_link").attr("href", "./Product-Details.html?did="+list[0].cid);
-                $("#w_name").html(list[0].cname);
-                $("#k_name").html(list[0].ckeyword);
-                var str="";
-                $.each(list, function (n, value) {
-                    if (n > 0) {
-                        str += week(value.cpicurl,  value.ckeyword,value.cname, value.cprice, value.cid);
-                    }
-                });
-                $("#weekly_shop").append(str);
-            } else {
-                console.log("本周最畅销数据加载异常：" + data.message);
-            }
-        }
-    });
+//     $.ajax({
+//         type: "POST",
+//         url: http + "/weekly/weekly",
+//         data: null,
+//         async:false,
+// //            contentType: "application/json",
+//         dataType: "json",
+//         success: function (data) {
+//             if (data.code == 200) {
+//                 // console.log(data)
+//                 var list = data.data.list;
+//
+//                 $(".like-bnr").eq(1).css("background", "#f5f5f5 url(" + list[0].cpicurl + ") right top no-repeat");
+//                 $("#h_link").attr("href", "./Product-Details.html?did="+list[0].cid);
+//                 $("#w_name").html(list[0].cname);
+//                 $("#k_name").html(list[0].ckeyword);
+//                 var str="";
+//                 $.each(list, function (n, value) {
+//                     if (n > 0) {
+//                         str += week(value.cpicurl,  value.ckeyword,value.cname, value.cprice, value.cid);
+//                     }
+//                 });
+//                 $("#weekly_shop").append(str);
+//             } else {
+//                 console.log("本周最畅销数据加载异常：" + data.message);
+//             }
+//         }
+//     });
 
     //公告加载
     $.ajax({
@@ -241,11 +241,12 @@ function sw() {
     $(".owl-item").css("width", "204px");
     // $("article").css("width", "204px");
     // $("article").css("height", "284.19px");
-    $(".owl-stage-outer").css("height","290px");
+    $(".owl-stage-outer").css("height","270px");
 }
 
 function sw2() {
     $(".owl-stage").css("width", f + "px");
+    // $(".owl-stage").css("height", "204px");
     $(".owl-item").css("width", "204px");
     // console.log(f)
     $("#featur").show();
@@ -460,7 +461,7 @@ function type() {
         dataType: "json",
         success: function (data) {
             if (data.code == 200) {
-                console.log(data)
+                // console.log(data)
                 var list = data.data.list;
                 var str="";
                 $.each(list,function(n,value){

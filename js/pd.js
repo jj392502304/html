@@ -18,7 +18,7 @@ window.onload = function init() {
                 $("#product").html(shop(data.data));
                 var str = "";
                 $.each(detailPic, function (n, value) {
-                    str += '<img style="margin-left:195px " src="' + value.dpicurl + '" alt="">'
+                    str += '<img style="margin-left:195px;width:750px;height:auto" src="' + value.dpicurl + '" alt="">'
                 })
                 var str1 = '<li class="xxx">颜色:　' + dd.color + '</li>' +
                     '                      <li class="xxx">类型:　' + dd.type + '</li>' +
