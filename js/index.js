@@ -2,7 +2,7 @@ var f = "";
 var s = "";
 var o = "";
 var login=JSON.parse(sessionStorage.getItem("login"));
-var adminid=login.id;
+// var adminid=login.id;
 
 window.onload = function () {
     console.log(login)
@@ -13,6 +13,7 @@ window.onload = function () {
             $("#welcome").html("欢迎来到净水器在线销售商店！");
         }
         $("#login_text").html("退出登录");
+        $("#register_text").html("");
     }
     $("#special").hide();
     $("#on-sal").hide();
@@ -30,18 +31,18 @@ window.onload = function () {
                 console.log(data);
                 var list = data.data.list;
                 var s;
-                for (var i = 0; i < list.length-1; i++) {
+                for (var i = 0; i < list.length; i++) {
                     s += round(list[i].rimage, list[i].rbrief, list[i].rname, list[i].rprice, list[i].rid)
                 }
                 s = s.replace("undefined", "");
                 var image = list[list.length-1].rimage;
                 $("#round").html(s)
-                $(".slid-sec .like-bnr").css("background", "#f5f5f5 url(" + image + ") right top no-repeat");
-                $(".like-bnr").css("background-size", "342px 250px");
-                $("#like-href").attr("href", "./Product-Details.html?did="+list[3].rid);
-                $("#like-name").html(list[list.length-1].rname);
-                $("#like-brief").html(list[list.length-1].rbrief);
-                $("#like-price").html(list[list.length-1].rprice);
+                // $(".slid-sec .like-bnr").css("background", "#f5f5f5 url(" + image + ") right top no-repeat");
+                // $(".like-bnr").css("background-size", "342px 250px");
+                // $("#like-href").attr("href", "./Product-Details.html?did="+list[3].rid);
+                // $("#like-name").html(list[list.length-1].rname);
+                // $("#like-brief").html(list[list.length-1].rbrief);
+                // $("#like-price").html(list[list.length-1].rprice);
                 loadScript('js/main.js', function () {
                     // console.log('onload');
                 });
@@ -183,6 +184,7 @@ window.onload = function () {
             }
         }
     });
+
     cartonload();
     sw3();
     sw();
@@ -191,63 +193,93 @@ window.onload = function () {
 }
 
 function cartonload() {
-    $.ajax({
-        type: "POST",
-        url: http + "/cart/cartonload",
-        data: {"cid":adminid},
-        async:false,
+    if(login!=null){
+        $.ajax({
+            type: "POST",
+            url: http + "/cart/cartonload",
+            data: {"cid":login.id},
+            async:false,
 //            contentType: "application/json",
-        dataType: "json",
-        success: function (data) {
-            if (data.code == 200) {
-                // console.log(data)
-                var list=data.data.list;
+            dataType: "json",
+            success: function (data) {
+                if (data.code == 200) {
+                    // console.log(data)
+                    var list=data.data.list;
 
-                var str='<li class="dropdown" ondblclick="db()"><a title="双击可以跳转购物车页面" class="dropdown-toggle" data-toggle="dropdown" role="button"'+
-                    '                                        aria-haspopup="true" aria-expanded="false"><span class="itm-cont">'+list.length+'</span> <i'+
-                    '                        class="flaticon-shopping-bag"></i> <strong>My Cart</strong> <br>'+
-                    '                    <span>￥'+data.data.totalPrice+'</span></a>'+
-                    '                    <ul class="dropdown-menu">';
+                    if(list.length!=0){
+                        var str='<li class="dropdown" ondblclick="db()"><a title="双击可以跳转购物车页面" class="dropdown-toggle" data-toggle="dropdown" role="button"'+
+                            '                                        aria-haspopup="true" aria-expanded="false"><span class="itm-cont">'+list.length+'</span> <i'+
+                            '                        class="flaticon-shopping-bag"></i> <strong>My Cart</strong> <br>'+
+                            '                    <span>￥'+data.data.totalPrice+'</span></a>'+
+                            '                    <ul class="dropdown-menu">';
 
 
 
-                for(var i=0;i<list.length;i++){
-                    str+='                        <li>'+
-                        '                            <div class="media-left"><a href="#." class="thumb"> <img src="'+list[i].picurl+'"'+
-                        '                                                                                     class="img-responsive" alt=""> </a>'+
-                        '                            </div>'+
-                        '                            <div class="media-body"><a href="#." class="tittle">'+list[i].shopname+'</a>'+
-                        '                                <span>'+list[i].price+' x '+list[i].count+'</span></div>'+
-                        '                        </li>'
+                        for(var i=0;i<list.length;i++){
+                            str+='                        <li>'+
+                                '                            <div class="media-left"><a href="#." class="thumb"> <img src="'+list[i].picurl+'"'+
+                                '                                                                                     class="img-responsive" alt=""> </a>'+
+                                '                            </div>'+
+                                '                            <div class="media-body"><a href="#." class="tittle">'+list[i].shopname+'</a>'+
+                                '                                <span>'+list[i].price+' x '+list[i].count+'</span></div>'+
+                                '                        </li>'
+                        }
+                        str+='                        <li class="btn-cart"><a href="cart.html?id='+login.id+'" class="btn-round">查看购物车</a></li>';
+                        '                    </ul>'+
+                        '                </li>';
+                        $("#cart_nav").html(str);
+                    }else {
+                        var str='<li class="dropdown" ondblclick="db()"><a title="双击可以跳转购物车页面" class="dropdown-toggle" data-toggle="dropdown" role="button"'+
+                            '                                        aria-haspopup="true" aria-expanded="false"><span class="itm-cont">'+list.length+'</span> <i'+
+                            '                        class="flaticon-shopping-bag"></i> <strong>My Cart</strong> <br>'+
+                            '                    <span>￥'+0+'</span></a>'+
+                            '                    <ul class="dropdown-menu">';
+
+
+
+                        for(var i=0;i<list.length;i++){
+                            str+='                        <li>'+
+                                '                            <div class="media-left"><a href="#." class="thumb"> <img src="'+list[i].picurl+'"'+
+                                '                                                                                     class="img-responsive" alt=""> </a>'+
+                                '                            </div>'+
+                                '                            <div class="media-body"><a href="#." class="tittle">'+list[i].shopname+'</a>'+
+                                '                                <span>'+list[i].price+' x '+list[i].count+'</span></div>'+
+                                '                        </li>'
+                        }
+                        str+='                        <li class="btn-cart"><a href="cart.html?id='+login.id+'" class="btn-round">查看购物车</a></li>';
+                        '                    </ul>'+
+                        '                </li>';
+                        $("#cart_nav").html(str);
+                    }
+                } else {
                 }
-                str+='                        <li class="btn-cart"><a href="cart.html?id='+adminid+'" class="btn-round">查看购物车</a></li>';
-                '                    </ul>'+
-                '                </li>';
-                $("#cart_nav").html(str);
-            } else {
             }
-        }
-    });
+        });
+    }else {
+        $("#cart_nav").html("");
+        alert("请先登录");
+    }
 }
 function db() {
-    window.location.href="cart.html?id="+adminid;
+    window.location.href="cart.html?id="+login.id;
 }
 function sw() {
     $("#featur").hide();
     $("#on-sal").hide();
     $("#special").show();
-    $(".owl-stage").css("width", s + "px");
+    // $(".owl-stage").css("width", s + "px");
     // console.log(s)
     $(".owl-item").css("width", "204px");
     // $("article").css("width", "204px");
     // $("article").css("height", "284.19px");
-    $(".owl-stage-outer").css("height","270px");
+    $(".owl-stage-outer").css("height","294px");
 }
 
 function sw2() {
-    $(".owl-stage").css("width", f + "px");
+    $(".owl-stage").css("width", f*10 + "px");
     // $(".owl-stage").css("height", "204px");
-    $(".owl-item").css("width", "204px");
+    // $(".owl-item").css("width", "204px");
+    $(".tab-content").css("height","320px");
     // console.log(f)
     $("#featur").show();
     $("#special").hide();
@@ -259,7 +291,7 @@ function sw3() {
     $("#special").hide();
     $("#featur").hide();
     $("#on-sal").show();
-    $(".owl-stage").css("width", o + "px");
+    // $(".owl-stage").css("width", o + "px");
     $(".owl-item").css("width", "204px");
     // $(".owl-item").css("width", "204px");
     // $(".product").css("width", "204px");
@@ -319,7 +351,7 @@ function special(image, brief, name, price, id) {
 //精选字符串拼接
 function jingxuan(image, brief, name, price, id) {
     var sb = '<div class="product">' +
-        '                                    <article><img class="img-responsive" src="' + image + '" alt="">' +
+        '                                    <article><img class="img-responsive" style="height:115px" src="' + image + '" alt="">' +
         '                                        <!-- Content -->' +
         '                                        <span class="tag">' + name + '</span> <a href="./Product-Details.html?did='+id+'" class="tittle">' + brief + '</a>' +
         '                                        <!-- Reviews -->' +
@@ -334,6 +366,9 @@ function jingxuan(image, brief, name, price, id) {
     return sb;
 }
 function addCart(id,count) {
+    if(yanzheng(login)){
+        return;
+    }
     var data={
         "cid":login.id,
         "cleanerid":id,

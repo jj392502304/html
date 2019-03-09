@@ -1,3 +1,5 @@
+var login=JSON.parse(sessionStorage.getItem("login"))
+var shuliang=1;
 window.onload = function init() {
     var id = GetRequest().did;
     // var jss=["js/main.js"];
@@ -53,6 +55,7 @@ window.onload = function init() {
         }
     });
     type();
+    cartonload();
 }
 
 function type() {
@@ -103,7 +106,74 @@ function loadScript(src, callback) {
     }
     head.appendChild(script);
 }
+function cartonload() {
+    if(login!=null){
+        $.ajax({
+            type: "POST",
+            url: http + "/cart/cartonload",
+            data: {"cid":login.id},
+            async:false,
+//            contentType: "application/json",
+            dataType: "json",
+            success: function (data) {
+                if (data.code == 200) {
+                    // console.log(data)
+                    var list=data.data.list;
 
+                    if(list.length!=0){
+                        var str='<li class="dropdown" ondblclick="db()"><a title="双击可以跳转购物车页面" class="dropdown-toggle" data-toggle="dropdown" role="button"'+
+                            '                                        aria-haspopup="true" aria-expanded="false"><span class="itm-cont">'+list.length+'</span> <i'+
+                            '                        class="flaticon-shopping-bag"></i> <strong>My Cart</strong> <br>'+
+                            '                    <span>￥'+data.data.totalPrice+'</span></a>'+
+                            '                    <ul class="dropdown-menu">';
+
+
+
+                        for(var i=0;i<list.length;i++){
+                            str+='                        <li>'+
+                                '                            <div class="media-left"><a href="#." class="thumb"> <img src="'+list[i].picurl+'"'+
+                                '                                                                                     class="img-responsive" alt=""> </a>'+
+                                '                            </div>'+
+                                '                            <div class="media-body"><a href="#." class="tittle">'+list[i].shopname+'</a>'+
+                                '                                <span>'+list[i].price+' x '+list[i].count+'</span></div>'+
+                                '                        </li>'
+                        }
+                        str+='                        <li class="btn-cart"><a href="cart.html?id='+login.id+'" class="btn-round">查看购物车</a></li>';
+                        '                    </ul>'+
+                        '                </li>';
+                        $("#cart_nav").html(str);
+                    }else {
+                        var str='<li class="dropdown" ondblclick="db()"><a title="双击可以跳转购物车页面" class="dropdown-toggle" data-toggle="dropdown" role="button"'+
+                            '                                        aria-haspopup="true" aria-expanded="false"><span class="itm-cont">'+list.length+'</span> <i'+
+                            '                        class="flaticon-shopping-bag"></i> <strong>My Cart</strong> <br>'+
+                            '                    <span>￥'+0+'</span></a>'+
+                            '                    <ul class="dropdown-menu">';
+
+
+
+                        for(var i=0;i<list.length;i++){
+                            str+='                        <li>'+
+                                '                            <div class="media-left"><a href="#." class="thumb"> <img src="'+list[i].picurl+'"'+
+                                '                                                                                     class="img-responsive" alt=""> </a>'+
+                                '                            </div>'+
+                                '                            <div class="media-body"><a href="#." class="tittle">'+list[i].shopname+'</a>'+
+                                '                                <span>'+list[i].price+' x '+list[i].count+'</span></div>'+
+                                '                        </li>'
+                        }
+                        str+='                        <li class="btn-cart"><a href="cart.html?id='+login.id+'" class="btn-round">查看购物车</a></li>';
+                        '                    </ul>'+
+                        '                </li>';
+                        $("#cart_nav").html(str);
+                    }
+                } else {
+                }
+            }
+        });
+    }else {
+        $("#cart_nav").html("");
+        alert("请先登录");
+    }
+}
 function checknumber() {
     var count = $("#count").val();
     if (!(/^(\+|-)?\d+$/.test(count)) || count < 1) {
@@ -111,6 +181,8 @@ function checknumber() {
         $("#count").val("1");
         $("#count").focus();
 
+    }else {
+        shuliang=count;
     }
 }
 
@@ -174,11 +246,38 @@ function shop(data) {
         '                    <div class="quinty" style="width: 200px">' +
         '                      <label style="font-size: 15px;color: gray">数量：</label><input id="count" onchange="checknumber()" type="number" value="01" style="width: 60%">' +
         '                    </div>' +
-        '                    <a href="http://www.baidu.com" class="btn-round"><i class="icon-basket-loaded margin-right-5"></i>加入购物车</a> </div>' +
+        '                    <a href="#"  onclick="addCart(\''+data.cid+'\','+shuliang+')" class="btn-round"><i class="icon-basket-loaded margin-right-5"></i>加入购物车</a> </div>' +
         '                </div>';
     return str;
 }
+function addCart(id,count) {
 
+    var data={
+        "cid":login.id,
+        "cleanerid":id,
+        "count":count
+    };
+    // console.log(data)
+    $.ajax({
+        type: "POST",
+        url: http + "/cart/add",
+        data: data,
+        async:false,
+//            contentType: "application/json",
+        dataType: "json",
+        success: function (data) {
+            if (data.code == 200) {
+                alert("购物车添加成功！")
+                cartonload();
+            } else {
+            }
+        }
+    });
+
+}
+function db() {
+    window.location.href="cart.html?id="+login.id;
+}
 function standard_str() {
     return '<li class="xxx">颜色:　白色</li>' +
         '                      <li class="xxx">类型:　纳滤机</li>' +

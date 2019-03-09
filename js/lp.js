@@ -8,6 +8,7 @@ var min = "";
 var total = 0;
 var tt = 0;
 var bb = true;
+var xx=true;
 var login = JSON.parse(sessionStorage.getItem("login"));
 window.onload = function () {
     console.log(login)
@@ -20,7 +21,9 @@ window.onload = function () {
         $("#login_text").html("退出登录");
     }
     id = GetRequest().id;
-    name = GetRequest().name;
+    if(xx){
+        name = GetRequest().name;
+    }
     cartonload();
     type();
     shop(p);
@@ -150,43 +153,48 @@ function type() {
 
 }
 function cartonload() {
-    $.ajax({
-        type: "POST",
-        url: http + "/cart/cartonload",
-        data: {"cid":login.id},
-        async:false,
+    if(login!=null){
+        $.ajax({
+            type: "POST",
+            url: http + "/cart/cartonload",
+            data: {"cid":login.id},
+            async:false,
 //            contentType: "application/json",
-        dataType: "json",
-        success: function (data) {
-            if (data.code == 200) {
-                // console.log(data)
-                var list=data.data.list;
+            dataType: "json",
+            success: function (data) {
+                if (data.code == 200) {
+                    // console.log(data)
+                    var list=data.data.list;
 
-                var str='<li class="dropdown" ondblclick="db()"><a title="双击可以跳转购物车页面" class="dropdown-toggle" data-toggle="dropdown" role="button"'+
-                    '                                        aria-haspopup="true" aria-expanded="false"><span class="itm-cont">'+list.length+'</span> <i'+
-                    '                        class="flaticon-shopping-bag"></i> <strong>My Cart</strong> <br>'+
-                    '                    <span>￥'+data.data.totalPrice+'</span></a>'+
-                    '                    <ul class="dropdown-menu">';
+                    var str='<li class="dropdown" ondblclick="db()"><a title="双击可以跳转购物车页面" class="dropdown-toggle" data-toggle="dropdown" role="button"'+
+                        '                                        aria-haspopup="true" aria-expanded="false"><span class="itm-cont">'+list.length+'</span> <i'+
+                        '                        class="flaticon-shopping-bag"></i> <strong>My Cart</strong> <br>'+
+                        '                    <span>￥'+data.data.totalPrice+'</span></a>'+
+                        '                    <ul class="dropdown-menu">';
 
 
 
-                for(var i=0;i<list.length;i++){
-                    str+='                        <li>'+
-                        '                            <div class="media-left"><a href="#." class="thumb"> <img src="'+list[i].picurl+'"'+
-                        '                                                                                     class="img-responsive" alt=""> </a>'+
-                        '                            </div>'+
-                        '                            <div class="media-body"><a href="#." class="tittle">'+list[i].shopname+'</a>'+
-                        '                                <span>'+list[i].price+' x '+list[i].count+'</span></div>'+
-                        '                        </li>'
+                    for(var i=0;i<list.length;i++){
+                        str+='                        <li>'+
+                            '                            <div class="media-left"><a href="#." class="thumb"> <img src="'+list[i].picurl+'"'+
+                            '                                                                                     class="img-responsive" alt=""> </a>'+
+                            '                            </div>'+
+                            '                            <div class="media-body"><a href="#." class="tittle">'+list[i].shopname+'</a>'+
+                            '                                <span>'+list[i].price+' x '+list[i].count+'</span></div>'+
+                            '                        </li>'
+                    }
+                    str+='                        <li class="btn-cart"><a href="cart.html?id='+login.id+'" class="btn-round">查看购物车</a></li>';
+                    '                    </ul>'+
+                    '                </li>';
+                    $("#cart_nav").html(str);
+                } else {
                 }
-                str+='                        <li class="btn-cart"><a href="cart.html?id='+login.id+'" class="btn-round">查看购物车</a></li>';
-                '                    </ul>'+
-                '                </li>';
-                $("#cart_nav").html(str);
-            } else {
             }
-        }
-    });
+        });
+    }else {
+        $("#cart_nav").html("");
+        alert("请先登录");
+    }
 }
 function db() {
     window.location.href="cart.html?id="+login.id;
@@ -229,6 +237,9 @@ function list_shop(image, name, keyword, price, count, id) {
         '                </article>' +
         '              </div>';
     return str;
+}
+function db() {
+    window.location.href="cart.html?id="+login.id;
 }
 function addCart(id,count) {
 
@@ -273,7 +284,10 @@ function jiansuo() {
 }
 
 function findByName() {
+    bb=false;
+    xx=false;
     name = $("#name").val().trim();
+    console.log(name)
     if (name.length == 0) {
         alert("搜索框不能为空");
         return;

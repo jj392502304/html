@@ -16,3 +16,9 @@ function GetRequest() {
     }
     return theRequest;
 }
+function yanzheng(login) {
+    if(login==null){
+        alert("请先登录")
+        return true;
+    }
+}

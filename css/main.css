@@ -1370,6 +1370,7 @@ opacity:0;
 	z-index: 1;
 }
 .owl-carousel .owl-stage {
+	width: 3510px;
 	position: relative;
 	-ms-touch-action: pan-Y;
 }
