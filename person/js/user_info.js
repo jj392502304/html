@@ -31,9 +31,7 @@ $(function () {
             return;
         }
         var formData = new FormData();
-        $.each(document.getElementById("file").files, function (n, value) {
-            formData.append("file", document.getElementById("file").files[n])
-        })
+       formData.append("file",document.getElementById('file').files[0])
 
         $.ajax({
             url: "http://120.79.7.46/file/fileonload/onload", //请求的url地址
@@ -57,7 +55,7 @@ $(function () {
                         "sex": sex,
                         "uinfoid": login.userinfo.uinfoid
                     };
-
+                    console.log(data1)
                     $.ajax({
                         url: http + "/userinfo/update?path="+data+"&cid="+login.id,
                         type: "post",
@@ -78,18 +76,28 @@ $(function () {
                         }
                     });
                 } else {
+                    var data1 = {
+                        "adress": address,
+                        "age": age,
+                        "email": email,
+                        "name": name,
+                        "phonenumber": phone,
+                        "sex": sex,
+                        "uid": login.id
+                    };
                     $.ajax({
-                        url: http + "/userinfo/update",
+                        url: http + "/userinfo/add?path="+data,
                         type: "post",
                         dataType: "json",
-                        // contentType: "application/json",
-                        data: {
-                            "id": GetRequest().addressId
-                        },
+                        contentType: "application/json",
+                        data: JSON.stringify(data1),
                         cache: false,
                         async: true,
                         success: function (data) {
-                            console.log(data)
+                            login.pic=path;
+                            login.userinfo=data.data;
+                            sessionStorage.setItem("login",JSON.stringify(login));
+                            alert("保存成功！")
                         },
                         error: function (data) {
                             alert("服务器出现问题，请联系管理员！")

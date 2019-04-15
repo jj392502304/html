@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+    <script type="text/javascript" src="../js/public.js"></script>
+</head>
+<body>
+<form name="subForm" method="post" action="http://localhost:8082/pay1">
+    <input id="subject" name="subject" value="111" type="text" hidden/>
+    <input id="amount" name="amount" value="222" type="text" hidden/>
+    <input id="no" name="no" type="text" value="333" hidden/>
+    <input id="port" name="port" type="text" value="333" hidden/>
+    <input type="submit" id="ddd" hidden>
+</form>
+
+</body>
+<script>
+    var no="";
+    var amount="";
+    $(function () {
+        no=GetRequest().no;
+        amount=GetRequest().amount;
+        if(no==""||typeof(no)=="undefined" ){
+            alert("网页出错！")
+            window.close();
+        }
+        if(amount==""||typeof(amount)=="undefined" ){
+            alert("网页出错！")
+            window.close();
+        }
+
+        $("#no").val(no)
+        $("#amount").val(amount);
+        $("#subject").val("净水器")
+        $("#port").val(location.port);
+        document.getElementById("ddd").click();
+        console.log($("#no").val())
+        console.log($("#amount").val())
+    })
+</script>
+</html>

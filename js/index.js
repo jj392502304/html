@@ -3,7 +3,7 @@ var s = "";
 var o = "";
 var login=JSON.parse(sessionStorage.getItem("login"));
 // var adminid=login.id;
-
+console.log(location.port);
 window.onload = function () {
     console.log(login)
     if(typeof(login)!=undefined&&login!=null){

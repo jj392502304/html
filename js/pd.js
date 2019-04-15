@@ -209,7 +209,7 @@ function shop(data) {
         '                  <div class="col-xs-7"> <span class="tags" style="font-size: 30px;color: black">' + data.name + '</span>' +
         '                    <!--<p class="rev"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i> <i class="fa fa-star-o"></i> <span class="margin-left-10">5 Review(s)</span></p>-->' +
         '                    <div class="row">' +
-        '                      <div class="col-sm-6" style="width: 30%;margin-left: 20px"><span class="price">$' + data.price + '</span></div>' +
+        '                      <div class="col-sm-6" style="width: 30%;margin-left: 20px"><span class="price">￥' + data.price + '</span></div>' +
         '                      <div class="col-sm-6" style="margin-top: 5px">' +
         '                        <p style="font-size: 20px;">库存: <span class="in-stock">' + data.count + '</span></p>' +
         '                      </div>' +

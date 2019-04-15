@@ -3,8 +3,23 @@
 <head>
     <title>纯字验证码</title>
     <meta http-equiv='content-type' content='text/html;charset=utf-8'/>
-    <script type='text/javascript' src='jquery-1.7.2.js'></script>
+    <script type='text/javascript' src='js/vendors/jquery/jquery.min.js'></script>
     <script type='text/javascript'>
+
+            $.ajax({
+                type: "get",
+                url: "http://localhost:8082/ip",
+                data: null,
+//            contentType: "application/json",
+                async:false,
+                dataType: "json",
+                success: function (data) {
+                    console.log(data);
+                }
+            });
+
+        
+        
         var code ; //在全局定义验证码  
 
         function createCode(){

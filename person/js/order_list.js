@@ -4,12 +4,12 @@ $(function () {
         type: "POST",
         url: http + "/order/daifukuan",
         data: {"id": login.id},
-        async: false,
+        async: true,
 //            contentType: "application/json",
         dataType: "json",
         success: function (data) {
             if (data.code == 200) {
-                console.log(data)
+                // console.log(data)
                 var list = data.data;
                 var str = "";
                 for (var i = 0; i < list.length; i++) {
@@ -42,12 +42,12 @@ $(function () {
         type: "POST",
         url: http + "/order/daifahuo",
         data: {"id": login.id},
-        async: false,
+        async: true,
 //            contentType: "application/json",
         dataType: "json",
         success: function (data) {
             if (data.code == 200) {
-                console.log(data)
+                // console.log(data)
                 var list = data.data;
                 var str = "";
                 for (var i = 0; i < list.length; i++) {
@@ -79,12 +79,12 @@ $(function () {
         type: "POST",
         url: http + "/order/daifahuo",
         data: {"id": login.id},
-        async: false,
+        async: true,
 //            contentType: "application/json",
         dataType: "json",
         success: function (data) {
             if (data.code == 200) {
-                console.log(data)
+                // console.log(data)
                 var list = data.data;
                 var str = "";
                 for (var i = 0; i < list.length; i++) {
@@ -116,12 +116,12 @@ $(function () {
         type: "POST",
         url: http + "/order/yifahuo",
         data: {"id": login.id},
-        async: false,
+        async: true,
 //            contentType: "application/json",
         dataType: "json",
         success: function (data) {
             if (data.code == 200) {
-                console.log(data)
+                // console.log(data)
                 var list = data.data;
                 var str = "";
                 for (var i = 0; i < list.length; i++) {
@@ -155,12 +155,12 @@ $(function () {
         type: "POST",
         url: http + "/order/yiwancheng",
         data: {"id": login.id},
-        async: false,
+        async: true,
 //            contentType: "application/json",
         dataType: "json",
         success: function (data) {
             if (data.code == 200) {
-                console.log(data)
+                // console.log(data)
                 var list = data.data;
                 var str = "";
                 for (var i = 0; i < list.length; i++) {
@@ -175,7 +175,7 @@ $(function () {
 
 
                     str += '                    </div>';
-                    str += '                    /*<div class="right_operate"><a href="#" onclick="querenshouhuo( \'' + list[i].orderid + '\')">确认收货</a></div>*/' +
+                    str += '                    ' +
                         '                </div>' +
                         '                <div class="price_count">' +
                         '                    <time>' + list[i].createtime + '</time>' +
@@ -194,7 +194,7 @@ function querenshouhuo(e) {
         type: "POST",
         url: http + "/order/querenshouhuo",
         data: {"id": e},
-        async: false,
+        async: true,
 //            contentType: "application/json",
         dataType: "json",
         success: function (data) {
@@ -217,7 +217,7 @@ function del(value) {
             type: "POST",
             url: http + "/order/delete",
             data: {"id": value},
-            async: false,
+            async: true,
 //            contentType: "application/json",
             dataType: "json",
             success: function (data) {
