@@ -1,4 +1,5 @@
-var http="http://localhost:8082"
+//var http="http://localhost:8082"
+var http="http://120.79.7.46/demo"
 function GetRequest() {
     var url = location.search; //获取url中"?"符后的字串
     if(url.length==0){
